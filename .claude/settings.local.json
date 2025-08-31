@@ -31,7 +31,9 @@
       "Bash(gh repo create:*)",
       "Bash(git remote add:*)",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(doctl apps create:*)",
+      "Bash(doctl apps get:*)"
     ],
     "deny": [],
     "ask": [],

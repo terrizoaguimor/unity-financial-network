@@ -1,21 +1,11 @@
-# DigitalOcean App Platform Configuration for Unity Financial Network
+# DigitalOcean App Platform - Docker Configuration
 name: unity-financial-network
-region: atl
+region: nyc
 
 services:
   - name: web
-    # GitHub repository configuration
-    github:
-      repo: terrizoaguimor/unity-financial-network
-      branch: master
-      deploy_on_push: true
-    
-    # Build configuration
-    build_command: npm ci && npm run build
-    run_command: npm start
-    
-    # Environment
-    environment_slug: node-js
+    source_dir: /
+    dockerfile_path: Dockerfile
     
     # Instance configuration
     instance_size_slug: professional-xs
