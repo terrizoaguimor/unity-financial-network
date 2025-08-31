@@ -72,7 +72,7 @@ export async function POST(request: Request) {
           : 'If you have any questions, feel free to contact us:'
         }</p>
         <p>
-          <strong>${isSpanish ? 'Teléfono' : 'Phone'}:</strong> (786) 577-2260<br>
+          <strong>${isSpanish ? 'Teléfono' : 'Phone'}:</strong> (786) 963-6392<br>
           <strong>${isSpanish ? 'Correo' : 'Email'}:</strong> recruiting@unityfinancialnetwork.com
         </p>
         <hr style="border: 1px solid #eee; margin: 30px 0;">

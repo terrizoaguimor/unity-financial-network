@@ -18,6 +18,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
+import CookieConsent from '@/components/CookieConsent'
 
 /**
  * Inter font configuration for optimal Latin character display
@@ -185,6 +186,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-gradient-to-br from-purple-50 via-white to-purple-50`}>
         <LanguageProvider>
           {children}
+          <CookieConsent />
         </LanguageProvider>
       </body>
     </html>

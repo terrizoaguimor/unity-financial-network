@@ -68,7 +68,7 @@ export async function POST(request: Request) {
           : 'We typically respond within 24 business hours. If your inquiry is urgent, please feel free to call us directly.'
         }</p>
         <p>
-          <strong>${isSpanish ? 'Teléfono' : 'Phone'}:</strong> (786) 577-2260<br>
+          <strong>${isSpanish ? 'Teléfono' : 'Phone'}:</strong> (786) 963-6392<br>
           <strong>${isSpanish ? 'Horario' : 'Hours'}:</strong> ${isSpanish ? 'Lunes a Viernes, 9:00 AM - 6:00 PM EST' : 'Monday to Friday, 9:00 AM - 6:00 PM EST'}
         </p>
         <hr style="border: 1px solid #eee; margin: 30px 0;">
