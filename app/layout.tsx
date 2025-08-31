@@ -35,24 +35,69 @@ const inter = Inter({ subsets: ['latin'] })
  */
 export const metadata: Metadata = {
   metadataBase: new URL('https://unityfinancialnetwork.com'),
-  title: 'Unity Financial Network - Your Personal Financial Concierge',
-  description: 'At Unity Financial Network, we partner with top-rated carriers to provide tailored coverage that fits your unique needs and priorities.',
-  keywords: 'insurance, financial services, ACA, Medicare, life insurance, auto insurance, home insurance',
+  title: {
+    default: 'Unity Financial Network - Insurance & Financial Services in Miami, FL',
+    template: '%s | Unity Financial Network'
+  },
+  description: 'Unity Financial Network offers comprehensive insurance solutions including ACA health plans, Medicare, life insurance, auto, and home insurance in Miami, Florida. Get personalized coverage with bilingual support. Call (786) 963-6392 for a free quote.',
+  keywords: 'insurance Miami, seguro medico Miami, ACA insurance Florida, Medicare plans Miami, life insurance Florida, auto insurance Miami, home insurance Florida, health insurance marketplace, Obamacare Miami, seguro de salud, Unity Financial Network, insurance agent Miami, bilingual insurance services, affordable health insurance, Medicare Advantage plans',
+  authors: [{ name: 'Unity Financial Network' }],
+  creator: 'Unity Financial Network',
+  publisher: 'Unity Financial Network',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: 'https://unityfinancialnetwork.com',
+    languages: {
+      'en-US': 'https://unityfinancialnetwork.com',
+      'es-ES': 'https://unityfinancialnetwork.com/es',
+    },
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
-    title: 'Unity Financial Network',
-    description: 'More than insurance - your personal financial concierge!',
-    images: ['/images/logo-main.png'],
+    type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['es_ES'],
     url: 'https://unityfinancialnetwork.com',
     siteName: 'Unity Financial Network',
-    locale: 'en_US',
-    type: 'website',
+    title: 'Unity Financial Network - Your Trusted Insurance Partner in Miami',
+    description: 'Get comprehensive insurance coverage with Unity Financial Network. ACA health plans, Medicare, life, auto & home insurance. Bilingual service. Call (786) 963-6392.',
+    images: [
+      {
+        url: '/images/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Unity Financial Network - Insurance Services',
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Unity Financial Network',
-    description: 'More than insurance - your personal financial concierge!',
-    images: ['/images/logo-main.png'],
+    title: 'Unity Financial Network - Insurance Services Miami',
+    description: 'Comprehensive insurance solutions in Miami. ACA, Medicare, Life, Auto & Home Insurance. Bilingual service. Get your free quote today!',
+    images: ['/images/og-image.png'],
+    creator: '@unityfinancial',
+    site: '@unityfinancial',
   },
+  verification: {
+    google: 'google-site-verification-code',
+    yandex: 'yandex-verification-code',
+    yahoo: 'yahoo-verification-code',
+  },
+  category: 'Insurance',
 }
 
 /**
@@ -82,8 +127,61 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'InsuranceAgency',
+    name: 'Unity Financial Network',
+    description: 'Comprehensive insurance and financial services in Miami, Florida. ACA health plans, Medicare, life, auto, and home insurance with bilingual support.',
+    url: 'https://unityfinancialnetwork.com',
+    logo: 'https://unityfinancialnetwork.com/images/logo-main.png',
+    image: 'https://unityfinancialnetwork.com/images/og-image.png',
+    telephone: '+1-786-963-6392',
+    email: 'info@unityfinancialnetwork.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '7950 NW 53rd St STE 136',
+      addressLocality: 'Doral',
+      addressRegion: 'FL',
+      postalCode: '33166',
+      addressCountry: 'US'
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 25.8195,
+      longitude: -80.3357
+    },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00'
+    },
+    sameAs: [
+      'https://www.facebook.com/unityfinancialnetwork',
+      'https://www.instagram.com/unityfinancialnetwork',
+      'https://www.linkedin.com/company/unity-financial-network',
+      'https://twitter.com/unityfinancial'
+    ],
+    areaServed: {
+      '@type': 'State',
+      name: 'Florida'
+    },
+    priceRange: '$$',
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.8',
+      reviewCount: '124'
+    }
+  }
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.className} bg-gradient-to-br from-purple-50 via-white to-purple-50`}>
         <LanguageProvider>
           {children}
