@@ -177,7 +177,7 @@ export default function Footer({ language = 'en' }: FooterProps) {
             transition={{ duration: 0.6 }}
           >
             <Image
-              src="/images/logo-white.png"
+              src="/images/logo-white.svg"
               alt="Unity Financial Network"
               width={180}
               height={60}

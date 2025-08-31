@@ -50,7 +50,7 @@ export async function POST(request: Request) {
     // Email to customer
     const customerEmailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-        <img src="https://unityfinancialnetwork.com/images/logo-main.png" alt="Unity Financial" style="width: 200px; margin-bottom: 20px;">
+        <img src="https://unityfinancialnetwork.com/images/logo-main.svg" alt="Unity Financial" style="width: 200px; margin-bottom: 20px;">
         <h2 style="color: #522784;">${isSpanish ? '¡Gracias por contactarnos!' : 'Thank you for contacting us!'}</h2>
         <p>${isSpanish ? 'Estimado/a' : 'Dear'} ${name},</p>
         <p>${isSpanish 

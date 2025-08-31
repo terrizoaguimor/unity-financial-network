@@ -195,7 +195,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 />
                 <div className="absolute inset-8 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center">
                   <Image
-                    src="/images/logo-main.png"
+                    src="/images/logo-main.svg"
                     alt="Unity Financial"
                     width={200}
                     height={80}

@@ -11,7 +11,7 @@ interface TurnstileWidgetProps {
 
 export default function TurnstileWidget({ onVerify, onError, onExpire }: TurnstileWidgetProps) {
   const { language } = useLanguage()
-  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!
+  const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAABxARgHmGCOgbqUe'
 
   return (
     <div className="flex flex-col items-center gap-2 my-4">

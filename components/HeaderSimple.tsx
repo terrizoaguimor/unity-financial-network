@@ -285,7 +285,7 @@ export default function HeaderSimple() {
           >
             <Link href="/" className="relative">
               <Image
-                src="/images/logo-main.png"
+                src="/images/logo-main.svg"
                 alt="Unity Financial Network"
                 width={180}
                 height={60}

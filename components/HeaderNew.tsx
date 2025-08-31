@@ -93,7 +93,7 @@ export default function HeaderNew({ locale }: { locale: string }) {
           >
             <Link href={`/${locale}`} className="relative">
               <Image
-                src="/images/logo-main.png"
+                src="/images/logo-main.svg"
                 alt="Unity Financial Network"
                 width={200}
                 height={66}

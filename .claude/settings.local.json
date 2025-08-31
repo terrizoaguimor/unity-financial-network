@@ -33,7 +33,9 @@
       "Bash(git push:*)",
       "Bash(git commit:*)",
       "Bash(doctl apps create:*)",
-      "Bash(doctl apps get:*)"
+      "Bash(doctl apps get:*)",
+      "Bash(copy \"C:\\Users\\mario\\Downloads\\LOGO UNITY SOLO VERS BLANCO FONDO MORADO.svg\" logo-white.svg)",
+      "Bash(find:*)"
     ],
     "deny": [],
     "ask": [],

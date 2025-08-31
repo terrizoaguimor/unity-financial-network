@@ -133,7 +133,7 @@ export default function RootLayout({
     name: 'Unity Financial Network',
     description: 'Comprehensive insurance and financial services in Miami, Florida. ACA health plans, Medicare, life, auto, and home insurance with bilingual support.',
     url: 'https://unityfinancialnetwork.com',
-    logo: 'https://unityfinancialnetwork.com/images/logo-main.png',
+    logo: 'https://unityfinancialnetwork.com/images/logo-main.svg',
     image: 'https://unityfinancialnetwork.com/images/og-image.png',
     telephone: '+1-786-963-6392',
     email: 'info@unityfinancialnetwork.com',
