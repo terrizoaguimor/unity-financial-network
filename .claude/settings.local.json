@@ -27,7 +27,8 @@
       "WebFetch(domain:unityfinancialnetwork.com)",
       "Bash(npx tsc:*)",
       "Bash(npm run lint)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(gh repo create:*)"
     ],
     "deny": [],
     "ask": [],
