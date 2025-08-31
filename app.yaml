@@ -1,0 +1,80 @@
+# DigitalOcean App Platform Configuration for Unity Financial Network
+#
+# This configuration file defines the deployment specification for the
+# Unity Financial Network application on DigitalOcean App Platform.
+#
+# Key Components:
+# - Container registry integration with DOCR
+# - Health checks for application monitoring
+# - Environment variables for production
+# - Scaling configuration for performance
+# - Security and networking settings
+#
+# Deployment Information:
+# - App ID: cb099a3d-7c17-46aa-a293-c34150d2a832
+# - Registry: registry.digitalocean.com/unity-financial
+# - Live URL: https://unity-financial-i3sz9.ondigitalocean.app
+# - Region: San Francisco (SFO) for optimal performance
+#
+# Version: 4.0 (Admin Portal Complete)
+# Author: Unity Financial Network Development Team
+
+# Application name and deployment region
+name: unity-financial
+region: sfo  # San Francisco region for optimal US coverage
+
+services:
+  - name: unity-web
+    # Container image configuration
+    # Uses DigitalOcean Container Registry (DOCR) for secure image storage
+    image:
+      registry_type: DOCR                    # DigitalOcean Container Registry
+      registry: unity-financial              # Registry name
+      repository: unity-app                  # Repository name
+      tag: v1.0                             # Current version tag
+
+    # Instance configuration
+    # Optimized for small to medium workloads
+    instance_size_slug: basic-xxs            # Basic tier, extra-extra-small
+    instance_count: 1                        # Single instance (can scale up)
+    
+    # Network configuration
+    http_port: 3000                          # Next.js default port
+    routes:
+      - path: /                              # Route all traffic to this service
+
+    # Health monitoring configuration
+    # Ensures application availability and automatic recovery
+    health_check:
+      http_path: /                           # Health check endpoint
+      initial_delay_seconds: 30              # Wait 30s before first check
+      period_seconds: 30                     # Check every 30 seconds
+      timeout_seconds: 10                    # 10s timeout per check
+      success_threshold: 1                   # 1 success = healthy
+      failure_threshold: 3                   # 3 failures = unhealthy
+
+    # Environment variables for production deployment
+    envs:
+      - key: NODE_ENV
+        value: production                     # Production environment
+      - key: NEXT_PUBLIC_API_URL
+        value: "https://unity-financial-i3sz9.ondigitalocean.app"  # Public API URL
+
+# Additional configuration options (commented for future use):
+#
+# alerts:
+#   - rule: CPU_UTILIZATION
+#     value: 80
+#   - rule: MEM_UTILIZATION  
+#     value: 80
+#
+# databases:
+#   - name: unity-db
+#     engine: PG
+#     version: "14"
+#     size: db-s-dev-database
+#
+# static_sites:
+#   - name: unity-docs
+#     source_dir: /docs
+#     output_dir: /dist

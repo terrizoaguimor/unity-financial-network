@@ -1,0 +1,166 @@
+{
+  "header": {
+    "about": "Nosotros",
+    "insurancePlans": "Planes de Seguro",
+    "getQuote": "Cotización gratis",
+    "blog": "Blog",
+    "joinUnity": "Únete a Unity",
+    "contact": "Contacto",
+    "payments": "Pagos",
+    "freeConsultation": "Consulta Gratis",
+    "insuranceTypes": {
+      "aca": "Ley de Cuidado de Salud Asequible (ACA)",
+      "medicare": "Medicare",
+      "medicareAdvantage": "Medicare Advantage",
+      "termLife": "Seguro de Vida a Término",
+      "permanentLife": "Seguro de Vida Permanente",
+      "iul": "Vida Universal Indexada (IUL)",
+      "finalExpense": "Seguro de Gastos Finales",
+      "commercial": "Seguro Comercial para Camiones",
+      "auto": "Seguro de Auto Personal",
+      "home": "Seguro de Hogar y Propiedad",
+      "supplemental": "Seguro Suplementario"
+    }
+  },
+  "hero": {
+    "badge": "Bienvenido a la Libertad Financiera",
+    "title": "Más que un seguro",
+    "titleHighlight": "¡tu conserje financiero personal!",
+    "subtitle": "En Unity Financial Network, nos asociamos con las mejores aseguradoras para brindar cobertura personalizada que se adapta a tus necesidades y prioridades únicas.",
+    "cta1": "Consulta Gratis",
+    "cta2": "Obtener Cotización",
+    "stats": {
+      "plans": "Planes de Seguro",
+      "clients": "Clientes Satisfechos",
+      "support": "Soporte Disponible"
+    }
+  },
+  "services": {
+    "badge": "Nuestros Servicios",
+    "title": "Planes de Seguro",
+    "titleHighlight": "Adaptados para Ti",
+    "subtitle": "Encuentra el plan adecuado para ti con nuestra amplia gama de soluciones de seguros",
+    "learnMore": "Saber Más",
+    "cta": "Obtén Tu Cotización Gratis Ahora",
+    "descriptions": {
+      "aca": "Cobertura de salud integral que satisface tus necesidades y presupuesto",
+      "medicare": "Navega Medicare con confianza y encuentra el plan adecuado",
+      "medicareAdvantage": "Cobertura mejorada con beneficios adicionales más allá del Medicare Original",
+      "termLife": "Protección asequible para tus seres queridos cuando más lo necesiten",
+      "permanentLife": "Cobertura de por vida con beneficios de acumulación de valor en efectivo",
+      "iul": "Construye riqueza mientras proteges el futuro de tu familia",
+      "finalExpense": "Tranquilidad para los gastos de fin de vida",
+      "commercial": "Cobertura integral para tu negocio de camiones",
+      "auto": "Protégete a ti y a tu vehículo en la carretera",
+      "home": "Protege tu hogar y pertenencias",
+      "supplemental": "Cobertura adicional para gastos médicos inesperados"
+    }
+  },
+  "about": {
+    "badge": "Sobre Unity",
+    "title": "Empoderando Tu",
+    "titleHighlight": "Futuro Financiero",
+    "subtitle": "En Unity Financial Network, creemos que el empoderamiento financiero es la clave para una comunidad próspera. Nuestra misión es redefinir la accesibilidad financiera, equipando a individuos y empresas con las herramientas, conocimientos y recursos necesarios para una estabilidad financiera duradera.",
+    "mission": {
+      "title": "Nuestra Misión",
+      "description": "Proporcionar soluciones financieras accesibles e integrales que protejan y hagan crecer la riqueza de cada cliente."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "description": "Ser el servicio de conserjería financiera líder, transformando cómo las familias abordan los seguros y la construcción de riqueza."
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "description": "Integridad, transparencia y servicio personalizado guían cada interacción con nuestros clientes."
+    },
+    "cta": "Conoce Más Sobre Nosotros",
+    "impact": {
+      "title": "Nuestro Impacto",
+      "clients": "Clientes Satisfechos",
+      "carriers": "Aseguradoras Asociadas",
+      "experience": "Años de Experiencia",
+      "location": "Confianza de familias en",
+      "locationValue": "Florida y Más Allá"
+    }
+  },
+  "testimonials": {
+    "badge": "Testimonios",
+    "title": "Lo Que Dicen",
+    "titleHighlight": "Nuestros Clientes",
+    "subtitle": "Historias reales de personas reales que han transformado su futuro financiero con Unity",
+    "client1": {
+      "name": "María González",
+      "role": "Dueña de Pequeño Negocio",
+      "content": "Nunca imaginé que una póliza de seguro de vida pudiera brindarme beneficios mientras estoy viva. Ahora tengo protección y ahorros al mismo tiempo."
+    },
+    "client2": {
+      "name": "Carlos Ramírez",
+      "role": "Padre de Familia",
+      "content": "Me encantó la consulta. Me explicaron todo claramente y sin presión. Ahora sé que mi familia y mi inversión están seguras."
+    },
+    "client3": {
+      "name": "Emily Johnson",
+      "role": "Emprendedora",
+      "content": "Siempre pensé que el seguro de vida solo era útil después de fallecer, pero ahora estoy disfrutando de sus beneficios en vida."
+    },
+    "footer": "Únete a miles de clientes satisfechos que confían en Unity Financial Network",
+    "cta": "Comienza Tu Viaje Hoy"
+  },
+  "contact": {
+    "badge": "Contáctanos",
+    "title": "Comencemos Tu",
+    "titleHighlight": "Viaje Financiero",
+    "subtitle": "Ponte en contacto con nuestro equipo de expertos para una consulta gratuita",
+    "form": {
+      "title": "Obtén Tu Cotización Gratis",
+      "name": "Tu Nombre",
+      "email": "Correo Electrónico",
+      "phone": "Número de Teléfono",
+      "service": "Seleccionar Servicio",
+      "message": "Cuéntanos sobre tus necesidades...",
+      "submit": "Enviar Mensaje",
+      "services": {
+        "aca": "Ley de Cuidado de Salud Asequible",
+        "medicare": "Medicare",
+        "life": "Seguro de Vida",
+        "auto": "Seguro de Auto",
+        "home": "Seguro de Hogar",
+        "commercial": "Seguro Comercial",
+        "other": "Otro"
+      }
+    },
+    "info": {
+      "call": {
+        "title": "Llámanos",
+        "hours": "Lun-Vie 9:00 AM - 6:00 PM"
+      },
+      "email": {
+        "title": "Envíanos un Email",
+        "support": "Soporte 24/7 Disponible"
+      },
+      "visit": {
+        "title": "Visítanos"
+      },
+      "chat": {
+        "title": "¿Necesitas Ayuda Inmediata?",
+        "subtitle": "Chatea con nuestros expertos ahora"
+      }
+    }
+  },
+  "footer": {
+    "description": "Tu conserje financiero personal, proporcionando soluciones de seguros integrales para un futuro seguro.",
+    "services": "Servicios",
+    "company": "Empresa",
+    "stayUpdated": "Mantente Actualizado",
+    "newsletterText": "Suscríbete para recibir los últimos consejos de seguros y asesoramiento financiero.",
+    "emailPlaceholder": "Ingresa tu correo",
+    "subscribe": "Suscribirse",
+    "rights": "© 2025 Unity Financial Network. Todos los derechos reservados.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "cookies": "Política de Cookies",
+    "careers": "Carreras",
+    "faq": "Preguntas Frecuentes",
+    "guide": "Guía de Seguros"
+  }
+}

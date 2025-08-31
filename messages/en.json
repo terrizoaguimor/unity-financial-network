@@ -1,0 +1,166 @@
+{
+  "header": {
+    "about": "About us",
+    "insurancePlans": "Insurance Plans",
+    "getQuote": "Get a free quote",
+    "blog": "Blog",
+    "joinUnity": "Join Unity",
+    "contact": "Contact",
+    "payments": "Payments",
+    "freeConsultation": "Free Consultation",
+    "insuranceTypes": {
+      "aca": "Affordable Care Act (ACA)",
+      "medicare": "Medicare",
+      "medicareAdvantage": "Medicare Advantage",
+      "termLife": "Term Life Insurance",
+      "permanentLife": "Permanent Life Insurance",
+      "iul": "Index Universal Life (IUL)",
+      "finalExpense": "Final Expense Insurance",
+      "commercial": "Commercial Insurance for Trucking",
+      "auto": "Personal Auto Insurance",
+      "home": "Home & Property Insurance",
+      "supplemental": "Supplemental Insurance"
+    }
+  },
+  "hero": {
+    "badge": "Welcome to Financial Freedom",
+    "title": "More than insurance",
+    "titleHighlight": "your personal financial concierge!",
+    "subtitle": "At Unity Financial Network, we partner with top-rated carriers to provide tailored coverage that fits your unique needs and priorities.",
+    "cta1": "Free Consultation",
+    "cta2": "Get a Quote",
+    "stats": {
+      "plans": "Insurance Plans",
+      "clients": "Happy Clients",
+      "support": "Support Available"
+    }
+  },
+  "services": {
+    "badge": "Our Services",
+    "title": "Insurance Plans",
+    "titleHighlight": "Tailored for You",
+    "subtitle": "Find the right plan for you with our comprehensive range of insurance solutions",
+    "learnMore": "Learn More",
+    "cta": "Get Your Free Quote Now",
+    "descriptions": {
+      "aca": "Comprehensive health coverage that meets your needs and budget",
+      "medicare": "Navigate Medicare with confidence and find the right plan",
+      "medicareAdvantage": "Enhanced coverage with additional benefits beyond Original Medicare",
+      "termLife": "Affordable protection for your loved ones when they need it most",
+      "permanentLife": "Lifetime coverage with cash value accumulation benefits",
+      "iul": "Build wealth while protecting your family's future",
+      "finalExpense": "Peace of mind for end-of-life expenses",
+      "commercial": "Comprehensive coverage for your trucking business",
+      "auto": "Protect yourself and your vehicle on the road",
+      "home": "Safeguard your home and belongings",
+      "supplemental": "Extra coverage for unexpected medical expenses"
+    }
+  },
+  "about": {
+    "badge": "About Unity",
+    "title": "Empowering Your",
+    "titleHighlight": "Financial Future",
+    "subtitle": "At Unity Financial Network, we believe financial empowerment is the key to a thriving community. Our mission is to redefine financial accessibility, equipping individuals and businesses with the tools, knowledge, and resources needed for lasting financial stability.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To provide accessible, comprehensive financial solutions that protect and grow wealth for every client."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To be the leading financial concierge service, transforming how families approach insurance and wealth building."
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "Integrity, transparency, and personalized service guide every interaction with our clients."
+    },
+    "cta": "Learn More About Us",
+    "impact": {
+      "title": "Our Impact",
+      "clients": "Happy Clients",
+      "carriers": "Partner Carriers",
+      "experience": "Years Experience",
+      "location": "Trusted by families across",
+      "locationValue": "Florida & Beyond"
+    }
+  },
+  "testimonials": {
+    "badge": "Testimonials",
+    "title": "What Our",
+    "titleHighlight": "Clients Say",
+    "subtitle": "Real stories from real people who have transformed their financial future with Unity",
+    "client1": {
+      "name": "María González",
+      "role": "Small Business Owner",
+      "content": "I never imagined that a life insurance policy could provide me benefits while I'm alive. Now I have both protection and savings at the same time."
+    },
+    "client2": {
+      "name": "Carlos Ramírez",
+      "role": "Family Man",
+      "content": "I loved the consultation. They explained everything clearly and without pressure. Now I know that my family and my investment are secure."
+    },
+    "client3": {
+      "name": "Emily Johnson",
+      "role": "Entrepreneur",
+      "content": "I always thought life insurance was only useful after passing away, but now I'm enjoying its benefits while alive."
+    },
+    "footer": "Join thousands of satisfied clients who trust Unity Financial Network",
+    "cta": "Start Your Journey Today"
+  },
+  "contact": {
+    "badge": "Contact Us",
+    "title": "Let's Start Your",
+    "titleHighlight": "Financial Journey",
+    "subtitle": "Get in touch with our expert team for a free consultation",
+    "form": {
+      "title": "Get Your Free Quote",
+      "name": "Your Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "service": "Select Service",
+      "message": "Tell us about your needs...",
+      "submit": "Send Message",
+      "services": {
+        "aca": "Affordable Care Act",
+        "medicare": "Medicare",
+        "life": "Life Insurance",
+        "auto": "Auto Insurance",
+        "home": "Home Insurance",
+        "commercial": "Commercial Insurance",
+        "other": "Other"
+      }
+    },
+    "info": {
+      "call": {
+        "title": "Call Us",
+        "hours": "Mon-Fri 9:00 AM - 6:00 PM"
+      },
+      "email": {
+        "title": "Email Us",
+        "support": "24/7 Support Available"
+      },
+      "visit": {
+        "title": "Visit Us"
+      },
+      "chat": {
+        "title": "Need Immediate Help?",
+        "subtitle": "Chat with our experts now"
+      }
+    }
+  },
+  "footer": {
+    "description": "Your personal financial concierge, providing comprehensive insurance solutions for a secure future.",
+    "services": "Services",
+    "company": "Company",
+    "stayUpdated": "Stay Updated",
+    "newsletterText": "Subscribe to get the latest insurance tips and financial advice.",
+    "emailPlaceholder": "Enter your email",
+    "subscribe": "Subscribe",
+    "rights": "© 2025 Unity Financial Network. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "cookies": "Cookie Policy",
+    "careers": "Careers",
+    "faq": "FAQ",
+    "guide": "Insurance Guide"
+  }
+}

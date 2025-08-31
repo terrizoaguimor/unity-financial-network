@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(chmod:*)",
+      "Bash(cd:*)",
+      "Bash(npm run build:*)",
+      "Bash(mkdir:*)",
+      "Bash(./update-admin-styles.sh:*)",
+      "Bash(grep:*)",
+      "Bash(/mnt/c/Users/Mario Gutierrez/Documents/Desarrollos/unity-financial/fix-admin-colors.sh)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(touch:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(cd:*)",
+      "Bash(dir:*)",
+      "Bash(curl:*)",
+      "Bash(npm run dev:*)",
+      "WebFetch(domain:unityfinancialnetwork.com)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run lint)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": [],
+    "defaultMode": "acceptEdits"
+  }
+}
