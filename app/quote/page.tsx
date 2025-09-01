@@ -28,6 +28,7 @@ import {
 } from 'lucide-react'
 import HeaderSimple from '@/components/HeaderSimple'
 import Footer from '@/components/Footer'
+import TurnstileWidget from '@/components/TurnstileWidget'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -38,6 +39,7 @@ export default function QuotePage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
   const [submitError, setSubmitError] = useState('')
+  const [turnstileToken, setTurnstileToken] = useState('')
   const containerRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -71,7 +73,9 @@ export default function QuotePage() {
     coverageAmount: '',
     deductiblePreference: '',
     // Step 5 - Review
-    agreeToTerms: false
+    agreeToContact: false,
+    agreeToTerms: false,
+    agreeToPrivacy: false
   })
 
   const [errors, setErrors] = useState<Record<string, string>>({})
@@ -209,7 +213,21 @@ export default function QuotePage() {
   }
 
   const handleSubmit = async () => {
-    if (!formData.agreeToTerms) return
+    // Validate all required checkboxes
+    if (!formData.agreeToContact || !formData.agreeToTerms || !formData.agreeToPrivacy) {
+      setSubmitError(language === 'en' 
+        ? 'Please accept all required terms and conditions'
+        : 'Por favor acepta todos los términos y condiciones requeridos')
+      return
+    }
+    
+    // Validate Turnstile token
+    if (!turnstileToken) {
+      setSubmitError(language === 'en'
+        ? 'Please complete the security verification'
+        : 'Por favor completa la verificación de seguridad')
+      return
+    }
     
     setIsSubmitting(true)
     setSubmitError('')
@@ -226,6 +244,7 @@ export default function QuotePage() {
           monthlyBudget: '$' + calculateEstimate(),
           hasMedicalConditions: formData.smoker === 'yes' ? 'Yes' : 'No',
           isSmoker: formData.smoker,
+          turnstileToken,
           language
         }),
       })
@@ -251,7 +270,9 @@ export default function QuotePage() {
             currentCoverage: '',
             coverageAmount: '',
             deductiblePreference: '',
-            agreeToTerms: false
+            agreeToContact: false,
+            agreeToTerms: false,
+            agreeToPrivacy: false
           })
           setCurrentStep(1)
           setSubmitSuccess(false)
@@ -1195,21 +1216,85 @@ export default function QuotePage() {
                     </div>
                   </div>
 
-                  {/* Agreement Checkbox */}
-                  <div className="flex items-start gap-3">
-                    <input
-                      type="checkbox"
-                      id="agreeToTerms"
-                      name="agreeToTerms"
-                      checked={formData.agreeToTerms}
-                      onChange={handleInputChange}
-                      className="mt-1 w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
-                    />
-                    <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
-                      {language === 'en' 
-                        ? 'I agree to be contacted by Unity Financial Network regarding my insurance quote. I understand that I am under no obligation to purchase any insurance product.'
-                        : 'Acepto ser contactado por Unity Financial Network sobre mi cotización de seguro. Entiendo que no tengo obligación de comprar ningún producto de seguro.'}
-                    </label>
+                  {/* Agreement Checkboxes */}
+                  <div className="space-y-4">
+                    {/* Contact Agreement */}
+                    <div className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        id="agreeToContact"
+                        name="agreeToContact"
+                        checked={formData.agreeToContact}
+                        onChange={handleInputChange}
+                        className="mt-1 w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
+                      />
+                      <label htmlFor="agreeToContact" className="text-sm text-gray-600">
+                        {language === 'en' 
+                          ? 'I agree to be contacted by Unity Financial Network regarding my insurance quote. I understand that I am under no obligation to purchase any insurance product.'
+                          : 'Acepto ser contactado por Unity Financial Network sobre mi cotización de seguro. Entiendo que no tengo obligación de comprar ningún producto de seguro.'}
+                      </label>
+                    </div>
+
+                    {/* Terms & Conditions Agreement */}
+                    <div className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        id="agreeToTerms"
+                        name="agreeToTerms"
+                        checked={formData.agreeToTerms}
+                        onChange={handleInputChange}
+                        className="mt-1 w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
+                      />
+                      <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
+                        {language === 'en' 
+                          ? 'I have read and accept the '
+                          : 'He leído y acepto los '}
+                        <Link href="/terms" target="_blank" className="text-primary-600 hover:text-primary-700 underline">
+                          {language === 'en' ? 'Terms and Conditions' : 'Términos y Condiciones'}
+                        </Link>
+                        {language === 'en' ? ' *' : ' *'}
+                      </label>
+                    </div>
+
+                    {/* Privacy Policy Agreement */}
+                    <div className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        id="agreeToPrivacy"
+                        name="agreeToPrivacy"
+                        checked={formData.agreeToPrivacy}
+                        onChange={handleInputChange}
+                        className="mt-1 w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
+                      />
+                      <label htmlFor="agreeToPrivacy" className="text-sm text-gray-600">
+                        {language === 'en' 
+                          ? 'I have read and accept the '
+                          : 'He leído y acepto la '}
+                        <Link href="/privacy" target="_blank" className="text-primary-600 hover:text-primary-700 underline">
+                          {language === 'en' ? 'Privacy Policy' : 'Política de Privacidad'}
+                        </Link>
+                        {language === 'en' ? ' *' : ' *'}
+                      </label>
+                    </div>
+
+                    {/* Turnstile Captcha */}
+                    <div className="mt-6">
+                      <TurnstileWidget
+                        onVerify={setTurnstileToken}
+                        onError={() => setTurnstileToken('')}
+                        onExpire={() => setTurnstileToken('')}
+                      />
+                    </div>
+
+                    {/* Submit Error Display */}
+                    {submitError && (
+                      <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                        <div className="flex items-center gap-2">
+                          <AlertCircle className="w-5 h-5 text-red-500" />
+                          <p className="text-sm text-red-700">{submitError}</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               )}
@@ -1246,9 +1331,9 @@ export default function QuotePage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleSubmit}
-                  disabled={!formData.agreeToTerms || isSubmitting}
+                  disabled={!formData.agreeToContact || !formData.agreeToTerms || !formData.agreeToPrivacy || !turnstileToken || isSubmitting}
                   className={`px-10 py-4 font-semibold rounded-xl transition-all flex items-center gap-2 ${
-                    formData.agreeToTerms && !isSubmitting
+                    formData.agreeToContact && formData.agreeToTerms && formData.agreeToPrivacy && turnstileToken && !isSubmitting
                       ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:shadow-xl'
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                   }`}

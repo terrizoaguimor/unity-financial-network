@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { resend, emailConfig } from '@/lib/resend';
+import { verifyTurnstileToken } from '@/lib/turnstile';
 
 export async function POST(request: Request) {
   try {
@@ -16,8 +17,17 @@ export async function POST(request: Request) {
       hasMedicalConditions,
       isSmoker,
       monthlyBudget,
+      turnstileToken,
       language = 'en'
     } = body;
+
+    // Verify Turnstile token
+    if (!turnstileToken || !await verifyTurnstileToken(turnstileToken)) {
+      return NextResponse.json(
+        { success: false, message: 'Security verification failed' },
+        { status: 400 }
+      );
+    }
 
     const isSpanish = language === 'es';
 
