@@ -53,7 +53,7 @@ const nextConfig = {
    */
   experimental: {
     optimizePackageImports: ['lucide-react', 'framer-motion'],
-    optimizeCss: true,
+    // optimizeCss: true, // Disabled - requires critters module
   },
 
   /**
