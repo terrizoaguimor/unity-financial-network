@@ -293,10 +293,11 @@ export default function ContactPage() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                         Full Name *
                       </label>
                       <input
+                        id="name"
                         type="text"
                         name="name"
                         value={formData.name}
@@ -339,14 +340,16 @@ export default function ContactPage() {
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-2">
                         Department
                       </label>
                       <select
+                        id="department"
                         name="department"
                         value={formData.department}
                         onChange={handleChange}
                         className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                        aria-required="true"
                       >
                         <option value="general">General Inquiry</option>
                         <option value="sales">Sales</option>

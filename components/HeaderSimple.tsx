@@ -227,6 +227,8 @@ export default function HeaderSimple() {
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                 className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 rounded-full transition-all text-xs"
+                aria-label={language === 'en' ? 'Change language' : 'Cambiar idioma'}
+                aria-expanded={langDropdownOpen}
               >
                 <span className="text-gray-600">
                   {language === 'en' ? '🇺🇸' : '🇪🇸'}
@@ -372,6 +374,7 @@ export default function HeaderSimple() {
             <button
               onClick={() => setLanguage(language === 'en' ? 'es' : 'en')}
               className="p-2 rounded-lg hover:bg-primary-50 transition-colors"
+              aria-label={language === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'}
             >
               <Globe className="h-5 w-5 text-primary-600" />
             </button>
@@ -379,6 +382,11 @@ export default function HeaderSimple() {
               whileTap={{ scale: 0.9 }}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg hover:bg-primary-50 transition-colors"
+              aria-label={mobileMenuOpen ? 
+                (language === 'en' ? 'Close menu' : 'Cerrar menú') : 
+                (language === 'en' ? 'Open menu' : 'Abrir menú')
+              }
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
                 <X className="h-6 w-6 text-primary-600" />

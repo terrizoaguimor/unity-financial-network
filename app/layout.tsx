@@ -178,6 +178,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to external domains */}
+        <link rel="preconnect" href="https://challenges.cloudflare.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="//unityfinancialnetwork.com" />
+        
+        {/* Critical CSS inlined - will be handled by Next.js automatically */}
+        <link rel="preload" href="/_next/static/css/b39fa12a17e2fc01.css" as="style" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

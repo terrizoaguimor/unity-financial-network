@@ -34,6 +34,29 @@ const nextConfig = {
   output: 'standalone',
 
   /**
+   * Performance Optimizations
+   */
+  compress: true,
+  swcMinify: true,
+  poweredByHeader: false,
+  
+  /**
+   * Modern JavaScript Target
+   * Reduces polyfills for modern browsers
+   */
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+
+  /**
+   * Bundle Analysis and Tree Shaking
+   */
+  experimental: {
+    optimizePackageImports: ['lucide-react', 'framer-motion'],
+    optimizeCss: true,
+  },
+
+  /**
    * Image Optimization Configuration
    * 
    * Configures Next.js Image component to allow external image sources.
@@ -50,7 +73,57 @@ const nextConfig = {
         pathname: '/wp-content/uploads/**',
       },
     ],
+    formats: ['image/avif', 'image/webp'],
   },
+
+  /**
+   * Headers for Performance and Security
+   */
+  headers: async () => [
+    {
+      source: '/(.*)',
+      headers: [
+        {
+          key: 'X-DNS-Prefetch-Control',
+          value: 'on'
+        },
+        {
+          key: 'Strict-Transport-Security',
+          value: 'max-age=63072000; includeSubDomains; preload'
+        },
+        {
+          key: 'X-Frame-Options',
+          value: 'DENY'
+        },
+        {
+          key: 'X-Content-Type-Options',
+          value: 'nosniff'
+        },
+        {
+          key: 'Referrer-Policy',
+          value: 'strict-origin-when-cross-origin'
+        }
+      ],
+    },
+    {
+      source: '/images/:path*',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=31536000, immutable',
+        },
+      ],
+    },
+    {
+      source: '/_next/static/:path*',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'public, max-age=31536000, immutable',
+        },
+      ],
+    },
+  ],
 
   /**
    * Additional Performance Optimizations
