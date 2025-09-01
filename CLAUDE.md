@@ -206,13 +206,15 @@ Sistema de traducción usando React Context:
 ## 🔧 Technical Specifications
 
 ### Stack Completo:
-- **Frontend**: Next.js 15.4.6, React 18
+- **Frontend**: Next.js 15.5.2, React 18
 - **Styling**: TailwindCSS 3.x
 - **Animations**: Framer Motion 11.x
-- **Icons**: Lucide React
+- **Icons**: Lucide React (optimized with tree-shaking)
 - **Language**: TypeScript
+- **Security**: Cloudflare Turnstile
+- **Email**: Resend API
 - **Deployment**: Docker + DigitalOcean
-- **AI**: ElevenLabs Widget
+- **AI**: ElevenLabs Widget (excluded from portals)
 
 ### Best Practices:
 - Type safety con TypeScript
@@ -235,23 +237,47 @@ Sistema de traducción usando React Context:
 ## 🔐 Security & Compliance
 
 ### Medidas Implementadas:
-- Input sanitization
-- No hardcoded secrets
-- HTTPS enforcement
-- CSP headers
-- Non-root Docker user
+- **Cloudflare Turnstile**: Spam protection on all forms with server-side validation
+- **GDPR Cookie Consent**: 4-category system (Necessary, Functional, Analytics, Marketing) 
+- **Legal Framework**: Privacy Policy, Terms & Conditions, Cookie Policy, Opt-out Policy
+- **Multi-Consent System**: Separate checkboxes for contact, terms, and privacy consent
+- **Authentication**: Context API for portals with protected routes
+- **Input Sanitization**: XSS prevention across all forms
+- **Security Headers**: HSTS, X-Frame-Options, Content-Type-Options, Referrer Policy
+- **HTTPS Enforcement**: SSL/TLS in production with auto-redirect
+- **No Hardcoded Secrets**: Environment variables and secure key management
+- **Non-root Docker User**: Container security best practices
 
 ## 🚀 Version History
 
-### v1.0 (Current - 2025):
-- ✅ Sitio web público completo
-- ✅ Diseño moderno y vibrante
-- ✅ Sistema bilingüe EN/ES
-- ✅ Integración ElevenLabs AI
-- ✅ Animaciones con Framer Motion
-- ✅ Responsive design
-- ✅ SEO optimizado
-- ✅ Deployment en DigitalOcean
+### v4.1 (Current - Sep 2025):
+- ✅ **Legal Framework Complete**: Privacy Policy, Terms, Cookie Policy, Opt-out Policy
+- ✅ **GDPR Cookie Consent**: 4-category system with localStorage persistence and modal customization
+- ✅ **Enhanced Security**: Cloudflare Turnstile integrated across all forms with server validation
+- ✅ **Performance Optimized**: 33KB bundle reduction, Lighthouse improvements, WCAG accessibility
+- ✅ **Asset Management Fixed**: Unity SVG logos, public directory deployment, 404 resolution
+- ✅ **Quote Calculator Enhanced**: Multi-checkbox consent (contact/terms/privacy) + Turnstile
+- ✅ **Contact System Corrected**: Phone number (786) 963-6392 across all email templates
+- ✅ **Build System Stable**: DigitalOcean compatibility, production deployment optimized
+
+### v4.0 (Aug 2025):
+- ✅ Portal Administrativo completo
+- ✅ Marketing Hub con 14 páginas
+- ✅ WhatsApp Business AI Management  
+- ✅ Content Management System
+- ✅ Gestión de cursos, documentos y noticias
+- ✅ Sistema de auditoría
+
+### v3.2 (Previous):
+- Portal de agentes completo
+- Integración ElevenLabs funcional
+
+### v2.0:
+- Sitio público con AI widget
+- Deployment en DigitalOcean
+
+### v1.0:
+- Sitio inicial sin portales
 
 ## 🔮 Future Enhancements
 
@@ -295,22 +321,62 @@ NEXT_PUBLIC_API_URL=https://unity-financial-i3sz9.ondigitalocean.app
 - **Public Website**: No authentication needed
 - **AI Assistant**: Disponible en todas las páginas
 
-## ✅ Project Status: READY FOR DEPLOYMENT v1.0
+## ✅ Project Status: PRODUCTION READY v4.1
 
 ### Completed Deliverables:
-- ✅ Sitio web público vibrante y moderno
-- ✅ Sistema bilingüe EN/ES
-- ✅ Diseño responsive
-- ✅ Animaciones interactivas
-- ✅ AI Assistant integration
-- ✅ Docker deployment ready
-- ✅ DigitalOcean configured
+- ✅ **Public Website**: Complete with legal framework and GDPR compliance
+- ✅ **Portal Systems**: Agent portal and admin portal fully functional
+- ✅ **Security**: Cloudflare Turnstile integrated across all forms
+- ✅ **Legal Compliance**: Privacy Policy, Terms, Cookie Policy, Opt-out Policy
+- ✅ **Cookie Consent**: GDPR-compliant 4-category system
+- ✅ **Performance**: Optimized bundle size, Lighthouse improvements
+- ✅ **Accessibility**: WCAG 2.1 AA compliant
+- ✅ **Asset Management**: Unity SVG logos properly deployed
+- ✅ **Enhanced Quote Calculator**: Multi-consent system with Turnstile
+- ✅ **Email System**: Correct contact information across all templates
+- ✅ **Bilingual Support**: Complete EN/ES translation system
+- ✅ **Docker Deployment**: Stable production build system
+- ✅ **DigitalOcean**: Auto-deployment pipeline configured
 
-### Live URL:
+### Live URLs:
 - **Production**: https://unity-financial-i3sz9.ondigitalocean.app
+- **Legal Pages**: /privacy, /terms, /cookies, /opt-out
+- **Quote Calculator**: /quote (enhanced with security)
+- **Agent Portal**: /agents
+- **Admin Portal**: /admin
+
+## 📋 Development Guidelines v4.1
+
+### **Critical Security Requirements** 🔒
+1. **ALL forms MUST include Turnstile captcha** with server-side validation
+2. **Quote calculator requires 3 checkboxes**: contact consent + terms + privacy
+3. **Email templates MUST use correct phone**: (786) 963-6392
+4. **Environment variables required**: Turnstile keys, Resend API key
+5. **Legal pages must remain current** and comprehensive
+
+### **Performance Standards** ⚡
+- Lighthouse Performance: 85+ | Accessibility: 90+ | Best Practices: 85+
+- Bundle size optimized with tree-shaking (`OptimizedIcons.tsx`)
+- SVG logos, WebP/AVIF images, aggressive caching for static assets
+- Modern JavaScript targeting to reduce polyfills
+
+### **Legal Compliance Checklist** ⚖️
+- [x] Cookie consent appears for new users (4 categories)
+- [x] Privacy policy comprehensive with contact details  
+- [x] Terms & conditions clear and enforceable
+- [x] Opt-out procedures documented with timeframes
+- [x] Multi-consent system in quote calculator
+- [x] GDPR principles followed in data collection
+
+### **Key File Locations** 📁
+- **Security**: `components/TurnstileWidget.tsx`, `lib/turnstile.ts`
+- **Legal**: `app/privacy/`, `app/terms/`, `app/cookies/`, `app/opt-out/`
+- **Cookie System**: `components/CookieConsent.tsx`
+- **Quote Calculator**: `app/quote/page.tsx` (enhanced)
+- **Assets**: `public/images/logo-main.svg`, `public/images/logo-white.svg`
 
 ---
 
-*Unity Financial Network v1.0 - Insurance Services Website with AI Assistant*
-*Developed with Next.js, TypeScript, and deployed on DigitalOcean*
-*Ready for production deployment*
+*Unity Financial Network v4.1 - Enterprise Insurance Platform*  
+*Complete Legal Framework | GDPR Compliant | Production Ready*  
+*Deployed on DigitalOcean with auto-deployment pipeline*
