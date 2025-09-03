@@ -6,6 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 declare global {
   interface Window {
     Intercom: any;
+    intercomSettings: any;
   }
 }
 
