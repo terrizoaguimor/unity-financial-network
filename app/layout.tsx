@@ -19,8 +19,6 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/contexts/LanguageContext'
 import CookieConsent from '@/components/CookieConsent'
-import IntercomScript from '@/components/IntercomScript'
-import IntercomCustomWidget from '@/components/IntercomCustomWidget'
 
 /**
  * Inter font configuration for optimal Latin character display
@@ -194,8 +192,6 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
           <CookieConsent />
-          <IntercomScript />
-          <IntercomCustomWidget />
         </LanguageProvider>
       </body>
     </html>

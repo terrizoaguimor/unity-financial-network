@@ -39,7 +39,8 @@
       "Bash(doctl auth:*)",
       "Bash(doctl serverless:*)",
       "Bash(sed:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)"
     ],
     "deny": [],
     "ask": [],
