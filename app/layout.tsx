@@ -139,7 +139,7 @@ export default function RootLayout({
     logo: 'https://unityfinancialnetwork.com/images/logo-main.svg',
     image: 'https://unityfinancialnetwork.com/images/og-image.png',
     telephone: '+1-7868285576',
-    email: 'info@unityfinancialnetwork.com',
+    email: 'hello@unityfinancialnetwork.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '7950 NW 53rd St STE 136',

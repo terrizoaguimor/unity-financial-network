@@ -42,7 +42,7 @@ export default function PrivacyPage() {
             <p><strong>Data Controller:</strong> Unity Financial Network LLC (Florida, USA).</p>
             <p><strong>Customer Contact Address:</strong> 7950 NW 53rd St, STE 136, Doral, FL 33166.</p>
             <p><strong>Phone:</strong> (7868285576</p>
-            <p><strong>Email:</strong> <a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a></p>
             <p><strong>Website:</strong> <a href="https://unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">unityfinancialnetwork.com</a></p>
             <p><strong>Registered Address (Sunbiz):</strong> 7950 NW 59 Street, STE 136, Doral, FL 33166. (Status: "ACTIVE", LLC in Florida).</p>
           `
@@ -109,7 +109,7 @@ export default function PrivacyPage() {
           icon: UserCheck,
           content: `
             <p>Depending on your jurisdiction, you may request: access, correction, deletion, portability, objection or opposition to marketing, and limitation of processing.</p>
-            <p><strong>How to exercise them:</strong> write to <a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a> or call us at (7868285576 (reasonably identifying yourself).</p>
+            <p><strong>How to exercise them:</strong> write to <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> or call us at (7868285576 (reasonably identifying yourself).</p>
           `
         },
         {
@@ -159,7 +159,7 @@ export default function PrivacyPage() {
           content: `
             <p><strong>Unity Financial Network LLC – Privacy</strong></p>
             <p>7950 NW 53rd St, STE 136, Doral, FL 33166</p>
-            <p><a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a> | (7868285576</p>
+            <p><a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> | (7868285576</p>
           `
         }
       ]
@@ -178,7 +178,7 @@ export default function PrivacyPage() {
             <p><strong>Responsable del tratamiento:</strong> Unity Financial Network LLC (Florida, EE. UU.).</p>
             <p><strong>Dirección de contacto para clientes:</strong> 7950 NW 53rd St, STE 136, Doral, FL 33166.</p>
             <p><strong>Teléfono:</strong> (7868285576</p>
-            <p><strong>Email:</strong> <a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a></p>
+            <p><strong>Email:</strong> <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a></p>
             <p><strong>Sitio web:</strong> <a href="https://unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">unityfinancialnetwork.com</a></p>
             <p><strong>Domicilio registrado (Sunbiz):</strong> 7950 NW 59 Street, STE 136, Doral, FL 33166. (Estado: "ACTIVE", LLC en Florida).</p>
           `
@@ -245,7 +245,7 @@ export default function PrivacyPage() {
           icon: UserCheck,
           content: `
             <p>Según tu jurisdicción, puedes solicitar: acceso, corrección, eliminación, portabilidad, objeción u oposición a marketing, y limitación del tratamiento.</p>
-            <p><strong>Cómo ejercerlos:</strong> escribe a <a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a> o llámanos al (7868285576 (identificándote razonablemente).</p>
+            <p><strong>Cómo ejercerlos:</strong> escribe a <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> o llámanos al (7868285576 (identificándote razonablemente).</p>
           `
         },
         {
@@ -295,7 +295,7 @@ export default function PrivacyPage() {
           content: `
             <p><strong>Unity Financial Network LLC – Privacidad</strong></p>
             <p>7950 NW 53rd St, STE 136, Doral, FL 33166</p>
-            <p><a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a> | (7868285576</p>
+            <p><a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> | (7868285576</p>
           `
         }
       ]

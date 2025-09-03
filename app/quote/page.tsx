@@ -1452,9 +1452,9 @@ export default function QuotePage() {
                 <Phone className="w-6 h-6" />
                 (7868285576
               </a>
-              <a href="mailto:info@unityfinancialnetwork.com" className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-lg">
+              <a href="mailto:hello@unityfinancialnetwork.com" className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold text-lg">
                 <Mail className="w-6 h-6" />
-                info@unityfinancialnetwork.com
+                hello@unityfinancialnetwork.com
               </a>
               <div className="flex items-center gap-2 text-gray-600 text-lg">
                 <Building className="w-6 h-6" />

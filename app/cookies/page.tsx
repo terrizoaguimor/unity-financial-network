@@ -108,7 +108,7 @@ export default function CookiesPage() {
           title: '6. Changes and contact',
           icon: Mail,
           content: `
-            <p>We may modify this policy. Questions: <a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a></p>
+            <p>We may modify this policy. Questions: <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a></p>
           `
         }
       ]
@@ -193,7 +193,7 @@ export default function CookiesPage() {
           title: '6. Cambios y contacto',
           icon: Mail,
           content: `
-            <p>Podemos modificar esta política. Dudas: <a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a></p>
+            <p>Podemos modificar esta política. Dudas: <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a></p>
           `
         }
       ]
@@ -576,8 +576,8 @@ export default function CookiesPage() {
                 </p>
                 <div className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-primary-600" />
-                  <a href="mailto:info@unityfinancialnetwork.com" className="text-primary-600 hover:text-primary-700 font-semibold">
-                    info@unityfinancialnetwork.com
+                  <a href="mailto:hello@unityfinancialnetwork.com" className="text-primary-600 hover:text-primary-700 font-semibold">
+                    hello@unityfinancialnetwork.com
                   </a>
                 </div>
               </motion.div>

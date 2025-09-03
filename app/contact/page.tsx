@@ -28,17 +28,9 @@ const contactMethods = [
     icon: Mail,
     title: 'Email Us',
     description: 'We reply within 24 hours',
-    value: 'info@unityfinancialnetwork.com',
-    link: 'mailto:info@unityfinancialnetwork.com',
+    value: 'hello@unityfinancialnetwork.com',
+    link: 'mailto:hello@unityfinancialnetwork.com',
     color: 'from-green-400 to-green-600'
-  },
-  {
-    icon: MessageCircle,
-    title: 'Live Chat',
-    description: 'Chat with our experts',
-    value: 'Start Chat',
-    link: '#',
-    color: 'from-purple-400 to-purple-600'
   },
   {
     icon: MapPin,
@@ -542,10 +534,15 @@ export default function ContactPage() {
                     {office.hours}
                   </p>
                 </div>
-                <button className="mt-4 text-primary-600 font-medium hover:text-primary-700 flex items-center gap-1">
+                <a
+                  href="https://www.google.com/maps/dir/?api=1&destination=7950+NW+53rd+St+STE+136,+Doral,+FL+33166"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-primary-600 font-medium hover:text-primary-700 flex items-center gap-1 inline-block"
+                >
                   Get Directions
                   <ChevronRight className="w-4 h-4" />
-                </button>
+                </a>
               </motion.div>
             ))}
           </div>
@@ -554,12 +551,17 @@ export default function ContactPage() {
 
       {/* Map Section */}
       <section className="h-96 bg-gray-200 relative">
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-4" />
-            <p className="text-gray-600">Interactive map would go here</p>
-          </div>
-        </div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3592.1823459290486!2d-80.37376892397845!3d25.797638077354516!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88d9bf8c8f8d5999%3A0x5b8c8f8d8f8d8f8d!2s7950%20NW%2053rd%20St%20STE%20136%2C%20Doral%2C%20FL%2033166!5e0!3m2!1sen!2sus!4v1704316800000!5m2!1sen!2sus"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          allowFullScreen
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          className="absolute inset-0"
+          title="Unity Financial Network Office Location"
+        />
       </section>
 
       {/* FAQ Section */}

@@ -369,8 +369,8 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                 <div>
                   <h4 className="font-bold text-gray-900 mb-1">{t.emailTitle}</h4>
                   <p className="text-gray-600">{t.emailSupport}</p>
-                  <a href="mailto:info@unityfinancialnetwork.com" className="text-primary-600 font-semibold hover:text-primary-700">
-                    info@unityfinancialnetwork.com
+                  <a href="mailto:hello@unityfinancialnetwork.com" className="text-primary-600 font-semibold hover:text-primary-700">
+                    hello@unityfinancialnetwork.com
                   </a>
                 </div>
               </div>

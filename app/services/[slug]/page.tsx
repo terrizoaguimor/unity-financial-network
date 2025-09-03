@@ -266,7 +266,7 @@ export default function ServiceDetailPage() {
                       </a>
                       
                       <a
-                        href="mailto:info@unityfinancialnetwork.com"
+                        href="mailto:hello@unityfinancialnetwork.com"
                         className="flex items-center gap-3 p-3 bg-white rounded-xl hover:shadow-md transition-all"
                       >
                         <Mail className="w-5 h-5" size={20} />

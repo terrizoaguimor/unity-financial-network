@@ -214,9 +214,9 @@ export default function HeaderSimple() {
               <span>(786) 828-5576</span>
             </a>
             <span className="text-gray-300">|</span>
-            <a href="mailto:info@unityfinancialnetwork.com" className="flex items-center gap-1.5 text-gray-500 hover:text-primary-600 transition-colors group">
+            <a href="mailto:hello@unityfinancialnetwork.com" className="flex items-center gap-1.5 text-gray-500 hover:text-primary-600 transition-colors group">
               <Mail className="h-3 w-3 opacity-70 group-hover:opacity-100" />
-              <span>info@unityfinancialnetwork.com</span>
+              <span>hello@unityfinancialnetwork.com</span>
             </a>
           </div>
           <div className="flex items-center gap-2">

@@ -53,7 +53,7 @@ export default function OptOutPage() {
               color: 'blue',
               instructions: [
                 'Click "Unsubscribe" in the email footer',
-                'Or write to info@unityfinancialnetwork.com indicating "Opt-Out Email"',
+                'Or write to hello@unityfinancialnetwork.com indicating "Opt-Out Email"',
                 'Processing may take up to 10 business days per CAN-SPAM'
               ],
               timeframe: 'Up to 10 business days'
@@ -131,7 +131,7 @@ export default function OptOutPage() {
           title: '6. Questions',
           icon: HelpCircle,
           content: `
-            <p>Write to us at <a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a> or call us at (7868285576.</p>
+            <p>Write to us at <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> or call us at (7868285576.</p>
           `
         }
       ]
@@ -161,7 +161,7 @@ export default function OptOutPage() {
               color: 'blue',
               instructions: [
                 'Haz clic en "Cancelar suscripción/Unsubscribe" en el pie del correo',
-                'O escribe a info@unityfinancialnetwork.com indicando "Opt-Out Email"',
+                'O escribe a hello@unityfinancialnetwork.com indicando "Opt-Out Email"',
                 'El cese puede tardar hasta 10 días hábiles conforme a CAN-SPAM'
               ],
               timeframe: 'Hasta 10 días hábiles'
@@ -239,7 +239,7 @@ export default function OptOutPage() {
           title: '6. Preguntas',
           icon: HelpCircle,
           content: `
-            <p>Escríbenos a <a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a> o llámanos al (7868285576.</p>
+            <p>Escríbenos a <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> o llámanos al (7868285576.</p>
           `
         }
       ]
@@ -361,7 +361,7 @@ export default function OptOutPage() {
                   </h4>
                   <div className="space-y-3">
                     <a
-                      href="mailto:info@unityfinancialnetwork.com?subject=Opt-Out%20Request"
+                      href="mailto:hello@unityfinancialnetwork.com?subject=Opt-Out%20Request"
                       className="flex items-center gap-2 text-sm text-red-700 hover:text-red-800"
                     >
                       <Mail className="w-4 h-4" />
@@ -591,13 +591,13 @@ export default function OptOutPage() {
                   </div>
                   <div className="space-y-3">
                     <a
-                      href="mailto:info@unityfinancialnetwork.com?subject=Opt-Out%20Request"
+                      href="mailto:hello@unityfinancialnetwork.com?subject=Opt-Out%20Request"
                       className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-primary-400 hover:bg-primary-50 transition-all"
                     >
                       <Mail className="w-5 h-5 text-primary-600" />
                       <div>
                         <p className="font-semibold text-gray-900">{language === 'en' ? 'Email Us' : 'Envíanos un Email'}</p>
-                        <p className="text-sm text-gray-600">info@unityfinancialnetwork.com</p>
+                        <p className="text-sm text-gray-600">hello@unityfinancialnetwork.com</p>
                       </div>
                     </a>
                   </div>

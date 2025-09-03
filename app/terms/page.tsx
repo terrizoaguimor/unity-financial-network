@@ -138,7 +138,7 @@ export default function TermsPage() {
           title: '13. Contact',
           icon: Mail,
           content: `
-            <p><a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a> | (7868285576 | 7950 NW 53rd St, STE 136, Doral, FL 33166.</p>
+            <p><a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> | (7868285576 | 7950 NW 53rd St, STE 136, Doral, FL 33166.</p>
           `
         }
       ]
@@ -253,7 +253,7 @@ export default function TermsPage() {
           title: '13. Contacto',
           icon: Mail,
           content: `
-            <p><a href="mailto:info@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">info@unityfinancialnetwork.com</a> | (7868285576 | 7950 NW 53rd St, STE 136, Doral, FL 33166.</p>
+            <p><a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> | (7868285576 | 7950 NW 53rd St, STE 136, Doral, FL 33166.</p>
           `
         }
       ]
@@ -559,8 +559,8 @@ export default function TermsPage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <Mail className="w-5 h-5 text-primary-600" />
-                      <a href="mailto:info@unityfinancialnetwork.com" className="text-primary-600 hover:text-primary-700 font-semibold">
-                        info@unityfinancialnetwork.com
+                      <a href="mailto:hello@unityfinancialnetwork.com" className="text-primary-600 hover:text-primary-700 font-semibold">
+                        hello@unityfinancialnetwork.com
                       </a>
                     </div>
                   </div>

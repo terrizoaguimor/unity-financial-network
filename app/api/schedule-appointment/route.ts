@@ -150,7 +150,7 @@ export async function POST(request: Request) {
             ${isSpanish ? 'Teléfono' : 'Phone'}: <a href="tel:7868285576" style="color: #f18918; text-decoration: none;">(786) 828-5576</a>
           </p>
           <p style="margin: 10px 0;">
-            ${isSpanish ? 'Correo' : 'Email'}: <a href="mailto:info@unityfinancialnetwork.com" style="color: #f18918; text-decoration: none;">info@unityfinancialnetwork.com</a>
+            ${isSpanish ? 'Correo' : 'Email'}: <a href="mailto:hello@unityfinancialnetwork.com" style="color: #f18918; text-decoration: none;">hello@unityfinancialnetwork.com</a>
           </p>
           <p style="margin: 10px 0; font-size: 14px; opacity: 0.9;">
             ${isSpanish ? 'Horario' : 'Hours'}: ${isSpanish ? 'Lunes-Viernes' : 'Monday-Friday'}, 9:00 AM - 6:00 PM EST

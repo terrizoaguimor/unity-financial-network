@@ -66,9 +66,9 @@ export default function HeaderNew({ locale }: { locale: string }) {
               <Phone className="h-3.5 w-3.5" />
               <span className="font-medium">(7868285576</span>
             </a>
-            <a href="mailto:info@unityfinancialnetwork.com" className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors">
+            <a href="mailto:hello@unityfinancialnetwork.com" className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors">
               <Mail className="h-3.5 w-3.5" />
-              <span className="font-medium">info@unityfinancialnetwork.com</span>
+              <span className="font-medium">hello@unityfinancialnetwork.com</span>
             </a>
           </div>
           <div className="flex items-center gap-4">
@@ -200,9 +200,9 @@ export default function HeaderNew({ locale }: { locale: string }) {
                   <Phone className="h-4 w-4" />
                   <span>(7868285576</span>
                 </a>
-                <a href="mailto:info@unityfinancialnetwork.com" className="flex items-center gap-2 text-gray-600 text-sm">
+                <a href="mailto:hello@unityfinancialnetwork.com" className="flex items-center gap-2 text-gray-600 text-sm">
                   <Mail className="h-4 w-4" />
-                  <span>info@unityfinancialnetwork.com</span>
+                  <span>hello@unityfinancialnetwork.com</span>
                 </a>
               </div>
 
