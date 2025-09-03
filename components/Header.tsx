@@ -132,13 +132,13 @@ export default function Header() {
 
         <div className="hidden lg:flex items-center space-x-4">
           <motion.a
-            href="tel:7869636392"
+            href="tel:7868285576"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="flex items-center text-primary-600 hover:text-primary-700 font-semibold"
           >
             <Phone className="h-4 w-4 mr-1" />
-            (786) 963-6392
+            (7868285576
           </motion.a>
           <motion.button
             whileHover={{ scale: 1.05 }}
@@ -202,11 +202,11 @@ export default function Header() {
               ))}
               <div className="pt-4 space-y-3">
                 <a
-                  href="tel:7869636392"
+                  href="tel:7868285576"
                   className="flex items-center justify-center text-primary-600 font-semibold"
                 >
                   <Phone className="h-4 w-4 mr-2" />
-                  (786) 963-6392
+                  (7868285576
                 </a>
                 <button className="w-full button-primary">
                   Free Consultation

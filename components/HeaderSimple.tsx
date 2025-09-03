@@ -209,9 +209,9 @@ export default function HeaderSimple() {
         {/* Top Bar for Desktop - More subtle */}
         <div className="hidden lg:flex justify-between items-center mb-2 pb-2 border-b border-gray-100/30">
           <div className="flex items-center gap-4 text-xs">
-            <a href="tel:7869636392" className="flex items-center gap-1.5 text-gray-500 hover:text-primary-600 transition-colors group">
+            <a href="tel:7868285576" className="flex items-center gap-1.5 text-gray-500 hover:text-primary-600 transition-colors group">
               <Phone className="h-3 w-3 opacity-70 group-hover:opacity-100" />
-              <span>(786) 963-6392</span>
+              <span>(786) 828-5576</span>
             </a>
             <span className="text-gray-300">|</span>
             <a href="mailto:info@unityfinancialnetwork.com" className="flex items-center gap-1.5 text-gray-500 hover:text-primary-600 transition-colors group">

@@ -255,13 +255,13 @@ export default function ServiceDetailPage() {
                     
                     <div className="space-y-3">
                       <a
-                        href="tel:7869636392"
+                        href="tel:7868285576"
                         className="flex items-center gap-3 p-3 bg-white rounded-xl hover:shadow-md transition-all"
                       >
                         <Phone className="w-5 h-5" size={20} />
                         <div>
                           <p className="font-semibold">{t.callUs}</p>
-                          <p className="text-sm text-gray-600">(786) 963-6392</p>
+                          <p className="text-sm text-gray-600">(7868285576</p>
                         </div>
                       </a>
                       

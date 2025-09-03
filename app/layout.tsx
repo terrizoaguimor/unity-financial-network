@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     default: 'Unity Financial Network - Insurance & Financial Services in Miami, FL',
     template: '%s | Unity Financial Network'
   },
-  description: 'Unity Financial Network offers comprehensive insurance solutions including ACA health plans, Medicare, life insurance, auto, and home insurance in Miami, Florida. Get personalized coverage with bilingual support. Call (786) 963-6392 for a free quote.',
+  description: 'Unity Financial Network offers comprehensive insurance solutions including ACA health plans, Medicare, life insurance, auto, and home insurance in Miami, Florida. Get personalized coverage with bilingual support. Call (7868285576 for a free quote.',
   keywords: 'insurance Miami, seguro medico Miami, ACA insurance Florida, Medicare plans Miami, life insurance Florida, auto insurance Miami, home insurance Florida, health insurance marketplace, Obamacare Miami, seguro de salud, Unity Financial Network, insurance agent Miami, bilingual insurance services, affordable health insurance, Medicare Advantage plans',
   authors: [{ name: 'Unity Financial Network' }],
   creator: 'Unity Financial Network',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     url: 'https://unityfinancialnetwork.com',
     siteName: 'Unity Financial Network',
     title: 'Unity Financial Network - Your Trusted Insurance Partner in Miami',
-    description: 'Get comprehensive insurance coverage with Unity Financial Network. ACA health plans, Medicare, life, auto & home insurance. Bilingual service. Call (786) 963-6392.',
+    description: 'Get comprehensive insurance coverage with Unity Financial Network. ACA health plans, Medicare, life, auto & home insurance. Bilingual service. Call (7868285576.',
     images: [
       {
         url: '/images/og-image.png',
@@ -136,7 +136,7 @@ export default function RootLayout({
     url: 'https://unityfinancialnetwork.com',
     logo: 'https://unityfinancialnetwork.com/images/logo-main.svg',
     image: 'https://unityfinancialnetwork.com/images/og-image.png',
-    telephone: '+1-786-963-6392',
+    telephone: '+1-7868285576',
     email: 'info@unityfinancialnetwork.com',
     address: {
       '@type': 'PostalAddress',

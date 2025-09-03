@@ -20,8 +20,8 @@ const contactMethods = [
     icon: Phone,
     title: 'Call Us',
     description: 'Mon-Fri 9AM-6PM EST',
-    value: '(786) 963-6392',
-    link: 'tel:7869636392',
+    value: '(786) 828-5576',
+    link: 'tel:7868285576',
     color: 'from-blue-400 to-blue-600'
   },
   {
@@ -54,7 +54,7 @@ const offices = [
   {
     name: 'Miami Headquarters',
     address: '123 Biscayne Blvd, Miami, FL 33101',
-    phone: '(786) 963-6392',
+    phone: '(786) 828-5576',
     hours: 'Mon-Fri: 9AM-6PM, Sat: 10AM-2PM'
   },
   {

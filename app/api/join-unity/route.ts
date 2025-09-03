@@ -67,7 +67,7 @@ export async function POST(request: Request) {
           <li>${isSpanish ? 'Proceso de licenciamiento (si aplica)' : 'Licensing process (if applicable)'}</li>
         </ol>
         <p>
-          <strong>${isSpanish ? 'Teléfono' : 'Phone'}:</strong> (786) 963-6392<br>
+          <strong>${isSpanish ? 'Teléfono' : 'Phone'}:</strong> (786) 828-5576<br>
           <strong>${isSpanish ? 'Horario' : 'Hours'}:</strong> ${isSpanish ? 'Lunes a Viernes, 9:00 AM - 6:00 PM EST' : 'Monday to Friday, 9:00 AM - 6:00 PM EST'}
         </p>
         <hr style="border: 1px solid #eee; margin: 30px 0;">

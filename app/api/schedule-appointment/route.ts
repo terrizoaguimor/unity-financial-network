@@ -147,7 +147,7 @@ export async function POST(request: Request) {
             ${isSpanish ? '¿Necesitas ayuda?' : 'Need Help?'}
           </h3>
           <p style="margin: 10px 0;">
-            ${isSpanish ? 'Teléfono' : 'Phone'}: <a href="tel:7869636392" style="color: #f18918; text-decoration: none;">(786) 963-6392</a>
+            ${isSpanish ? 'Teléfono' : 'Phone'}: <a href="tel:7868285576" style="color: #f18918; text-decoration: none;">(786) 828-5576</a>
           </p>
           <p style="margin: 10px 0;">
             ${isSpanish ? 'Correo' : 'Email'}: <a href="mailto:info@unityfinancialnetwork.com" style="color: #f18918; text-decoration: none;">info@unityfinancialnetwork.com</a>
