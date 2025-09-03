@@ -35,7 +35,9 @@
       "Bash(doctl apps create:*)",
       "Bash(doctl apps get:*)",
       "Bash(copy \"C:\\Users\\mario\\Downloads\\LOGO UNITY SOLO VERS BLANCO FONDO MORADO.svg\" logo-white.svg)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(doctl auth:*)",
+      "Bash(doctl serverless:*)"
     ],
     "deny": [],
     "ask": [],
