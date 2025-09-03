@@ -37,7 +37,6 @@ const nextConfig = {
    * Performance Optimizations
    */
   compress: true,
-  swcMinify: true,
   poweredByHeader: false,
   
   /**
