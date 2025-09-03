@@ -4,14 +4,14 @@
     "namespace": "fn-4eff5507-88e8-4d23-ab1f-604d723278cd",
     "packageVersions": {
       "unity-financial-functions": {
-        "version": "0.0.3",
+        "version": "0.0.6",
         "digest": "1b662a493ba2ac5afd79a902f79b0cde2afb61a7cb661c1bb150f6ed18188db7"
       }
     },
     "actionVersions": {
       "unity-financial-functions/hubspot-lead": {
-        "version": "0.0.2",
-        "digest": "b8c91bd1391238be9bfcc4df299fbd59e149fd9abd1ceb6ad7dd9d331359b1f2"
+        "version": "0.0.5",
+        "digest": "cd814e66577f6c8063e9b9a6ec0dc4d8066a3ed3d983aaa998bae5504952a51a"
       }
     }
   }

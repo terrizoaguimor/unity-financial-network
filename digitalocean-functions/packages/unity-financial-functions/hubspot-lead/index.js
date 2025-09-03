@@ -31,6 +31,21 @@ async function main(args) {
         };
     }
 
+    // Check if HubSpot API key is configured
+    if (!HUBSPOT_API_KEY) {
+        console.error('HubSpot API key not found in environment variables');
+        return {
+            statusCode: 500,
+            headers,
+            body: JSON.stringify({
+                success: false,
+                error: 'HubSpot API key not configured'
+            })
+        };
+    }
+    
+    console.log('HubSpot API key length:', HUBSPOT_API_KEY ? HUBSPOT_API_KEY.length : 0);
+
     try {
         // Extract appointment data
         const {
@@ -58,44 +73,34 @@ async function main(args) {
             };
         }
 
-        // Prepare HubSpot contact properties
+        // Prepare HubSpot contact properties (only standard properties)
         const contactProperties = {
             email: email,
             firstname: firstName,
             lastname: lastName,
             phone: phone || '',
-            
-            // Custom properties (these need to be created in HubSpot)
-            appointment_type: appointmentType || '',
-            appointment_date: appointmentDate || '',
-            appointment_time: appointmentTime || '',
-            preferred_contact_method: preferredContact || '',
-            lead_source: 'Website - Schedule Form',
-            language_preference: language,
-            
-            // Lead status
-            lifecyclestage: 'lead',
-            hs_lead_status: 'NEW'
+            lifecyclestage: 'lead'
         };
 
-        // Add message as a note if provided
-        const notes = [];
-        if (message) {
-            notes.push({
-                engagement: {
-                    active: true,
-                    type: 'NOTE'
-                },
-                associations: {
-                    contactIds: [],
-                    companyIds: [],
-                    dealIds: []
-                },
-                metadata: {
-                    body: `Appointment Request Message:\n${message}\n\nAppointment Details:\n- Type: ${appointmentType}\n- Date: ${appointmentDate}\n- Time: ${appointmentTime}\n- Preferred Contact: ${preferredContact}`
-                }
-            });
-        }
+        // Create a comprehensive note with all appointment details
+        const appointmentNote = `APPOINTMENT REQUEST FROM WEBSITE
+
+Contact Information:
+- Name: ${firstName} ${lastName}
+- Email: ${email}
+- Phone: ${phone || 'Not provided'}
+- Language: ${language === 'es' ? 'Spanish' : 'English'}
+
+Appointment Details:
+- Type: ${appointmentType === 'health' ? 'Health Insurance' : appointmentType === 'life' ? 'Life Insurance' : appointmentType || 'Not specified'}
+- Date: ${appointmentDate || 'Not specified'}
+- Time: ${appointmentTime || 'Not specified'}
+- Preferred Contact Method: ${preferredContact || 'Not specified'}
+
+${message ? `Additional Message:\n${message}` : ''}
+
+Source: Unity Financial Network - Schedule Form
+Submitted: ${new Date().toISOString()}`;
 
         // Create contact in HubSpot
         const contactResult = await createHubSpotContact(contactProperties);
@@ -104,9 +109,9 @@ async function main(args) {
             throw new Error(contactResult.error || 'Failed to create HubSpot contact');
         }
 
-        // If contact was created and we have a message, add the note
-        if (message && contactResult.contactId) {
-            await createHubSpotNote(contactResult.contactId, notes[0]);
+        // If contact was created, add the appointment details as a note
+        if (contactResult.contactId) {
+            await createHubSpotNote(contactResult.contactId, appointmentNote);
         }
 
         return {
@@ -149,6 +154,8 @@ function createHubSpotContact(properties) {
                 return acc;
             }, {});
 
+        console.log('Sending to HubSpot:', cleanProperties);
+
         const data = JSON.stringify({
             properties: cleanProperties
         });
@@ -188,6 +195,7 @@ function createHubSpotContact(properties) {
                             .then(resolve)
                             .catch(reject);
                     } else {
+                        console.error('HubSpot API Error:', res.statusCode, response);
                         resolve({
                             success: false,
                             error: `HubSpot API error: ${res.statusCode}`,
@@ -311,15 +319,15 @@ function updateExistingContact(email, properties) {
 /**
  * Create a note in HubSpot and associate it with a contact
  * @param {string} contactId - HubSpot contact ID
- * @param {Object} noteData - Note data
+ * @param {string} noteBody - Note body text
  * @returns {Promise<Object>} Result object
  */
-function createHubSpotNote(contactId, noteData) {
+function createHubSpotNote(contactId, noteBody) {
     return new Promise((resolve, reject) => {
         const data = JSON.stringify({
             properties: {
                 hs_timestamp: Date.now(),
-                hs_note_body: noteData.metadata.body
+                hs_note_body: noteBody
             }
         });
 
