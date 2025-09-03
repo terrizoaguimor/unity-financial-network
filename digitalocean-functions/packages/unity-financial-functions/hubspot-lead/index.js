@@ -79,7 +79,8 @@ async function main(args) {
             firstname: firstName,
             lastname: lastName,
             phone: phone || '',
-            lifecyclestage: 'lead'
+            lifecyclestage: 'lead',
+            hs_lead_status: 'NEW'
         };
 
         // Create a comprehensive note with all appointment details
