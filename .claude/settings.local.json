@@ -38,7 +38,8 @@
       "Bash(find:*)",
       "Bash(doctl auth:*)",
       "Bash(doctl serverless:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": [],

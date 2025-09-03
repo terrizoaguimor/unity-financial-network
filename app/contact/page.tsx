@@ -44,7 +44,7 @@ const contactMethods = [
     icon: MapPin,
     title: 'Visit Us',
     description: 'Our main office',
-    value: 'Miami, FL 33101',
+    value: '7950 NW 53rd St STE 136, Doral, FL 33166',
     link: '#',
     color: 'from-orange-400 to-orange-600'
   }
@@ -52,22 +52,10 @@ const contactMethods = [
 
 const offices = [
   {
-    name: 'Miami Headquarters',
-    address: '123 Biscayne Blvd, Miami, FL 33101',
+    name: 'Unity Financial Network',
+    address: '7950 NW 53rd St STE 136, Doral, FL 33166',
     phone: '(786) 828-5576',
-    hours: 'Mon-Fri: 9AM-6PM, Sat: 10AM-2PM'
-  },
-  {
-    name: 'Fort Lauderdale',
-    address: '456 Las Olas Blvd, Fort Lauderdale, FL 33301',
-    phone: '(954) 123-4567',
-    hours: 'Mon-Fri: 9AM-5PM'
-  },
-  {
-    name: 'West Palm Beach',
-    address: '789 Clematis St, West Palm Beach, FL 33401',
-    phone: '(561) 987-6543',
-    hours: 'Mon-Fri: 9AM-5PM'
+    hours: 'Mon-Fri: 9AM-6PM'
   }
 ]
 
@@ -514,18 +502,18 @@ export default function ContactPage() {
             className="text-center mb-12"
           >
             <span className="inline-block px-4 py-2 bg-primary-100 rounded-full text-sm font-semibold text-primary-700 mb-4">
-              Our Locations
+              Our Location
             </span>
             <h2 className="text-4xl font-bold mb-4">
               Visit Our{' '}
-              <span className="gradient-text">Offices</span>
+              <span className="gradient-text">Office</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We have multiple locations throughout Florida to serve you better
+              Located in Doral, Florida to serve you better
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 max-w-md mx-auto">
             {offices.map((office, index) => (
               <motion.div
                 key={index}
@@ -609,8 +597,8 @@ export default function ContactPage() {
               {
                 question: language === 'en' ? 'Can I schedule an in-person appointment?' : '¿Puedo programar una cita en persona?',
                 answer: language === 'en'
-                  ? 'Yes! You can schedule an appointment at any of our office locations. Call us or use our online booking system.'
-                  : '¡Sí! Puedes programar una cita en cualquiera de nuestras oficinas. Llámanos o usa nuestro sistema de reservas en línea.'
+                  ? 'Yes! You can schedule an appointment at our Doral office location. Call us or use our online booking system.'
+                  : '¡Sí! Puedes programar una cita en nuestra oficina de Doral. Llámanos o usa nuestro sistema de reservas en línea.'
               },
               {
                 question: language === 'en' ? 'Do you offer virtual consultations?' : '¿Ofrecen consultas virtuales?',
