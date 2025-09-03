@@ -1,0 +1,9 @@
+packages:
+  - name: unity-financial-functions
+    functions:
+      - name: hubspot-lead
+        runtime: nodejs:18
+        environment:
+          HUBSPOT_API_KEY: "${HUBSPOT_API_KEY}"
+        web: true
+        webSecure: false

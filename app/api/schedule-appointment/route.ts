@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server'
 import { resend, emailConfig } from '@/lib/resend'
 import { verifyTurnstileToken } from '@/lib/turnstile'
+import { sendToHubSpot } from '@/lib/hubspot'
 
 export async function POST(request: Request) {
   try {
@@ -245,6 +246,26 @@ export async function POST(request: Request) {
       </div>
     `
 
+    // Send to HubSpot CRM
+    const hubspotResult = await sendToHubSpot({
+      firstName,
+      lastName,
+      email,
+      phone,
+      appointmentType,
+      appointmentDate,
+      appointmentTime,
+      preferredContact,
+      message,
+      language,
+      source: 'Website - Schedule Appointment Form'
+    })
+
+    if (!hubspotResult.success) {
+      console.error('Failed to send lead to HubSpot:', hubspotResult.error)
+      // Continue with email sending even if HubSpot fails
+    }
+
     // Send emails
     const [customerEmail, departmentEmailResult, adminEmail] = await Promise.all([
       // Email to customer
@@ -279,7 +300,11 @@ export async function POST(request: Request) {
       success: true,
       message: isSpanish 
         ? 'Cita agendada exitosamente'
-        : 'Appointment scheduled successfully'
+        : 'Appointment scheduled successfully',
+      hubspotLead: hubspotResult.success ? { 
+        created: true, 
+        contactId: hubspotResult.contactId 
+      } : null
     })
 
   } catch (error) {
