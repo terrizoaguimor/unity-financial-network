@@ -50,13 +50,6 @@ const contactMethods = [
   }
 ]
 
-const departments = [
-  { name: 'Sales', email: 'sales@unityfinancialnetwork.com', phone: '(786) 963-6392' },
-  { name: 'Customer Service', email: 'support@unityfinancialnetwork.com', phone: '(786) 963-6393' },
-  { name: 'Claims', email: 'claims@unityfinancialnetwork.com', phone: '(786) 963-6394' },
-  { name: 'Billing', email: 'billing@unityfinancialnetwork.com', phone: '(786) 963-6395' }
-]
-
 const offices = [
   {
     name: 'Miami Headquarters',
@@ -85,7 +78,6 @@ export default function ContactPage() {
     email: '',
     phone: '',
     subject: '',
-    department: 'general',
     message: '',
     acceptTerms: false
   })
@@ -124,7 +116,7 @@ export default function ContactPage() {
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
-          subject: formData.subject || formData.department,
+          subject: formData.subject,
           message: formData.message,
           language,
           turnstileToken
@@ -141,7 +133,6 @@ export default function ContactPage() {
             email: '',
             phone: '',
             subject: '',
-            department: 'general',
             message: '',
             acceptTerms: false
           })
@@ -338,26 +329,6 @@ export default function ContactPage() {
                         placeholder="(555) 123-4567"
                       />
                     </div>
-                    
-                    <div>
-                      <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-2">
-                        Department
-                      </label>
-                      <select
-                        id="department"
-                        name="department"
-                        value={formData.department}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
-                        aria-required="true"
-                      >
-                        <option value="general">General Inquiry</option>
-                        <option value="sales">Sales</option>
-                        <option value="support">Customer Support</option>
-                        <option value="claims">Claims</option>
-                        <option value="billing">Billing</option>
-                      </select>
-                    </div>
                   </div>
 
                   <div>
@@ -459,29 +430,6 @@ export default function ContactPage() {
 
             {/* Contact Information */}
             <div className="lg:col-span-2 space-y-6">
-              {/* Department Contacts */}
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="bg-white rounded-2xl shadow-lg p-6"
-              >
-                <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
-                  <Users className="w-5 h-5 text-primary-600" />
-                  Department Contacts
-                </h3>
-                <div className="space-y-4">
-                  {departments.map((dept, index) => (
-                    <div key={index} className="pb-4 border-b last:border-0">
-                      <h4 className="font-semibold text-gray-900">{dept.name}</h4>
-                      <a href={`mailto:${dept.email}`} className="text-sm text-primary-600 hover:text-primary-700">
-                        {dept.email}
-                      </a>
-                      <p className="text-sm text-gray-600">{dept.phone}</p>
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-
               {/* Office Hours */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
