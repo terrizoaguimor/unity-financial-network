@@ -190,9 +190,25 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Methods */}
-      <section className="py-12 bg-white">
+      <section className="py-16 bg-white">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
+              <HeadphonesIcon className="w-8 h-8 text-primary-600" />
+            </div>
+            <h2 className="text-4xl font-bold mb-2">
+              Get in <span className="gradient-text">Touch</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We're here to help with all your insurance needs. Reach out to our friendly team
+              and get the support you deserve.
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {contactMethods.map((method, index) => {
               const Icon = method.icon
               return (
