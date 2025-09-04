@@ -352,10 +352,10 @@ export default function AlbaEstevezPage() {
       <HeaderSimple />
       <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-50">
         {/* Hero Section */}
-        <section className="relative py-20 overflow-hidden">
+        <section className="relative py-12 md:py-20 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 opacity-95" />
-          <div className="container-custom relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -371,13 +371,13 @@ export default function AlbaEstevezPage() {
                     ⭐ {language === 'en' ? 'Top-Rated Insurance Agent in Florida' : 'Agente de Seguros Mejor Calificado en Florida'}
                   </motion.div>
                   
-                  <h1 className="text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
                     {agentData.name}
                   </h1>
-                  <p className="text-2xl mb-2 text-purple-200">
+                  <p className="text-lg sm:text-xl md:text-2xl mb-2 text-purple-200">
                     {agentData.title[language as 'en' | 'es']}
                   </p>
-                  <p className="text-lg mb-4 text-purple-100 italic">
+                  <p className="text-base sm:text-lg mb-4 text-purple-100 italic">
                     {agentData.subtitle[language as 'en' | 'es']}
                   </p>
                   <p className="text-sm mb-6 opacity-90 flex items-center gap-2">
@@ -406,27 +406,28 @@ export default function AlbaEstevezPage() {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-wrap gap-4">
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                     <button
                       onClick={() => setShowAppointmentModal(true)}
-                      className="inline-flex items-center gap-2 bg-white text-primary-600 px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition-colors"
+                      className="inline-flex items-center justify-center gap-2 bg-white text-primary-600 px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition-colors text-sm sm:text-base"
                     >
-                      <Calendar className="w-5 h-5" />
-                      {language === 'en' ? 'Schedule Appointment' : 'SOLICITE UNA CITA'}
+                      <Calendar className="w-4 sm:w-5 h-4 sm:h-5" />
+                      <span className="truncate">{language === 'en' ? 'Schedule' : 'CITA'}</span>
+                      <span className="hidden sm:inline">{language === 'en' ? 'Appointment' : ''}</span>
                     </button>
                     <button
                       onClick={() => setShowCallModal(true)}
-                      className="inline-flex items-center gap-2 bg-yellow-500 text-primary-800 px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-colors"
+                      className="inline-flex items-center justify-center gap-2 bg-yellow-500 text-primary-800 px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-colors text-sm sm:text-base"
                     >
-                      <Phone className="w-5 h-5" />
-                      {language === 'en' ? 'Request a Call' : 'SOLICITE UNA LLAMADA'}
+                      <Phone className="w-4 sm:w-5 h-4 sm:h-5" />
+                      <span>{language === 'en' ? 'Call Me' : 'LLAMADA'}</span>
                     </button>
                     <button
                       onClick={() => setShowQuoteModal(true)}
-                      className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors"
+                      className="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors text-sm sm:text-base"
                     >
-                      <Calculator className="w-5 h-5" />
-                      {language === 'en' ? 'Get Quote' : 'SOLICITE UNA COTIZACIÓN'}
+                      <Calculator className="w-4 sm:w-5 h-4 sm:h-5" />
+                      <span>{language === 'en' ? 'Quote' : 'COTIZACIÓN'}</span>
                     </button>
                   </div>
 
@@ -472,12 +473,12 @@ export default function AlbaEstevezPage() {
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
-                className="relative"
+                className="relative mt-8 lg:mt-0"
               >
-                <div className="relative">
+                <div className="relative max-w-sm mx-auto lg:max-w-none">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-400 rounded-3xl blur-2xl opacity-30" />
                   <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
-                    <div className="aspect-[3/4] bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl overflow-hidden relative">
+                    <div className="aspect-[3/4] max-h-[400px] sm:max-h-[500px] lg:max-h-none bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl overflow-hidden relative">
                       {/* Alba's Professional Photo */}
                       <div className="w-full h-full bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 flex items-center justify-center">
                         <div className="text-center p-6">
@@ -502,10 +503,10 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-800 relative overflow-hidden">
+        <section className="py-12 md:py-20 bg-gradient-to-r from-primary-600 to-primary-800 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
-          <div className="container-custom relative z-10">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => {
                 const Icon = stat.icon
                 return (
@@ -521,18 +522,18 @@ export default function AlbaEstevezPage() {
                     }}
                     className="text-center"
                   >
-                    <div className={`w-20 h-20 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl transform hover:scale-110 transition-transform`}>
-                      <Icon className="w-10 h-10 text-white" />
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br ${stat.color} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 shadow-xl transform hover:scale-110 transition-transform`}>
+                      <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
                     </div>
                     <motion.div 
-                      className="text-4xl font-bold text-white mb-2"
+                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2"
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ delay: index * 0.1 + 0.3 }}
                     >
                       {stat.number}
                     </motion.div>
-                    <div className="text-purple-100 font-medium">{stat.label[language as 'en' | 'es']}</div>
+                    <div className="text-xs sm:text-sm md:text-base text-purple-100 font-medium px-2">{stat.label[language as 'en' | 'es']}</div>
                   </motion.div>
                 )
               })}
@@ -541,9 +542,9 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Personal Story Section */}
-        <section className="py-20 bg-gradient-to-br from-white via-purple-50 to-white">
-          <div className="container-custom">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <section className="py-12 md:py-20 bg-gradient-to-br from-white via-purple-50 to-white">
+          <div className="container-custom px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -553,7 +554,7 @@ export default function AlbaEstevezPage() {
                 <span className="inline-block px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full text-sm font-semibold text-white mb-4">
                   {language === 'en' ? 'My Story' : 'Mi Historia'}
                 </span>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-pink-600 bg-clip-text text-transparent">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary-600 to-pink-600 bg-clip-text text-transparent leading-tight">
                   {language === 'en' 
                     ? 'A Mother\'s Promise to Protect Families'
                     : 'La Promesa de una Madre de Proteger Familias'
@@ -628,26 +629,26 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Why Choose Me Section */}
-        <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
-          <div className="container-custom">
+        <section className="py-12 md:py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+          <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-8 md:mb-12"
             >
-              <span className="inline-block px-4 py-2 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full text-sm font-semibold text-white mb-4">
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full text-xs sm:text-sm font-semibold text-white mb-3 sm:mb-4">
                 {language === 'en' ? 'Why Choose Alba' : 'Por Qué Elegir a Alba'}
               </span>
-              <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent px-4">
                 {language === 'en' ? 'Your Success Is My Mission' : 'Tu Éxito Es Mi Misión'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                 {agentData.mission[language as 'en' | 'es']}
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {whyChooseMe.map((reason, index) => {
                 const Icon = reason.icon
                 return (
@@ -678,21 +679,21 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Services Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="container-custom">
+        <section className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-white">
+          <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-8 md:mb-12"
             >
-              <span className="inline-block px-4 py-2 bg-primary-100 rounded-full text-sm font-semibold text-primary-700 mb-4">
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary-100 rounded-full text-xs sm:text-sm font-semibold text-primary-700 mb-3 sm:mb-4">
                 {language === 'en' ? 'Services' : 'Servicios'}
               </span>
-              <h2 className="text-4xl font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
                 {language === 'en' ? 'Insurance Solutions' : 'Soluciones de Seguro'}
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                 {language === 'en' 
                   ? 'Comprehensive insurance coverage tailored to your needs'
                   : 'Cobertura de seguro integral adaptada a sus necesidades'
@@ -700,7 +701,7 @@ export default function AlbaEstevezPage() {
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
               {services.map((service, index) => {
                 const Icon = service.icon
                 return (
@@ -729,8 +730,8 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Achievements Section */}
-        <section className="py-16 bg-gradient-to-r from-yellow-50 to-orange-50">
-          <div className="container-custom">
+        <section className="py-12 md:py-16 bg-gradient-to-r from-yellow-50 to-orange-50">
+          <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -765,23 +766,23 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-white">
-          <div className="container-custom">
+        <section className="py-12 md:py-20 bg-white">
+          <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center mb-12"
+              className="text-center mb-8 md:mb-12"
             >
-              <span className="inline-block px-4 py-2 bg-primary-100 rounded-full text-sm font-semibold text-primary-700 mb-4">
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary-100 rounded-full text-xs sm:text-sm font-semibold text-primary-700 mb-3 sm:mb-4">
                 {language === 'en' ? 'Testimonials' : 'Testimonios'}
               </span>
-              <h2 className="text-4xl font-bold mb-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
                 {language === 'en' ? 'What Clients Say' : 'Lo Que Dicen Los Clientes'}
               </h2>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
               {testimonials.slice(0, 4).map((testimonial, index) => (
                 <motion.div
                   key={index}
@@ -1084,7 +1085,7 @@ export default function AlbaEstevezPage() {
             </motion.div>
 
             {/* Contact Info Cards */}
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mt-8 md:mt-12">
               <motion.a
                 href={`tel:${agentData.phone.replace(/\D/g, '')}`}
                 initial={{ opacity: 0, y: 30 }}
@@ -1234,17 +1235,17 @@ export default function AlbaEstevezPage() {
                 }
               </p>
               
-              <div className="flex flex-wrap gap-6 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
                 <motion.a
                   href={`tel:${agentData.phone.replace(/\D/g, '')}`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative inline-flex items-center gap-3 bg-white text-primary-700 px-10 py-5 rounded-full font-bold hover:bg-yellow-50 transition-all text-lg shadow-2xl"
+                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-white text-primary-700 px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold hover:bg-yellow-50 transition-all text-base sm:text-lg shadow-2xl"
                 >
-                  <Phone className="w-6 h-6 group-hover:animate-bounce" />
-                  <div>
-                    <div className="text-sm font-normal text-gray-600">{language === 'en' ? 'Call Now' : 'Llame Ahora'}</div>
-                    <div>{agentData.phone}</div>
+                  <Phone className="w-5 sm:w-6 h-5 sm:h-6 group-hover:animate-bounce" />
+                  <div className="text-left">
+                    <div className="text-xs sm:text-sm font-normal text-gray-600">{language === 'en' ? 'Call Now' : 'Llame Ahora'}</div>
+                    <div className="text-sm sm:text-base">{agentData.phone}</div>
                   </div>
                 </motion.a>
                 
@@ -1254,12 +1255,12 @@ export default function AlbaEstevezPage() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-5 rounded-full font-bold hover:from-green-600 hover:to-green-700 transition-all text-lg shadow-2xl"
+                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold hover:from-green-600 hover:to-green-700 transition-all text-base sm:text-lg shadow-2xl"
                 >
-                  <MessageCircle className="w-6 h-6 group-hover:animate-bounce" />
-                  <div>
-                    <div className="text-sm font-normal text-green-100">{language === 'en' ? 'Message Us' : 'Escríbanos'}</div>
-                    <div>WhatsApp</div>
+                  <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6 group-hover:animate-bounce" />
+                  <div className="text-left">
+                    <div className="text-xs sm:text-sm font-normal text-green-100">{language === 'en' ? 'Message Us' : 'Escríbanos'}</div>
+                    <div className="text-sm sm:text-base">WhatsApp</div>
                   </div>
                 </motion.a>
               </div>
@@ -1306,14 +1307,14 @@ export default function AlbaEstevezPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/50 backdrop-blur-sm"
             onClick={() => setShowQuoteModal(false)}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl shadow-2xl"
+              className="relative w-full max-w-5xl max-h-[85vh] sm:max-h-[90vh] overflow-y-auto bg-white rounded-2xl sm:rounded-3xl shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               <button
