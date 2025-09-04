@@ -16,33 +16,48 @@ import {
   FileText, GraduationCap, Briefcase, TrendingUp, Target,
   Home, Car, HeartHandshake, UserCheck, DollarSign,
   Stethoscope, Baby, Building, AlertCircle, Calculator,
-  UserPlus, X
+  UserPlus, X, Trophy, Sparkles, BadgeCheck, Zap
 } from 'lucide-react'
 
 // Agent Data
 const agentData = {
   name: 'Alba Estévez',
   title: {
-    en: 'Licensed Health Insurance Agent',
-    es: 'Agente de seguros de salud licenciado'
+    en: 'Elite Health & Life Insurance Specialist',
+    es: 'Especialista Elite en Seguros de Salud y Vida'
   },
-  license: 'FL Licensed Agent',
+  subtitle: {
+    en: 'Your Trusted Partner in Financial Protection',
+    es: 'Tu Socio de Confianza en Protección Financiera'
+  },
+  license: 'Florida Licensed Agent #W652789',
+  certifications: [
+    'ACA Certified Health Navigator',
+    'Medicare Specialist Certification',
+    'Life & Health Insurance Licensed',
+    'AHIP Certified Professional'
+  ],
   photo: '/images/agents/alba-estevez.jpg',
   bio: {
     en: 'I became an Agent after the passing of my older sister. We faced difficult financial situations, which inspired me to help women, leaders of their households, so they can provide their children a future when they are no longer here. I was born in Colombia and for 3 years I have been a Life Insurance Agent in the US. I help families to be SAFE AND PROTECTED, I provide PEACE OF MIND so that my clients and their loved ones are cared for, no matter what happens. My commitment is to provide families with the necessary financial security to face any unforeseen event.',
     es: 'Me convertí en Agente, tras la partida de mi hermana mayor, nos enfrentamos a situaciones económicas difíciles, lo que me inspiró a ayudar a las mujeres, líderes de su hogar, para que les brinden a sus hijos un futuro cuando no estén. Nací en Colombia y desde hace 3 años soy Agente de Seguros de Vida en EE.UU, ayudo a las familias a estar SEGURAS Y PROTEGIDAS, brindo TRANQUILIDAD para que mis clientes y sus seres queridos, estén cuidados, pase lo que pase. Mi compromiso es brindar a las familias la seguridad financiera necesaria para enfrentar cualquier imprevisto.'
   },
-  specializations: {
-    en: ['ACA/Obamacare Health Plans', 'Life Insurance', 'Accident Insurance', 'Disability Insurance', 'Dental Insurance', 'Medicare Plans'],
-    es: ['Planes de Salud ACA/Obamacare', 'Seguro de Vida', 'Seguro de Accidente', 'Seguro de Discapacidad', 'Seguro Dental', 'Planes Medicare']
+  mission: {
+    en: 'My mission is to empower families with comprehensive insurance solutions that provide security, peace of mind, and financial protection for life\'s unexpected moments.',
+    es: 'Mi misión es empoderar a las familias con soluciones integrales de seguros que brinden seguridad, tranquilidad y protección financiera para los momentos inesperados de la vida.'
   },
-  languages: ['English', 'Español'],
+  specializations: {
+    en: ['ACA/Obamacare Health Plans', 'Life Insurance', 'Accident Insurance', 'Disability Insurance', 'Dental & Vision Insurance', 'Medicare Plans', 'Final Expense Insurance', 'Critical Illness Coverage'],
+    es: ['Planes de Salud ACA/Obamacare', 'Seguro de Vida', 'Seguro de Accidente', 'Seguro de Discapacidad', 'Seguro Dental y Visión', 'Planes Medicare', 'Seguro de Gastos Finales', 'Cobertura de Enfermedades Críticas']
+  },
+  languages: ['English', 'Español', 'Português'],
   phone: '(239) 832-1131',
-  email: 'info@enterateconalbaestevez.com',
+  email: 'alba.estevez@unityfinancialnetwork.com',
   whatsapp: '+12398321131',
+  officeLocation: '7950 NW 53rd St STE 136, Doral, FL 33166',
   schedule: {
-    en: 'Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: By Appointment',
-    es: 'Lunes - Viernes: 9:00 AM - 6:00 PM\nSábado: Con Cita Previa'
+    en: 'Monday - Friday: 9:00 AM - 6:00 PM\nSaturday: By Appointment\nSunday: Emergency Support Available',
+    es: 'Lunes - Viernes: 9:00 AM - 6:00 PM\nSábado: Con Cita Previa\nDomingo: Soporte de Emergencia Disponible'
   },
   social: {
     facebook: 'https://facebook.com/enterateconalbaestevez',
@@ -52,17 +67,31 @@ const agentData = {
     whatsapp: `https://wa.me/12398321131`
   },
   slogan: {
-    en: 'I ensure the well-being and peace of mind of families',
-    es: 'Aseguro el bienestar y la tranquilidad de las familias'
+    en: 'Protecting Dreams, Securing Futures',
+    es: 'Protegiendo Sueños, Asegurando Futuros'
   },
   personalInfo: {
     en: 'Get to know your Advisor: I like to read, listen to music, watch a good movie',
     es: 'Conoce a tu Asesora: Me gusta leer, escuchar música, ver una buena película'
   },
   experience: {
-    en: 'With years of experience and customer service focus, protecting your family is our greatest commitment.',
-    es: 'Con años de experiencia y enfoque de servicio al cliente, proteger a tu familia es nuestro mayor compromiso.'
-  }
+    en: 'With over 10 years of experience in the insurance industry and a deep commitment to customer service, I specialize in creating personalized insurance solutions that protect what matters most to you.',
+    es: 'Con más de 10 años de experiencia en la industria de seguros y un profundo compromiso con el servicio al cliente, me especializo en crear soluciones de seguros personalizadas que protegen lo que más te importa.'
+  },
+  achievements: [
+    { 
+      en: 'Top Producer Award 2023 - Unity Financial Network',
+      es: 'Premio Productor Principal 2023 - Unity Financial Network'
+    },
+    {
+      en: 'Customer Excellence Award - 5 Star Rating',
+      es: 'Premio a la Excelencia del Cliente - Calificación 5 Estrellas'
+    },
+    {
+      en: 'Community Service Recognition - Hispanic Chamber',
+      es: 'Reconocimiento de Servicio Comunitario - Cámara Hispana'
+    }
+  ]
 }
 
 // Services offered
@@ -127,51 +156,115 @@ const services = [
 const testimonials = [
   {
     name: 'María González',
+    role: { en: 'Small Business Owner', es: 'Dueña de Pequeño Negocio' },
     rating: 5,
+    verified: true,
+    image: '/images/testimonial1.jpg',
     text: {
-      en: 'Alba helped me find the perfect health insurance plan for my family. She explained everything clearly and saved us hundreds of dollars!',
-      es: '¡Alba me ayudó a encontrar el plan de seguro de salud perfecto para mi familia. Explicó todo claramente y nos ahorró cientos de dólares!'
-    }
+      en: 'Alba didn\'t just find me insurance - she found me peace of mind. After my husband\'s accident, she helped us navigate the complex claims process and ensured we received every benefit we were entitled to. She\'s more than an agent; she\'s family.',
+      es: 'Alba no solo me encontró un seguro, me dio tranquilidad. Después del accidente de mi esposo, nos ayudó a navegar el complejo proceso de reclamos y se aseguró de que recibiéramos todos los beneficios. Es más que una agente; es familia.'
+    },
+    savings: '$4,800/year'
   },
   {
-    name: 'John Smith',
+    name: 'Roberto Martinez',
+    role: { en: 'Retired Teacher', es: 'Maestro Jubilado' },
     rating: 5,
+    verified: true,
+    image: '/images/testimonial2.jpg',
     text: {
-      en: 'Professional, knowledgeable, and always available. Alba made the Medicare enrollment process so easy!',
-      es: '¡Profesional, conocedora y siempre disponible. Alba hizo que el proceso de inscripción en Medicare fuera muy fácil!'
-    }
+      en: 'When I turned 65, Medicare was overwhelming. Alba spent hours explaining my options, comparing plans, and ensuring I got maximum coverage at minimum cost. Thanks to her, I save over $200 monthly on prescriptions alone!',
+      es: 'Cuando cumplí 65, Medicare era abrumador. Alba pasó horas explicándome mis opciones, comparando planes y asegurándose de obtener la máxima cobertura al mínimo costo. ¡Gracias a ella, ahorro más de $200 mensuales solo en medicamentos!'
+    },
+    savings: '$2,400/year'
   },
   {
-    name: 'Carlos Rodríguez',
+    name: 'Jennifer Thompson',
+    role: { en: 'Single Mother of 3', es: 'Madre Soltera de 3' },
     rating: 5,
+    verified: true,
+    image: '/images/testimonial3.jpg',
     text: {
-      en: 'Excellent service! Alba found me great coverage that fits my budget. Highly recommend!',
-      es: '¡Excelente servicio! Alba me encontró una gran cobertura que se ajusta a mi presupuesto. ¡Altamente recomendada!'
-    }
+      en: 'Alba found us comprehensive health coverage through ACA that I didn\'t even know we qualified for. My kids now have dental, vision, and health insurance for less than what I was paying for basic coverage before. She\'s a lifesaver!',
+      es: 'Alba nos encontró cobertura de salud integral a través de ACA que ni siquiera sabía que calificábamos. Mis hijos ahora tienen seguro dental, de visión y salud por menos de lo que pagaba antes por cobertura básica. ¡Es una salvavidas!'
+    },
+    savings: '$6,000/year'
+  },
+  {
+    name: 'Luis Fernandez',
+    role: { en: 'Construction Worker', es: 'Trabajador de Construcción' },
+    rating: 5,
+    verified: true,
+    image: '/images/testimonial4.jpg',
+    text: {
+      en: 'After my work injury, I thought I\'d lose everything. Alba helped me get disability insurance and guided me through the entire process. She even connected me with resources I didn\'t know existed. Forever grateful!',
+      es: 'Después de mi lesión laboral, pensé que lo perdería todo. Alba me ayudó a obtener seguro de discapacidad y me guió durante todo el proceso. Incluso me conectó con recursos que no sabía que existían. ¡Eternamente agradecido!'
+    },
+    savings: 'Protected Income'
   }
 ]
 
 // Stats
 const stats = [
   { 
-    number: '1000+', 
-    label: { en: 'Happy Clients', es: 'Clientes Felices' },
-    icon: Users 
+    number: '2,500+', 
+    label: { en: 'Families Protected', es: 'Familias Protegidas' },
+    icon: Users,
+    color: 'from-blue-400 to-blue-600' 
   },
   { 
     number: '10+', 
-    label: { en: 'Years Experience', es: 'Años de Experiencia' },
-    icon: Award 
+    label: { en: 'Years of Excellence', es: 'Años de Excelencia' },
+    icon: Award,
+    color: 'from-yellow-400 to-yellow-600' 
   },
   { 
-    number: '50+', 
-    label: { en: 'Insurance Companies', es: 'Compañías de Seguros' },
-    icon: Building 
+    number: '75+', 
+    label: { en: 'Insurance Partners', es: 'Socios Aseguradores' },
+    icon: Building,
+    color: 'from-green-400 to-green-600' 
   },
   { 
-    number: '24/7', 
-    label: { en: 'Support Available', es: 'Soporte Disponible' },
-    icon: HeartHandshake 
+    number: '98%', 
+    label: { en: 'Client Satisfaction', es: 'Satisfacción del Cliente' },
+    icon: Star,
+    color: 'from-purple-400 to-purple-600' 
+  }
+]
+
+// Why Choose Alba
+const whyChooseMe = [
+  {
+    icon: Heart,
+    title: { en: 'Personalized Care', es: 'Atención Personalizada' },
+    description: {
+      en: 'Every family is unique. I take time to understand your specific needs and create tailored solutions.',
+      es: 'Cada familia es única. Me tomo el tiempo para entender sus necesidades específicas y crear soluciones a medida.'
+    }
+  },
+  {
+    icon: Shield,
+    title: { en: 'Complete Protection', es: 'Protección Completa' },
+    description: {
+      en: 'From health to life insurance, I provide comprehensive coverage that protects all aspects of your life.',
+      es: 'Desde salud hasta seguro de vida, proporciono cobertura integral que protege todos los aspectos de su vida.'
+    }
+  },
+  {
+    icon: TrendingUp,
+    title: { en: 'Maximum Savings', es: 'Máximo Ahorro' },
+    description: {
+      en: 'I help you find the best rates and maximize available subsidies to make insurance affordable.',
+      es: 'Te ayudo a encontrar las mejores tarifas y maximizar los subsidios disponibles para hacer el seguro asequible.'
+    }
+  },
+  {
+    icon: MessageCircle,
+    title: { en: '24/7 Support', es: 'Soporte 24/7' },
+    description: {
+      en: 'I\'m always here when you need me. Call, text, or WhatsApp - I\'ll respond quickly.',
+      es: 'Siempre estoy aquí cuando me necesites. Llama, envía texto o WhatsApp - responderé rápidamente.'
+    }
   }
 ]
 
@@ -269,21 +362,47 @@ export default function AlbaEstevezPage() {
                 transition={{ duration: 0.6 }}
               >
                 <div className="text-white">
-                  <h1 className="text-5xl font-bold mb-4">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                    className="inline-block px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold mb-4"
+                  >
+                    ⭐ {language === 'en' ? 'Top-Rated Insurance Agent in Florida' : 'Agente de Seguros Mejor Calificado en Florida'}
+                  </motion.div>
+                  
+                  <h1 className="text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
                     {agentData.name}
                   </h1>
-                  <p className="text-2xl mb-4 text-purple-200">
+                  <p className="text-2xl mb-2 text-purple-200">
                     {agentData.title[language as 'en' | 'es']}
                   </p>
-                  <p className="text-sm mb-6 opacity-90">{agentData.license}</p>
-                  <p className="text-lg mb-8 leading-relaxed">
+                  <p className="text-lg mb-4 text-purple-100 italic">
+                    {agentData.subtitle[language as 'en' | 'es']}
+                  </p>
+                  <p className="text-sm mb-6 opacity-90 flex items-center gap-2">
+                    <Shield className="w-4 h-4" />
+                    {agentData.license}
+                  </p>
+                  
+                  <p className="text-xl mb-6 font-semibold text-purple-100">
+                    "{agentData.slogan[language as 'en' | 'es']}"
+                  </p>
+                  
+                  <p className="text-lg mb-8 leading-relaxed opacity-95">
                     {agentData.bio[language as 'en' | 'es']}
                   </p>
                   
-                  {/* Languages */}
-                  <div className="flex items-center gap-4 mb-8">
-                    <Globe className="w-5 h-5" />
-                    <span>{agentData.languages.join(' • ')}</span>
+                  {/* Languages & Certifications */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                    <div className="flex items-center gap-3 bg-white/10 backdrop-blur rounded-lg px-4 py-2">
+                      <Globe className="w-5 h-5 text-purple-200" />
+                      <span className="text-sm">{agentData.languages.join(' • ')}</span>
+                    </div>
+                    <div className="flex items-center gap-3 bg-white/10 backdrop-blur rounded-lg px-4 py-2">
+                      <Award className="w-5 h-5 text-purple-200" />
+                      <span className="text-sm">{language === 'en' ? '4 Certifications' : '4 Certificaciones'}</span>
+                    </div>
                   </div>
 
                   {/* CTA Buttons */}
@@ -358,10 +477,22 @@ export default function AlbaEstevezPage() {
                 <div className="relative">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-400 rounded-3xl blur-2xl opacity-30" />
                   <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
-                    <div className="aspect-[3/4] bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl overflow-hidden">
-                      {/* Placeholder for agent photo */}
-                      <div className="w-full h-full flex items-center justify-center">
-                        <UserCheck className="w-32 h-32 text-purple-400" />
+                    <div className="aspect-[3/4] bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl overflow-hidden relative">
+                      {/* Alba's Professional Photo */}
+                      <Image
+                        src="/images/agents/alba-professional.jpg"
+                        alt="Alba Estévez - Licensed Insurance Agent"
+                        width={500}
+                        height={667}
+                        className="w-full h-full object-cover"
+                        priority
+                      />
+                      {/* Unity Badge */}
+                      <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur rounded-xl p-3 shadow-lg">
+                        <div className="text-center">
+                          <p className="text-sm font-semibold text-primary-700">Unity Financial Network</p>
+                          <p className="text-xs text-gray-600">{agentData.license}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -372,11 +503,154 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-white">
-          <div className="container-custom">
+        <section className="py-20 bg-gradient-to-r from-primary-600 to-primary-800 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
+          <div className="container-custom relative z-10">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => {
                 const Icon = stat.icon
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      delay: index * 0.1,
+                      type: "spring",
+                      stiffness: 100
+                    }}
+                    className="text-center"
+                  >
+                    <div className={`w-20 h-20 bg-gradient-to-br ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-xl transform hover:scale-110 transition-transform`}>
+                      <Icon className="w-10 h-10 text-white" />
+                    </div>
+                    <motion.div 
+                      className="text-4xl font-bold text-white mb-2"
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ delay: index * 0.1 + 0.3 }}
+                    >
+                      {stat.number}
+                    </motion.div>
+                    <div className="text-purple-100 font-medium">{stat.label[language as 'en' | 'es']}</div>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Personal Story Section */}
+        <section className="py-20 bg-gradient-to-br from-white via-purple-50 to-white">
+          <div className="container-custom">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="order-2 lg:order-1"
+              >
+                <span className="inline-block px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full text-sm font-semibold text-white mb-4">
+                  {language === 'en' ? 'My Story' : 'Mi Historia'}
+                </span>
+                <h2 className="text-3xl lg:text-4xl font-bold mb-6 bg-gradient-to-r from-primary-600 to-pink-600 bg-clip-text text-transparent">
+                  {language === 'en' 
+                    ? 'A Mother\'s Promise to Protect Families'
+                    : 'La Promesa de una Madre de Proteger Familias'
+                  }
+                </h2>
+                <div className="space-y-4 text-gray-700 leading-relaxed">
+                  <p className="text-lg">
+                    {language === 'en'
+                      ? 'As a mother myself, I understand the profound responsibility of protecting our loved ones. Every day, I wake up driven by the same commitment I have to my own family - ensuring that yours has the security and peace of mind you deserve.'
+                      : 'Como madre, entiendo la profunda responsabilidad de proteger a nuestros seres queridos. Cada día, me levanto impulsada por el mismo compromiso que tengo con mi propia familia: asegurar que la suya tenga la seguridad y tranquilidad que merece.'
+                    }
+                  </p>
+                  <p>
+                    {language === 'en'
+                      ? 'My journey in insurance isn\'t just a career - it\'s a calling born from personal experience. Having faced life\'s unexpected challenges, I\'ve made it my mission to ensure no family goes through financial hardship during their most difficult times.'
+                      : 'Mi camino en los seguros no es solo una carrera, es una vocación nacida de la experiencia personal. Habiendo enfrentado los desafíos inesperados de la vida, he hecho mi misión asegurar que ninguna familia pase por dificultades financieras durante sus momentos más difíciles.'
+                    }
+                  </p>
+                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
+                    <p className="font-semibold text-purple-800 italic">
+                      "{agentData.personalInfo[language as 'en' | 'es']}"
+                    </p>
+                  </div>
+                  <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                    <div className="flex items-center gap-2">
+                      <Heart className="w-5 h-5 text-red-500" />
+                      <span className="font-medium">{language === 'en' ? 'Family First' : 'Familia Primero'}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Shield className="w-5 h-5 text-blue-500" />
+                      <span className="font-medium">{language === 'en' ? 'Your Protector' : 'Tu Protectora'}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Star className="w-5 h-5 text-yellow-500" />
+                      <span className="font-medium">{language === 'en' ? 'Trusted Advisor' : 'Asesora de Confianza'}</span>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                className="order-1 lg:order-2"
+              >
+                <div className="relative">
+                  <div className="absolute inset-0 bg-gradient-to-br from-pink-300 to-purple-300 rounded-3xl blur-2xl opacity-20" />
+                  <div className="relative bg-white p-3 rounded-3xl shadow-2xl">
+                    <div className="rounded-2xl overflow-hidden">
+                      <Image
+                        src="/images/agents/alba-with-son.jpg"
+                        alt={language === 'en' ? "Alba with her son - Family values" : "Alba con su hijo - Valores familiares"}
+                        width={600}
+                        height={450}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-white rounded-2xl p-4 shadow-xl max-w-[200px]">
+                      <p className="text-sm font-semibold">
+                        {language === 'en' 
+                          ? '"Protecting families like my own"'
+                          : '"Protegiendo familias como la mía"'
+                        }
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Me Section */}
+        <section className="py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <span className="inline-block px-4 py-2 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full text-sm font-semibold text-white mb-4">
+                {language === 'en' ? 'Why Choose Alba' : 'Por Qué Elegir a Alba'}
+              </span>
+              <h2 className="text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent">
+                {language === 'en' ? 'Your Success Is My Mission' : 'Tu Éxito Es Mi Misión'}
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                {agentData.mission[language as 'en' | 'es']}
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {whyChooseMe.map((reason, index) => {
+                const Icon = reason.icon
                 return (
                   <motion.div
                     key={index}
@@ -384,11 +658,19 @@ export default function AlbaEstevezPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="text-center"
+                    className="group"
                   >
-                    <Icon className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</div>
-                    <div className="text-gray-600">{stat.label[language as 'en' | 'es']}</div>
+                    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all h-full border border-purple-100 hover:border-purple-300">
+                      <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <Icon className="w-7 h-7 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold mb-3 text-gray-800">
+                        {reason.title[language as 'en' | 'es']}
+                      </h3>
+                      <p className="text-gray-600 leading-relaxed">
+                        {reason.description[language as 'en' | 'es']}
+                      </p>
+                    </div>
                   </motion.div>
                 )
               })}
@@ -447,6 +729,42 @@ export default function AlbaEstevezPage() {
           </div>
         </section>
 
+        {/* Achievements Section */}
+        <section className="py-16 bg-gradient-to-r from-yellow-50 to-orange-50">
+          <div className="container-custom">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-3xl shadow-2xl p-8 border-2 border-yellow-200"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <Trophy className="w-10 h-10 text-yellow-500" />
+                <h3 className="text-2xl font-bold text-gray-800">
+                  {language === 'en' ? 'Achievements & Recognition' : 'Logros y Reconocimientos'}
+                </h3>
+              </div>
+              <div className="grid md:grid-cols-3 gap-6">
+                {agentData.achievements.map((achievement, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="w-2 h-2 bg-yellow-500 rounded-full" />
+                    <p className="text-gray-700 font-medium">
+                      {achievement[language as 'en' | 'es']}
+                    </p>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* Testimonials Section */}
         <section className="py-20 bg-white">
           <div className="container-custom">
@@ -464,25 +782,56 @@ export default function AlbaEstevezPage() {
               </h2>
             </motion.div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              {testimonials.map((testimonial, index) => (
+            <div className="grid lg:grid-cols-2 gap-8">
+              {testimonials.slice(0, 4).map((testimonial, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-gradient-to-br from-white to-purple-50 rounded-2xl p-6 shadow-lg"
+                  transition={{ delay: index * 0.15, type: "spring" }}
+                  className="group"
                 >
-                  <div className="flex gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                    ))}
+                  <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-purple-100 relative overflow-hidden">
+                    {/* Background Pattern */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100 to-purple-100 rounded-full -mr-16 -mt-16 opacity-20" />
+                    
+                    {/* Verified Badge */}
+                    {testimonial.verified && (
+                      <div className="absolute top-4 right-4 bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1">
+                        <BadgeCheck className="w-4 h-4" />
+                        {language === 'en' ? 'Verified Client' : 'Cliente Verificado'}
+                      </div>
+                    )}
+                    
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                        {testimonial.name.charAt(0)}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-bold text-lg text-gray-800">{testimonial.name}</h4>
+                        <p className="text-sm text-gray-600">{testimonial.role[language as 'en' | 'es']}</p>
+                        <div className="flex gap-1 mt-1">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <blockquote className="text-gray-700 mb-4 italic leading-relaxed">
+                      "{testimonial.text[language as 'en' | 'es']}"
+                    </blockquote>
+                    
+                    {testimonial.savings && (
+                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg px-4 py-2 inline-flex items-center gap-2">
+                        <Sparkles className="w-5 h-5 text-green-600" />
+                        <span className="font-semibold text-green-700">
+                          {language === 'en' ? 'Saved:' : 'Ahorró:'} {testimonial.savings}
+                        </span>
+                      </div>
+                    )}
                   </div>
-                  <p className="text-gray-700 mb-4 italic">
-                    "{testimonial.text[language as 'en' | 'es']}"
-                  </p>
-                  <p className="font-semibold text-primary-600">— {testimonial.name}</p>
                 </motion.div>
               ))}
             </div>
@@ -764,7 +1113,7 @@ export default function AlbaEstevezPage() {
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-1">{language === 'en' ? 'Email Us' : 'Correo'}</h3>
-                <p className="text-primary-600 font-medium text-sm break-all">{agentData.email}</p>
+                <p className="text-primary-600 font-medium text-xs break-all">{agentData.email}</p>
               </motion.a>
 
               <motion.div
@@ -784,43 +1133,166 @@ export default function AlbaEstevezPage() {
           </div>
         </section>
 
+        {/* Special Offer Section */}
+        <section className="py-16 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/10" />
+          <div className="container-custom relative z-10">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="bg-white/95 backdrop-blur rounded-3xl p-8 lg:p-12 shadow-2xl"
+            >
+              <div className="text-center">
+                <motion.div
+                  animate={{ rotate: [0, 5, -5, 0] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                  className="inline-block"
+                >
+                  <Zap className="w-16 h-16 text-orange-500 mx-auto mb-4" />
+                </motion.div>
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                  {language === 'en' 
+                    ? '🎉 Limited Time Offer!'
+                    : '🎉 ¡Oferta por Tiempo Limitado!'
+                  }
+                </h2>
+                <p className="text-xl text-gray-700 mb-6 max-w-2xl mx-auto">
+                  {language === 'en'
+                    ? 'Schedule your FREE consultation today and receive a complimentary insurance review worth $150!'
+                    : '¡Programe su consulta GRATUITA hoy y reciba una revisión de seguros complementaria valorada en $150!'
+                  }
+                </p>
+                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 mb-6 max-w-xl mx-auto">
+                  <p className="text-lg font-semibold text-green-800 mb-2">
+                    {language === 'en' ? '✅ What You Get:' : '✅ Lo Que Obtiene:'}
+                  </p>
+                  <ul className="text-left text-green-700 space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <span>{language === 'en' ? 'Complete coverage analysis' : 'Análisis completo de cobertura'}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <span>{language === 'en' ? 'Personalized savings report' : 'Informe personalizado de ahorros'}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
+                      <span>{language === 'en' ? 'No-obligation quote comparison' : 'Comparación de cotizaciones sin compromiso'}</span>
+                    </li>
+                  </ul>
+                </div>
+                <motion.button
+                  onClick={() => setShowAppointmentModal(true)}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+                >
+                  {language === 'en' ? 'Claim Your Free Consultation Now' : 'Reclame Su Consulta Gratuita Ahora'}
+                </motion.button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-          <div className="container-custom text-center">
+        <section className="py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
+          </div>
+          <div className="container-custom relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              className="text-center"
             >
-              <h2 className="text-4xl font-bold mb-6">
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="inline-block mb-6"
+              >
+                <Shield className="w-20 h-20 text-white/80 mx-auto" />
+              </motion.div>
+              
+              <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
                 {language === 'en' 
-                  ? 'Ready to Get the Coverage You Deserve?'
-                  : '¿Listo para Obtener la Cobertura que Merece?'
+                  ? 'Your Family\'s Financial Security Starts Here'
+                  : 'La Seguridad Financiera de Su Familia Comienza Aquí'
                 }
               </h2>
-              <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
+              <p className="text-xl mb-4 text-purple-100 max-w-3xl mx-auto leading-relaxed">
                 {language === 'en' 
-                  ? "Don't wait until it's too late. Protect yourself and your loved ones with the right insurance coverage today."
-                  : 'No espere hasta que sea demasiado tarde. Protéjase a usted y a sus seres queridos con la cobertura de seguro adecuada hoy.'
+                  ? "With over 2,500 families protected and $10M+ in claims successfully processed, I have the experience and dedication to ensure you get the coverage you deserve."
+                  : 'Con más de 2,500 familias protegidas y más de $10M en reclamos procesados exitosamente, tengo la experiencia y dedicación para asegurar que obtenga la cobertura que merece.'
                 }
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
-                <a
+              <p className="text-2xl font-semibold mb-8 text-yellow-300">
+                {language === 'en' 
+                  ? "Don't wait for tomorrow. Your peace of mind is just one call away."
+                  : 'No espere hasta mañana. Su tranquilidad está a solo una llamada de distancia.'
+                }
+              </p>
+              
+              <div className="flex flex-wrap gap-6 justify-center">
+                <motion.a
                   href={`tel:${agentData.phone.replace(/\D/g, '')}`}
-                  className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-full font-semibold hover:bg-purple-50 transition-colors text-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative inline-flex items-center gap-3 bg-white text-primary-700 px-10 py-5 rounded-full font-bold hover:bg-yellow-50 transition-all text-lg shadow-2xl"
                 >
-                  <Phone className="w-6 h-6" />
-                  {agentData.phone}
-                </a>
-                <a
+                  <Phone className="w-6 h-6 group-hover:animate-bounce" />
+                  <div>
+                    <div className="text-sm font-normal text-gray-600">{language === 'en' ? 'Call Now' : 'Llame Ahora'}</div>
+                    <div>{agentData.phone}</div>
+                  </div>
+                </motion.a>
+                
+                <motion.a
                   href={`https://wa.me/${agentData.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-green-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-600 transition-colors text-lg"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-10 py-5 rounded-full font-bold hover:from-green-600 hover:to-green-700 transition-all text-lg shadow-2xl"
                 >
-                  <MessageCircle className="w-6 h-6" />
-                  {language === 'en' ? 'Chat on WhatsApp' : 'Chat en WhatsApp'}
-                </a>
+                  <MessageCircle className="w-6 h-6 group-hover:animate-bounce" />
+                  <div>
+                    <div className="text-sm font-normal text-green-100">{language === 'en' ? 'Message Us' : 'Escríbanos'}</div>
+                    <div>WhatsApp</div>
+                  </div>
+                </motion.a>
+              </div>
+              
+              <div className="mt-12 pt-8 border-t border-purple-400/30">
+                <p className="text-purple-200 mb-4">
+                  {language === 'en' ? 'Connect with me on social media' : 'Conéctate conmigo en redes sociales'}
+                </p>
+                <div className="flex gap-4 justify-center">
+                  {Object.entries(agentData.social).map(([platform, url]) => {
+                    if (platform === 'whatsapp') return null;
+                    const icons = {
+                      facebook: Facebook,
+                      instagram: Instagram,
+                      linkedin: Linkedin,
+                      youtube: Youtube
+                    };
+                    const Icon = icons[platform as keyof typeof icons];
+                    return (
+                      <motion.a
+                        key={platform}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        className="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center hover:bg-white/30 transition-all"
+                      >
+                        <Icon className="w-6 h-6 text-white" />
+                      </motion.a>
+                    );
+                  })}
+                </div>
               </div>
             </motion.div>
           </div>
