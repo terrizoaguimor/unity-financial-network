@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useLanguage } from '@/contexts/LanguageContext'
-import Image from 'next/image'
 import Link from 'next/link'
 import HeaderSimple from '@/components/HeaderSimple'
 import Footer from '@/components/Footer'
@@ -479,14 +478,13 @@ export default function AlbaEstevezPage() {
                   <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
                     <div className="aspect-[3/4] bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl overflow-hidden relative">
                       {/* Alba's Professional Photo */}
-                      <Image
-                        src="/images/agents/alba-professional.jpg"
-                        alt="Alba Estévez - Licensed Insurance Agent"
-                        width={500}
-                        height={667}
-                        className="w-full h-full object-cover"
-                        priority
-                      />
+                      <div className="w-full h-full bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 flex items-center justify-center">
+                        <div className="text-center p-6">
+                          <UserCheck className="w-24 h-24 text-purple-400 mx-auto mb-4" />
+                          <p className="text-purple-600 font-semibold">Alba Estévez</p>
+                          <p className="text-purple-500 text-sm">Professional Photo</p>
+                        </div>
+                      </div>
                       {/* Unity Badge */}
                       <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur rounded-xl p-3 shadow-lg">
                         <div className="text-center">
@@ -605,13 +603,13 @@ export default function AlbaEstevezPage() {
                   <div className="absolute inset-0 bg-gradient-to-br from-pink-300 to-purple-300 rounded-3xl blur-2xl opacity-20" />
                   <div className="relative bg-white p-3 rounded-3xl shadow-2xl">
                     <div className="rounded-2xl overflow-hidden">
-                      <Image
-                        src="/images/agents/alba-with-son.jpg"
-                        alt={language === 'en' ? "Alba with her son - Family values" : "Alba con su hijo - Valores familiares"}
-                        width={600}
-                        height={450}
-                        className="w-full h-auto object-cover"
-                      />
+                      <div className="w-full aspect-[4/3] bg-gradient-to-br from-yellow-50 via-pink-50 to-purple-50 flex items-center justify-center">
+                        <div className="text-center p-6">
+                          <Users className="w-20 h-20 text-pink-400 mx-auto mb-4" />
+                          <p className="text-pink-600 font-semibold">{language === 'en' ? 'Alba with Family' : 'Alba con Familia'}</p>
+                          <p className="text-pink-500 text-sm">{language === 'en' ? 'Family Photo' : 'Foto Familiar'}</p>
+                        </div>
+                      </div>
                     </div>
                     <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-white rounded-2xl p-4 shadow-xl max-w-[200px]">
                       <p className="text-sm font-semibold">

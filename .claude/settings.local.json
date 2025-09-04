@@ -40,7 +40,9 @@
       "Bash(doctl serverless:*)",
       "Bash(sed:*)",
       "Bash(npm install:*)",
-      "Bash(npm uninstall:*)"
+      "Bash(npm uninstall:*)",
+      "WebFetch(domain:www.enterateconalbaestevez.com)",
+      "WebFetch(domain:enterateconalbaestevez.com)"
     ],
     "deny": [],
     "ask": [],
