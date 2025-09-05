@@ -274,7 +274,7 @@ export default function ServiceDetailPage() {
                         <Mail className="w-5 h-5" size={20} />
                         <div>
                           <p className="font-semibold">{t.emailUs}</p>
-                          <p className="text-sm text-gray-600">info@unity.com</p>
+                          <p className="text-sm text-gray-600">hello@unityfinancialnetwork.com</p>
                         </div>
                       </a>
                     </div>
