@@ -18,7 +18,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
     { number: '10+', label: language === 'en' ? 'Years Experience' : 'Años de Experiencia', icon: Award },
   ]
   return (
-    <section id="about" className="section-padding relative overflow-hidden bg-gradient-to-br from-white via-purple-50/30 to-white">
+    <section id="about" className="section-padding relative overflow-hidden bg-white">
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -32,7 +32,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-purple-100 rounded-full text-sm font-semibold text-primary-700 mb-6"
+              className="inline-block px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary mb-6"
             >
               {t.badge}
             </motion.span>
@@ -55,7 +55,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                 transition={{ delay: 0.2 }}
                 className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -73,7 +73,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                 transition={{ delay: 0.3 }}
                 className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
                   <Eye className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -91,7 +91,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                 transition={{ delay: 0.4 }}
                 className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Lightbulb className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -132,12 +132,12 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                   repeat: Infinity,
                   ease: "linear"
                 }}
-                className="absolute inset-0 bg-gradient-to-br from-primary-200 via-purple-200 to-pink-200 rounded-3xl opacity-30 blur-2xl"
+                className="absolute inset-0 bg-primary/10 rounded-3xl blur-2xl"
               />
 
               {/* Stats Cards */}
               <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-br from-primary-400 to-purple-600 rounded-2xl flex items-center justify-center text-white font-bold text-xl animate-pulse">
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary rounded-2xl flex items-center justify-center text-white font-bold text-xl">
                   Unity
                 </div>
 
@@ -155,11 +155,11 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-center justify-between p-4 bg-gradient-to-r from-purple-50 to-primary-50 rounded-xl hover:from-purple-100 hover:to-primary-100 transition-colors"
+                        className="flex items-center justify-between p-4 bg-primary/5 rounded-xl hover:bg-primary/10 transition-colors"
                       >
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center">
-                            <Icon className="w-6 h-6 text-primary-600" />
+                            <Icon className="w-6 h-6 text-primary" />
                           </div>
                           <div>
                             <p className="text-3xl font-bold text-gray-900">{stat.number}</p>
@@ -168,14 +168,14 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                         </div>
                         <motion.div
                           whileHover={{ scale: 1.2, rotate: 90 }}
-                          className="w-8 h-8 bg-gradient-to-br from-primary-400 to-purple-600 rounded-full opacity-20"
+                          className="w-8 h-8 bg-accent/20 rounded-full"
                         />
                       </motion.div>
                     )
                   })}
                 </div>
 
-                <div className="mt-8 p-4 bg-gradient-to-r from-primary-600 to-purple-600 rounded-xl text-white text-center">
+                <div className="mt-8 p-4 bg-primary rounded-xl text-white text-center">
                   <p className="text-sm font-medium">{t.trustedBy}</p>
                   <p className="text-2xl font-bold">{t.location}</p>
                 </div>
@@ -195,7 +195,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-20 left-20 w-20 h-20 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full opacity-30 blur-xl"
+        className="absolute top-20 left-20 w-20 h-20 bg-accent/20 rounded-full blur-xl"
       />
       
       <motion.div
@@ -207,7 +207,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-20 right-20 w-32 h-32 bg-gradient-to-tr from-blue-200 to-cyan-200 rounded-full opacity-30 blur-xl"
+        className="absolute bottom-20 right-20 w-32 h-32 bg-primary/10 rounded-full blur-xl"
       />
     </section>
   )

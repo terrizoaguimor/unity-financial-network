@@ -95,7 +95,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
   }
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden bg-gradient-to-br from-white via-primary-50/30 to-purple-50">
+    <section id="contact" className="section-padding relative overflow-hidden bg-white">
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -108,7 +108,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-purple-100 rounded-full text-sm font-semibold text-primary-700 mb-4"
+            className="inline-block px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary mb-4"
           >
             {t.badge}
           </motion.span>
@@ -145,7 +145,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     value={formData.name}
                     onChange={handleChange}
                     placeholder={t.placeholders.name}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     required
                   />
                 </motion.div>
@@ -160,7 +160,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     value={formData.email}
                     onChange={handleChange}
                     placeholder={t.placeholders.email}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     required
                   />
                 </motion.div>
@@ -177,7 +177,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder={t.placeholders.phone}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     required
                   />
                 </motion.div>
@@ -235,22 +235,22 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     {language === 'en' ? (
                       <>
                         I accept the{' '}
-                        <a href="/terms" target="_blank" className="text-primary-600 hover:text-primary-700 underline">
+                        <a href="/terms" target="_blank" className="text-primary hover:text-primary-700 underline">
                           Terms and Conditions
                         </a>
                         {' '}and{' '}
-                        <a href="/privacy" target="_blank" className="text-primary-600 hover:text-primary-700 underline">
+                        <a href="/privacy" target="_blank" className="text-primary hover:text-primary-700 underline">
                           Privacy Policy
                         </a>
                       </>
                     ) : (
                       <>
                         Acepto los{' '}
-                        <a href="/terms" target="_blank" className="text-primary-600 hover:text-primary-700 underline">
+                        <a href="/terms" target="_blank" className="text-primary hover:text-primary-700 underline">
                           Términos y Condiciones
                         </a>
                         {' '}y la{' '}
-                        <a href="/privacy" target="_blank" className="text-primary-600 hover:text-primary-700 underline">
+                        <a href="/privacy" target="_blank" className="text-primary hover:text-primary-700 underline">
                           Política de Privacidad
                         </a>
                       </>
@@ -345,13 +345,13 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
               className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900 mb-1">{t.callTitle}</h4>
                   <p className="text-gray-600">{t.callHours}</p>
-                  <a href="tel:7868285576" className="text-primary-600 font-semibold hover:text-primary-700">
+                  <a href="tel:7868285576" className="text-primary font-semibold hover:text-primary-700">
                     (7868285576
                   </a>
                 </div>
@@ -363,13 +363,13 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
               className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
                   <h4 className="font-bold text-gray-900 mb-1">{t.emailTitle}</h4>
                   <p className="text-gray-600">{t.emailSupport}</p>
-                  <a href="mailto:hello@unityfinancialnetwork.com" className="text-primary-600 font-semibold hover:text-primary-700">
+                  <a href="mailto:hello@unityfinancialnetwork.com" className="text-primary font-semibold hover:text-primary-700">
                     hello@unityfinancialnetwork.com
                   </a>
                 </div>
@@ -381,7 +381,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
               className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-pink-400 to-rose-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -397,7 +397,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
             {/* Live Chat Card */}
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="bg-gradient-to-r from-primary-600 to-purple-600 rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all"
+              className="bg-primary rounded-2xl p-6 text-white shadow-xl hover:shadow-2xl transition-all"
             >
               <div className="flex items-center justify-between">
                 <div>
@@ -428,7 +428,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
           repeat: Infinity,
           ease: "linear"
         }}
-        className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-primary-200 to-purple-200 rounded-full opacity-20 blur-2xl"
+        className="absolute top-20 right-20 w-32 h-32 bg-primary/20 rounded-full blur-2xl"
       />
     </section>
   )

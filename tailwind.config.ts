@@ -55,22 +55,53 @@ const config: Config = {
         '5xl-r': ['clamp(2.5rem, 7vw, 3.75rem)', '1'],
       },
       colors: {
+        // Unity Financial Brand Colors
         primary: {
-          DEFAULT: '#522784',
-          50: '#f5f3ff',
-          100: '#ede9fe',
-          200: '#ddd6fe',
-          300: '#c4b5fd',
-          400: '#a78bfa',
-          500: '#8b5cf6',
-          600: '#7c3aed',
-          700: '#6d28d9',
-          800: '#522784',
-          900: '#4c1d95',
+          DEFAULT: '#512783', // Unity Purple
+          50: '#f4f0fa',
+          100: '#e9e1f5',
+          200: '#d3c3eb',
+          300: '#bda5e1',
+          400: '#a787d7',
+          500: '#9169cd',
+          600: '#7b4bc3',
+          700: '#6938a2',
+          800: '#512783', // Main Unity Purple
+          900: '#3d1d62',
+          950: '#291341',
         },
         accent: {
-          cyan: '#abb8c3',
-        }
+          DEFAULT: '#f18918', // Unity Orange
+          50: '#fef8f0',
+          100: '#fdf0e1',
+          200: '#fbd9b3',
+          300: '#f9c285',
+          400: '#f7ab57',
+          500: '#f18918', // Main Unity Orange
+          600: '#d97a16',
+          700: '#b56713',
+          800: '#915410',
+          900: '#6d410d',
+        },
+        neutral: {
+          light: '#dadada', // Unity Light Gray
+          DEFAULT: '#403c43', // Unity Dark Gray
+          50: '#fafafa',
+          100: '#f5f5f5',
+          200: '#ebebeb',
+          300: '#dadada', // Unity Light Gray
+          400: '#b8b8b8',
+          500: '#969696',
+          600: '#747474',
+          700: '#525252',
+          800: '#403c43', // Unity Dark Gray
+          900: '#2e2b30',
+        },
+        // Keep some semantic colors for specific uses
+        success: '#10b981',
+        warning: '#f59e0b',
+        error: '#ef4444',
+        info: '#3b82f6',
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

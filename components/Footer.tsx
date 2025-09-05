@@ -143,7 +143,7 @@ export default function Footer({ language = 'en' }: FooterProps) {
   }
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-neutral-800 to-neutral-900 text-white overflow-hidden">
       {/* Decorative Top Wave */}
       <div className="absolute top-0 left-0 right-0">
         <svg
@@ -183,7 +183,7 @@ export default function Footer({ language = 'en' }: FooterProps) {
               height={60}
               className="h-12 w-auto mb-4"
             />
-            <p className="text-gray-400 mb-6">
+            <p className="text-neutral-300 mb-6">
               {language === 'en' 
                 ? 'Your personal financial concierge, providing comprehensive insurance solutions for a secure future.'
                 : 'Tu conserje financiero personal, brindando soluciones integrales de seguros para un futuro seguro.'}
@@ -193,9 +193,9 @@ export default function Footer({ language = 'en' }: FooterProps) {
                 <motion.a
                   key={index}
                   href="#"
-                  whileHover={{ scale: 1.2, rotate: 360 }}
+                  whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 bg-white/10 hover:bg-primary-600 rounded-full flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-white/10 hover:bg-accent rounded-full flex items-center justify-center transition-colors"
                 >
                   <Icon className="w-5 h-5" />
                 </motion.a>
@@ -216,7 +216,7 @@ export default function Footer({ language = 'en' }: FooterProps) {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-400 transition-colors inline-block hover:translate-x-1 transform duration-200"
+                    className="text-neutral-300 hover:text-accent transition-colors inline-block hover:translate-x-1 transform duration-200"
                   >
                     {link.name}
                   </Link>
@@ -238,7 +238,7 @@ export default function Footer({ language = 'en' }: FooterProps) {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-400 hover:text-primary-400 transition-colors inline-block hover:translate-x-1 transform duration-200"
+                    className="text-neutral-300 hover:text-accent transition-colors inline-block hover:translate-x-1 transform duration-200"
                   >
                     {link.name}
                   </Link>
@@ -255,7 +255,7 @@ export default function Footer({ language = 'en' }: FooterProps) {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h3 className="text-lg font-bold mb-4 text-white">{language === 'en' ? 'Stay Updated' : 'Manténte Actualizado'}</h3>
-            <p className="text-gray-400 mb-4">
+            <p className="text-neutral-300 mb-4">
               {language === 'en' 
                 ? 'Subscribe to get the latest insurance tips and financial advice.'
                 : 'Suscríbete para recibir los últimos consejos de seguros y asesoramiento financiero.'}
@@ -275,7 +275,7 @@ export default function Footer({ language = 'en' }: FooterProps) {
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder={language === 'en' ? 'Enter your email' : 'Ingresa tu correo electrónico'}
-                className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all text-white placeholder-gray-400"
+                className="w-full px-4 py-2 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all text-white placeholder-neutral-400"
                 required
               />
               <label className="flex items-start gap-2">
@@ -284,28 +284,28 @@ export default function Footer({ language = 'en' }: FooterProps) {
                   checked={acceptNewsletter}
                   onChange={(e) => setAcceptNewsletter(e.target.checked)}
                   required
-                  className="mt-1 w-4 h-4 bg-white/10 border-white/30 rounded focus:ring-primary-400 focus:ring-2"
+                  className="mt-1 w-4 h-4 bg-white/10 border-white/30 rounded focus:ring-accent focus:ring-2"
                 />
-                <span className="text-xs text-gray-400">
+                <span className="text-xs text-neutral-300">
                   {language === 'en' ? (
                     <>
                       I accept the{' '}
-                      <Link href="/terms" className="text-primary-400 hover:text-primary-300 underline">
+                      <Link href="/terms" className="text-accent hover:text-accent-400 underline">
                         Terms
                       </Link>
                       {' '}and{' '}
-                      <Link href="/privacy" className="text-primary-400 hover:text-primary-300 underline">
+                      <Link href="/privacy" className="text-accent hover:text-accent-400 underline">
                         Privacy Policy
                       </Link>
                     </>
                   ) : (
                     <>
                       Acepto los{' '}
-                      <Link href="/terms" className="text-primary-400 hover:text-primary-300 underline">
+                      <Link href="/terms" className="text-accent hover:text-accent-400 underline">
                         Términos
                       </Link>
                       {' '}y la{' '}
-                      <Link href="/privacy" className="text-primary-400 hover:text-primary-300 underline">
+                      <Link href="/privacy" className="text-accent hover:text-accent-400 underline">
                         Política de Privacidad
                       </Link>
                     </>
@@ -318,11 +318,11 @@ export default function Footer({ language = 'en' }: FooterProps) {
                 onExpire={() => setTurnstileToken(null)}
               />
               <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 type="submit"
                 disabled={!turnstileToken}
-                className="w-full py-2 bg-gradient-to-r from-primary-600 to-purple-600 text-white font-semibold rounded-lg hover:from-primary-700 hover:to-purple-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-2 bg-accent text-white font-semibold rounded-lg hover:bg-accent-600 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {language === 'en' ? 'Subscribe' : 'Suscribirse'}
               </motion.button>
@@ -333,22 +333,22 @@ export default function Footer({ language = 'en' }: FooterProps) {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-2 text-gray-400">
+            <div className="flex items-center gap-2 text-neutral-300">
               <span>© 2025 Unity Financial Network. {language === 'en' ? 'All rights reserved.' : 'Todos los derechos reservados.'}</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
             </div>
             
             <div className="flex gap-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <Link href="/privacy" className="text-neutral-300 hover:text-accent transition-colors">
                 {language === 'en' ? 'Privacy Policy' : 'Política de Privacidad'}
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <Link href="/terms" className="text-neutral-300 hover:text-accent transition-colors">
                 {language === 'en' ? 'Terms of Service' : 'Términos de Servicio'}
               </Link>
-              <Link href="/cookies" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <Link href="/cookies" className="text-neutral-300 hover:text-accent transition-colors">
                 {language === 'en' ? 'Cookie Policy' : 'Política de Cookies'}
               </Link>
-              <Link href="/opt-out" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <Link href="/opt-out" className="text-neutral-300 hover:text-accent transition-colors">
                 {language === 'en' ? 'Opt-Out' : 'Cancelar Suscripción'}
               </Link>
             </div>
@@ -364,14 +364,14 @@ export default function Footer({ language = 'en' }: FooterProps) {
           y: showScrollTop ? 0 : 20
         }}
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-primary-600 to-purple-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-2xl hover:scale-110 hover:bg-primary-700 transition-all z-50"
       >
         <ArrowUp className="w-6 h-6 text-white" />
       </motion.button>
 
       {/* Background Decorations */}
-      <div className="absolute top-20 left-20 w-64 h-64 bg-primary-600/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
     </footer>
   )
 }

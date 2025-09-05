@@ -35,18 +35,15 @@
   }
   
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-purple-400 bg-clip-text text-transparent;
+    @apply text-primary font-bold;
   }
   
-  .animate-gradient {
-    background-size: 200% auto;
-    animation: gradient 3s ease infinite;
+  .gradient-unity {
+    @apply bg-primary;
   }
   
-  @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  .gradient-unity-reverse {
+    @apply bg-accent;
   }
   
   .animate-spin-slow {
@@ -64,11 +61,11 @@
   
   /* Responsive Buttons */
   .button-primary {
-    @apply relative px-4 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 text-sm xs:text-base sm:text-lg bg-gradient-to-r from-primary-600 to-purple-500 text-white font-semibold rounded-full overflow-hidden transform transition-all hover:scale-105 hover:shadow-2xl;
+    @apply relative px-4 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 text-sm xs:text-base sm:text-lg bg-primary text-white font-semibold rounded-full overflow-hidden transform transition-all hover:scale-105 hover:bg-primary-700 hover:shadow-xl;
   }
   
   .button-secondary {
-    @apply px-4 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 text-sm xs:text-base sm:text-lg bg-white text-primary-800 font-semibold rounded-full border-2 border-primary-200 hover:bg-primary-50 transform transition-all hover:scale-105;
+    @apply px-4 xs:px-6 sm:px-8 py-2.5 xs:py-3 sm:py-4 text-sm xs:text-base sm:text-lg bg-white text-primary font-semibold rounded-full border-2 border-primary hover:bg-neutral-100 transform transition-all hover:scale-105;
   }
   
   /* Responsive Cards */
@@ -137,9 +134,6 @@
   }
   
   .bg-gradient-mesh {
-    background-image: 
-      radial-gradient(at 0% 0%, rgb(147, 51, 234) 0, transparent 50%),
-      radial-gradient(at 50% 0%, rgb(168, 85, 247) 0, transparent 50%),
-      radial-gradient(at 100% 0%, rgb(196, 181, 253) 0, transparent 50%);
+    @apply bg-neutral-100;
   }
 }

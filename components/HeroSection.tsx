@@ -14,12 +14,12 @@ export default function HeroSection({ language }: HeroSectionProps) {
   const t = translations[language].hero
   
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
-      {/* Animated Background Elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 bg-neutral-50">
+      {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" />
-        <div className="absolute top-40 right-10 w-72 h-72 bg-primary-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float-delayed" />
-        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full filter blur-xl" />
+        <div className="absolute top-40 right-10 w-72 h-72 bg-accent/10 rounded-full filter blur-xl" />
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-primary/10 rounded-full filter blur-xl" />
       </div>
 
       {/* Animated Grid Pattern */}
@@ -38,7 +38,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary-100 to-purple-100 rounded-full mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-6"
             >
               <Sparkles className="w-4 h-4 text-primary-600" />
               <span className="text-sm font-semibold text-primary-700">
@@ -147,7 +147,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 className="absolute top-0 right-0 bg-white rounded-2xl shadow-2xl p-6 z-10"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -171,7 +171,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 className="absolute bottom-10 left-0 bg-white rounded-2xl shadow-2xl p-6 z-10"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-primary-600 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -186,12 +186,12 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-400 via-purple-400 to-pink-400 opacity-20"
+                  className="absolute inset-0 rounded-full bg-primary/20"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="absolute inset-4 rounded-full bg-gradient-to-l from-primary-300 via-purple-300 to-pink-300 opacity-20"
+                  className="absolute inset-4 rounded-full bg-accent/10"
                 />
                 <div className="absolute inset-8 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center">
                   <Image
@@ -225,9 +225,9 @@ export default function HeroSection({ language }: HeroSectionProps) {
           />
           <defs>
             <linearGradient id="gradient" x1="0" y1="0" x2="1440" y2="0">
-              <stop offset="0%" stopColor="#9333ea" stopOpacity="0.1" />
-              <stop offset="50%" stopColor="#7c3aed" stopOpacity="0.15" />
-              <stop offset="100%" stopColor="#a855f7" stopOpacity="0.1" />
+              <stop offset="0%" stopColor="#512783" stopOpacity="0.1" />
+              <stop offset="50%" stopColor="#f18918" stopOpacity="0.1" />
+              <stop offset="100%" stopColor="#512783" stopOpacity="0.1" />
             </linearGradient>
           </defs>
         </svg>

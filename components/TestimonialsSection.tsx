@@ -45,7 +45,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section className="section-padding relative overflow-hidden bg-gradient-to-br from-primary-50 via-white to-purple-50">
+    <section className="section-padding relative overflow-hidden bg-neutral-50">
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +58,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-purple-100 rounded-full text-sm font-semibold text-primary-700 mb-4"
+            className="inline-block px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary mb-4"
           >
             {language === 'en' ? 'Testimonials' : 'Testimonios'}
           </motion.span>
@@ -89,11 +89,11 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
             >
               <motion.div
                 className={`relative bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all ${
-                  activeIndex === index ? 'ring-2 ring-primary-400 ring-offset-4' : ''
+                  activeIndex === index ? 'ring-2 ring-primary ring-offset-4' : ''
                 }`}
               >
                 {/* Quote Icon */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-gradient-to-br from-primary-400 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center shadow-lg">
                   <Quote className="w-6 h-6 text-white" />
                 </div>
 
@@ -118,7 +118,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary-300 to-purple-400 rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
@@ -136,7 +136,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
                     duration: 2,
                     repeat: activeIndex === index ? Infinity : 0,
                   }}
-                  className="absolute -bottom-2 -right-2 w-20 h-20 bg-gradient-to-br from-primary-200 to-purple-200 rounded-full opacity-20 blur-xl"
+                  className="absolute -bottom-2 -right-2 w-20 h-20 bg-primary/20 rounded-full blur-xl"
                 />
               </motion.div>
             </motion.div>

@@ -42,7 +42,8 @@
       "Bash(npm install:*)",
       "Bash(npm uninstall:*)",
       "WebFetch(domain:www.enterateconalbaestevez.com)",
-      "WebFetch(domain:enterateconalbaestevez.com)"
+      "WebFetch(domain:enterateconalbaestevez.com)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": [],

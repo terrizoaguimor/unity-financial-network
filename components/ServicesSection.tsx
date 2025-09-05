@@ -29,8 +29,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Comprehensive health coverage that meets your needs and budget'
       : 'Cobertura de salud completa que satisface tus necesidades y presupuesto',
     icon: Heart,
-    color: 'from-blue-400 to-blue-600',
-    bgColor: 'bg-blue-50',
+    color: 'bg-primary',
+    bgColor: 'bg-primary/5',
     delay: 0,
     href: '/services/aca'
   },
@@ -40,8 +40,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Navigate Medicare with confidence and find the right plan'
       : 'Navega Medicare con confianza y encuentra el plan adecuado',
     icon: Shield,
-    color: 'from-green-400 to-green-600',
-    bgColor: 'bg-green-50',
+    color: 'bg-accent',
+    bgColor: 'bg-accent/5',
     delay: 0.1,
     href: '/services/medicare'
   },
@@ -51,8 +51,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Enhanced coverage with additional benefits beyond Original Medicare'
       : 'Cobertura mejorada con beneficios adicionales más allá del Medicare Original',
     icon: Award,
-    color: 'from-purple-400 to-purple-600',
-    bgColor: 'bg-purple-50',
+    color: 'bg-primary',
+    bgColor: 'bg-primary/5',
     delay: 0.2,
     href: '/services/medicare-advantage'
   },
@@ -62,8 +62,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Affordable protection for your loved ones when they need it most'
       : 'Protección asequible para tus seres queridos cuando más lo necesitan',
     icon: Users,
-    color: 'from-pink-400 to-pink-600',
-    bgColor: 'bg-pink-50',
+    color: 'bg-accent',
+    bgColor: 'bg-accent/5',
     delay: 0.3,
     href: '/services/term-life'
   },
@@ -73,8 +73,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Lifetime coverage with cash value accumulation benefits'
       : 'Cobertura de por vida con beneficios de acumulación de valor en efectivo',
     icon: HeartHandshake,
-    color: 'from-indigo-400 to-indigo-600',
-    bgColor: 'bg-indigo-50',
+    color: 'bg-primary',
+    bgColor: 'bg-primary/5',
     delay: 0.4,
     href: '/services/permanent-life'
   },
@@ -84,8 +84,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Build wealth while protecting your family\'s future'
       : 'Construye riqueza mientras proteges el futuro de tu familia',
     icon: TrendingUp,
-    color: 'from-yellow-400 to-yellow-600',
-    bgColor: 'bg-yellow-50',
+    color: 'bg-accent',
+    bgColor: 'bg-accent/5',
     delay: 0.5,
     href: '/services/iul'
   },
@@ -95,8 +95,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Peace of mind for end-of-life expenses'
       : 'Tranquilidad para los gastos de fin de vida',
     icon: FileText,
-    color: 'from-gray-400 to-gray-600',
-    bgColor: 'bg-gray-50',
+    color: 'bg-neutral',
+    bgColor: 'bg-neutral/5',
     delay: 0.6,
     href: '/services/final-expense'
   },
@@ -106,8 +106,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Comprehensive coverage for your trucking business'
       : 'Cobertura completa para tu negocio de transporte',
     icon: Truck,
-    color: 'from-orange-400 to-orange-600',
-    bgColor: 'bg-orange-50',
+    color: 'bg-accent',
+    bgColor: 'bg-accent/5',
     delay: 0.7,
     href: '/services/commercial-trucking'
   },
@@ -117,8 +117,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Protect yourself and your vehicle on the road'
       : 'Protégete a ti y a tu vehículo en la carretera',
     icon: Car,
-    color: 'from-red-400 to-red-600',
-    bgColor: 'bg-red-50',
+    color: 'bg-primary',
+    bgColor: 'bg-primary/5',
     delay: 0.8,
     href: '/services/auto'
   },
@@ -128,8 +128,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Safeguard your home and belongings'
       : 'Protege tu hogar y pertenencias',
     icon: Home,
-    color: 'from-teal-400 to-teal-600',
-    bgColor: 'bg-teal-50',
+    color: 'bg-accent',
+    bgColor: 'bg-accent/5',
     delay: 0.9,
     href: '/services/home'
   },
@@ -139,8 +139,8 @@ const getServices = (language: 'en' | 'es') => [
       ? 'Extra coverage for unexpected medical expenses'
       : 'Cobertura adicional para gastos médicos inesperados',
     icon: Briefcase,
-    color: 'from-cyan-400 to-cyan-600',
-    bgColor: 'bg-cyan-50',
+    color: 'bg-primary',
+    bgColor: 'bg-primary/5',
     delay: 1,
     href: '/services/supplemental'
   }
@@ -152,7 +152,7 @@ export default function ServicesSection({ language = 'en' }: ServicesSectionProp
   return (
     <section id="services" className="section-padding relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-white to-primary-50 opacity-50" />
+      <div className="absolute inset-0 bg-white" />
       
       <div className="container-custom relative z-10">
         <motion.div
@@ -166,7 +166,7 @@ export default function ServicesSection({ language = 'en' }: ServicesSectionProp
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-4 py-2 bg-gradient-to-r from-primary-100 to-purple-100 rounded-full text-sm font-semibold text-primary-700 mb-4"
+            className="inline-block px-4 py-2 bg-primary/10 rounded-full text-sm font-semibold text-primary mb-4"
           >
             {t.badge}
           </motion.span>
@@ -197,24 +197,18 @@ export default function ServicesSection({ language = 'en' }: ServicesSectionProp
                 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl blur-xl"
-                  style={{
-                    backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
-                    '--tw-gradient-from': service.color.split(' ')[1],
-                    '--tw-gradient-to': service.color.split(' ')[3],
-                  } as any}
-                />
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl blur-xl bg-primary" />
                 
                 <div className={`relative ${service.bgColor} p-6 rounded-2xl border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all duration-300 h-full`}>
                   <motion.div
                     whileHover={{ rotate: 360 }}
                     transition={{ duration: 0.5 }}
-                    className={`w-14 h-14 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-4 shadow-lg`}
+                    className={`w-14 h-14 ${service.color} rounded-xl flex items-center justify-center mb-4 shadow-lg`}
                   >
                     <Icon className="w-7 h-7 text-white" />
                   </motion.div>
                   
-                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary-700 transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
                     {service.title}
                   </h3>
                   
@@ -225,7 +219,7 @@ export default function ServicesSection({ language = 'en' }: ServicesSectionProp
                   <Link href={service.href}>
                     <motion.button
                       whileHover={{ x: 5 }}
-                      className="text-primary-600 font-semibold text-sm flex items-center gap-2 group-hover:text-primary-700"
+                      className="text-primary font-semibold text-sm flex items-center gap-2 group-hover:text-primary-700"
                     >
                       {language === 'en' ? 'Learn More' : 'Saber Más'}
                       <motion.span
@@ -273,7 +267,7 @@ export default function ServicesSection({ language = 'en' }: ServicesSectionProp
           repeat: Infinity,
           ease: "linear"
         }}
-        className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-br from-primary-200 to-purple-200 rounded-full opacity-20 blur-2xl"
+        className="absolute top-10 right-10 w-32 h-32 bg-primary/20 rounded-full blur-2xl"
       />
       
       <motion.div
@@ -286,7 +280,7 @@ export default function ServicesSection({ language = 'en' }: ServicesSectionProp
           repeat: Infinity,
           ease: "linear"
         }}
-        className="absolute bottom-10 left-10 w-40 h-40 bg-gradient-to-tr from-pink-200 to-purple-200 rounded-full opacity-20 blur-2xl"
+        className="absolute bottom-10 left-10 w-40 h-40 bg-accent/20 rounded-full blur-2xl"
       />
     </section>
   )

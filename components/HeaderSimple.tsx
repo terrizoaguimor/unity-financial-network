@@ -207,14 +207,14 @@ export default function HeaderSimple() {
     >
       <nav className="container-custom">
         {/* Top Bar for Desktop - More subtle */}
-        <div className="hidden lg:flex justify-between items-center mb-2 pb-2 border-b border-gray-100/30">
+        <div className="hidden lg:flex justify-between items-center mb-2 pb-2 border-b border-neutral-100/30">
           <div className="flex items-center gap-4 text-xs">
-            <a href="tel:7868285576" className="flex items-center gap-1.5 text-gray-500 hover:text-primary-600 transition-colors group">
+            <a href="tel:7868285576" className="flex items-center gap-1.5 text-neutral-500 hover:text-primary transition-colors group">
               <Phone className="h-3 w-3 opacity-70 group-hover:opacity-100" />
               <span>(786) 828-5576</span>
             </a>
-            <span className="text-gray-300">|</span>
-            <a href="mailto:hello@unityfinancialnetwork.com" className="flex items-center gap-1.5 text-gray-500 hover:text-primary-600 transition-colors group">
+            <span className="text-neutral-300">|</span>
+            <a href="mailto:hello@unityfinancialnetwork.com" className="flex items-center gap-1.5 text-neutral-500 hover:text-primary transition-colors group">
               <Mail className="h-3 w-3 opacity-70 group-hover:opacity-100" />
               <span>hello@unityfinancialnetwork.com</span>
             </a>
@@ -226,17 +226,17 @@ export default function HeaderSimple() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-50 hover:bg-gray-100 rounded-full transition-all text-xs"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-neutral-50 hover:bg-neutral-100 rounded-full transition-all text-xs"
                 aria-label={language === 'en' ? 'Change language' : 'Cambiar idioma'}
                 aria-expanded={langDropdownOpen}
               >
-                <span className="text-gray-600">
+                <span className="text-neutral-600">
                   {language === 'en' ? '🇺🇸' : '🇪🇸'}
                 </span>
-                <span className="text-gray-600 font-medium">
+                <span className="text-neutral-600 font-medium">
                   {language === 'en' ? 'EN' : 'ES'}
                 </span>
-                <ChevronDown className={`w-3 h-3 text-gray-400 transition-transform ${langDropdownOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown className={`w-3 h-3 text-neutral-400 transition-transform ${langDropdownOpen ? 'rotate-180' : ''}`} />
               </motion.button>
               
               <AnimatePresence>
@@ -245,14 +245,14 @@ export default function HeaderSimple() {
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -5 }}
-                    className="absolute right-0 mt-1 bg-white rounded-lg shadow-lg overflow-hidden z-50 border border-gray-100"
+                    className="absolute right-0 mt-1 bg-white rounded-lg shadow-lg overflow-hidden z-50 border border-neutral-100"
                   >
                     <button
                       onClick={() => {
                         setLanguage('en')
                         setLangDropdownOpen(false)
                       }}
-                      className={`w-full px-3 py-2 flex items-center gap-2 hover:bg-gray-50 transition-colors text-xs ${
+                      className={`w-full px-3 py-2 flex items-center gap-2 hover:bg-neutral-50 transition-colors text-xs ${
                         language === 'en' ? 'bg-primary-50/50' : ''
                       }`}
                     >
@@ -264,7 +264,7 @@ export default function HeaderSimple() {
                         setLanguage('es')
                         setLangDropdownOpen(false)
                       }}
-                      className={`w-full px-3 py-2 flex items-center gap-2 hover:bg-gray-50 transition-colors text-xs ${
+                      className={`w-full px-3 py-2 flex items-center gap-2 hover:bg-neutral-50 transition-colors text-xs ${
                         language === 'es' ? 'bg-primary-50/50' : ''
                       }`}
                     >
@@ -300,7 +300,7 @@ export default function HeaderSimple() {
           {/* Desktop Navigation - Pill Style */}
           <div className="hidden lg:flex items-center gap-2">
             {/* Navigation Pills */}
-            <div className="flex items-center bg-gray-50/80 backdrop-blur-sm rounded-full p-1 gap-1">
+            <div className="flex items-center bg-neutral-50/80 backdrop-blur-sm rounded-full p-1 gap-1">
               {navigation.map((item) => (
                 <div key={item.name} className="relative">
                   {item.dropdown ? (
@@ -308,7 +308,7 @@ export default function HeaderSimple() {
                       onMouseEnter={() => setDropdownOpen(true)}
                       onMouseLeave={() => setDropdownOpen(false)}
                     >
-                      <button className="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-white text-sm font-medium transition-all rounded-full flex items-center gap-1">
+                      <button className="px-4 py-2 text-neutral-600 hover:text-neutral-900 hover:bg-white text-sm font-medium transition-all rounded-full flex items-center gap-1">
                         {item.name}
                         <ChevronDown className={`h-3 w-3 opacity-50 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
                       </button>
@@ -319,7 +319,7 @@ export default function HeaderSimple() {
                             initial={{ opacity: 0, y: -5 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -5 }}
-                            className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100"
+                            className="absolute top-full left-0 mt-2 w-72 bg-white rounded-xl shadow-xl overflow-hidden border border-neutral-100"
                           >
                             <div className="p-1 max-h-80 overflow-y-auto">
                               {item.dropdown.map((plan, index) => (
@@ -332,7 +332,7 @@ export default function HeaderSimple() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: index * 0.01 }}
-                                    className="px-3 py-2 text-xs text-gray-600 hover:bg-gray-50 hover:text-primary-600 rounded-lg transition-all cursor-pointer"
+                                    className="px-3 py-2 text-xs text-neutral-600 hover:bg-neutral-50 hover:text-primary rounded-lg transition-all cursor-pointer"
                                   >
                                     {plan}
                                   </motion.div>
@@ -346,7 +346,7 @@ export default function HeaderSimple() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="block px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-white text-sm font-medium transition-all rounded-full"
+                      className="block px-4 py-2 text-neutral-600 hover:text-neutral-900 hover:bg-white text-sm font-medium transition-all rounded-full"
                     >
                       {item.name}
                     </Link>
@@ -361,7 +361,7 @@ export default function HeaderSimple() {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="px-5 py-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white text-sm font-medium rounded-full hover:shadow-md transition-all"
+                  className="px-5 py-2 bg-primary text-white text-sm font-medium rounded-full hover:bg-primary-700 hover:shadow-md transition-all"
                 >
                   {t.freeConsultation}
                 </motion.button>
@@ -376,7 +376,7 @@ export default function HeaderSimple() {
               className="p-2 rounded-lg hover:bg-primary-50 transition-colors"
               aria-label={language === 'en' ? 'Switch to Spanish' : 'Cambiar a inglés'}
             >
-              <Globe className="h-5 w-5 text-primary-600" />
+              <Globe className="h-5 w-5 text-primary" />
             </button>
             <motion.button
               whileTap={{ scale: 0.9 }}
@@ -389,9 +389,9 @@ export default function HeaderSimple() {
               aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6 text-primary-600" />
+                <X className="h-6 w-6 text-primary" />
               ) : (
-                <Menu className="h-6 w-6 text-primary-600" />
+                <Menu className="h-6 w-6 text-primary" />
               )}
             </motion.button>
           </div>
@@ -406,20 +406,20 @@ export default function HeaderSimple() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden fixed top-[60px] left-0 right-0 bg-white shadow-xl border-t border-gray-100 z-[9998] max-h-[calc(100vh-60px)] overflow-y-auto"
+            className="lg:hidden fixed top-[60px] left-0 right-0 bg-white shadow-xl border-t border-neutral-100 z-[9998] max-h-[calc(100vh-60px)] overflow-y-auto"
           >
             <div className="container-custom py-4 space-y-3">
               {/* Language Toggle Mobile */}
-              <div className="flex justify-center gap-2 pb-3 border-b border-gray-100">
+              <div className="flex justify-center gap-2 pb-3 border-b border-neutral-100">
                 <button
                   onClick={() => setLanguage('en')}
-                  className={`px-4 py-2 rounded-lg ${language === 'en' ? 'bg-primary-100 text-primary-600' : 'bg-gray-100'}`}
+                  className={`px-4 py-2 rounded-lg ${language === 'en' ? 'bg-primary-100 text-primary' : 'bg-neutral-100'}`}
                 >
                   🇺🇸 English
                 </button>
                 <button
                   onClick={() => setLanguage('es')}
-                  className={`px-4 py-2 rounded-lg ${language === 'es' ? 'bg-primary-100 text-primary-600' : 'bg-gray-100'}`}
+                  className={`px-4 py-2 rounded-lg ${language === 'es' ? 'bg-primary-100 text-primary' : 'bg-neutral-100'}`}
                 >
                   🇪🇸 Español
                 </button>
@@ -431,13 +431,13 @@ export default function HeaderSimple() {
                   key={item.name}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
-                  className="border-b border-gray-100 pb-3"
+                  className="border-b border-neutral-100 pb-3"
                 >
                   {item.dropdown ? (
                     <div>
                       <button
                         onClick={() => setDropdownOpen(!dropdownOpen)}
-                        className="w-full flex items-center justify-between text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
+                        className="w-full flex items-center justify-between text-neutral-700 hover:text-primary font-medium transition-colors py-2"
                       >
                         {item.name}
                         <ChevronDown className={`w-4 h-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`} />
@@ -449,7 +449,7 @@ export default function HeaderSimple() {
                               key={plan}
                               href={item.dropdownLinks?.[idx] || '#'}
                               onClick={() => setMobileMenuOpen(false)}
-                              className="block text-sm text-gray-600 hover:text-primary-600 py-1"
+                              className="block text-sm text-neutral-600 hover:text-primary py-1"
                             >
                               {plan}
                             </Link>
@@ -461,7 +461,7 @@ export default function HeaderSimple() {
                     <Link
                       href={item.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block text-gray-700 hover:text-primary-600 font-medium transition-colors py-2"
+                      className="block text-neutral-700 hover:text-primary font-medium transition-colors py-2"
                     >
                       {item.name}
                     </Link>
@@ -472,7 +472,7 @@ export default function HeaderSimple() {
               {/* CTAs Mobile */}
               <div className="pt-3 space-y-3">
                 <Link href="/contact" className="block" onClick={() => setMobileMenuOpen(false)}>
-                  <button className="w-full px-6 py-3 bg-gradient-to-r from-primary-600 to-purple-600 text-white font-semibold rounded-full">
+                  <button className="w-full px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-700 transition-all">
                     {t.freeConsultation}
                   </button>
                 </Link>
