@@ -251,7 +251,7 @@ export default function ServicesSection({
                     {service.description}
                   </p>
 
-                  <Link href={service.href}>
+                  <Link href="/contact">
                     <motion.button
                       whileHover={{ x: 5 }}
                       className="text-primary font-semibold text-sm flex items-center gap-2 group-hover:text-orange-600"

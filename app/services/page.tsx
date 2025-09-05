@@ -311,7 +311,7 @@ export default function ServicesPage() {
                       </ul>
 
                       <div className="flex gap-3">
-                        <Link href={`/services/${service.id}`} className="flex-1">
+                        <Link href="/contact" className="flex-1">
                           <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
