@@ -43,7 +43,9 @@
       "Bash(npm uninstall:*)",
       "WebFetch(domain:www.enterateconalbaestevez.com)",
       "WebFetch(domain:enterateconalbaestevez.com)",
-      "Bash(taskkill:*)"
+      "Bash(taskkill:*)",
+      "Bash(git checkout:*)",
+      "Bash(pkill:*)"
     ],
     "deny": [],
     "ask": [],

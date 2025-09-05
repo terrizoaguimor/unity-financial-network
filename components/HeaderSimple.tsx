@@ -226,7 +226,7 @@ export default function HeaderSimple() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                className="flex items-center gap-1.5 px-3 py-1.5 bg-neutral-50 hover:bg-neutral-100 rounded-full transition-all text-xs"
+                className="flex items-center gap-1.5 px-3 py-1.5 bg-primary/5 hover:bg-primary/10 rounded-full transition-all text-xs"
                 aria-label={language === 'en' ? 'Change language' : 'Cambiar idioma'}
                 aria-expanded={langDropdownOpen}
               >
@@ -252,7 +252,7 @@ export default function HeaderSimple() {
                         setLanguage('en')
                         setLangDropdownOpen(false)
                       }}
-                      className={`w-full px-3 py-2 flex items-center gap-2 hover:bg-neutral-50 transition-colors text-xs ${
+                      className={`w-full px-3 py-2 flex items-center gap-2 hover:bg-primary/5 transition-colors text-xs ${
                         language === 'en' ? 'bg-primary-50/50' : ''
                       }`}
                     >
@@ -264,7 +264,7 @@ export default function HeaderSimple() {
                         setLanguage('es')
                         setLangDropdownOpen(false)
                       }}
-                      className={`w-full px-3 py-2 flex items-center gap-2 hover:bg-neutral-50 transition-colors text-xs ${
+                      className={`w-full px-3 py-2 flex items-center gap-2 hover:bg-primary/5 transition-colors text-xs ${
                         language === 'es' ? 'bg-primary-50/50' : ''
                       }`}
                     >
@@ -300,7 +300,7 @@ export default function HeaderSimple() {
           {/* Desktop Navigation - Pill Style */}
           <div className="hidden lg:flex items-center gap-2">
             {/* Navigation Pills */}
-            <div className="flex items-center bg-neutral-50/80 backdrop-blur-sm rounded-full p-1 gap-1">
+            <div className="flex items-center bg-primary/10 backdrop-blur-sm rounded-full p-1 gap-1">
               {navigation.map((item) => (
                 <div key={item.name} className="relative">
                   {item.dropdown ? (
@@ -332,7 +332,7 @@ export default function HeaderSimple() {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ delay: index * 0.01 }}
-                                    className="px-3 py-2 text-xs text-neutral-600 hover:bg-neutral-50 hover:text-primary rounded-lg transition-all cursor-pointer"
+                                    className="px-3 py-2 text-xs text-neutral-600 hover:bg-primary/5 hover:text-primary rounded-lg transition-all cursor-pointer"
                                   >
                                     {plan}
                                   </motion.div>
@@ -357,7 +357,7 @@ export default function HeaderSimple() {
             
             {/* CTA Buttons - Pill Style */}
             <div className="flex items-center gap-2 ml-2">
-              <Link href="/contact">
+              <Link href="/schedule">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -413,13 +413,13 @@ export default function HeaderSimple() {
               <div className="flex justify-center gap-2 pb-3 border-b border-neutral-100">
                 <button
                   onClick={() => setLanguage('en')}
-                  className={`px-4 py-2 rounded-lg ${language === 'en' ? 'bg-primary-100 text-primary' : 'bg-neutral-100'}`}
+                  className={`px-4 py-2 rounded-lg ${language === 'en' ? 'bg-primary-100 text-primary' : 'bg-primary/5'}`}
                 >
                   🇺🇸 English
                 </button>
                 <button
                   onClick={() => setLanguage('es')}
-                  className={`px-4 py-2 rounded-lg ${language === 'es' ? 'bg-primary-100 text-primary' : 'bg-neutral-100'}`}
+                  className={`px-4 py-2 rounded-lg ${language === 'es' ? 'bg-primary-100 text-primary' : 'bg-primary/5'}`}
                 >
                   🇪🇸 Español
                 </button>
@@ -471,7 +471,7 @@ export default function HeaderSimple() {
               
               {/* CTAs Mobile */}
               <div className="pt-3 space-y-3">
-                <Link href="/contact" className="block" onClick={() => setMobileMenuOpen(false)}>
+                <Link href="/schedule" className="block" onClick={() => setMobileMenuOpen(false)}>
                   <button className="w-full px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-700 transition-all">
                     {t.freeConsultation}
                   </button>

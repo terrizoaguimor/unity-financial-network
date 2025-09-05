@@ -139,7 +139,7 @@ export default function QuoteCalculator({ onClose }: { onClose?: () => void }) {
       {/* People List */}
       <div className="space-y-4 mb-6">
         {people.map((person) => (
-          <div key={person.id} className="bg-gray-50 rounded-xl p-4">
+          <div key={person.id} className="bg-primary/5 rounded-xl p-4">
             <div className="flex justify-between items-center mb-3">
               <h3 className="font-semibold text-primary-700">
                 {person.type === 'you' ? (language === 'es' ? 'Usted' : 'You') :
@@ -227,7 +227,7 @@ export default function QuoteCalculator({ onClose }: { onClose?: () => void }) {
       </div>
 
       {/* Income and Zip Code */}
-      <div className="bg-gray-50 rounded-xl p-4 mb-6">
+      <div className="bg-primary/5 rounded-xl p-4 mb-6">
         <div className="grid md:grid-cols-3 gap-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">

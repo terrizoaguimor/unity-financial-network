@@ -133,14 +133,16 @@ export default function ServiceDetailPage() {
                 transition={{ delay: 0.6 }}
                 className="flex flex-wrap gap-4"
               >
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all flex items-center gap-2"
-                >
-                  <Calculator className="w-5 h-5" size={20} />
-                  {t.getQuote}
-                </motion.button>
+                <Link href="/schedule">
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all flex items-center gap-2"
+                  >
+                    <Calculator className="w-5 h-5" size={20} />
+                    {t.getQuote}
+                  </motion.button>
+                </Link>
                 
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -206,7 +208,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Tab Content */}
-      <section className="section-padding bg-neutral-light">
+      <section className="section-padding bg-primary/10">
         <div className="container-custom">
           <AnimatePresence mode="wait">
             {/* Overview Tab */}
@@ -282,11 +284,11 @@ export default function ServiceDetailPage() {
                   <div className="bg-white rounded-2xl p-6 shadow-lg">
                     <h3 className="font-bold text-lg mb-4">Resources</h3>
                     <div className="space-y-3">
-                      <button className="w-full flex items-center justify-between p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+                      <button className="w-full flex items-center justify-between p-3 bg-primary/5 rounded-xl hover:bg-primary/10 transition-all">
                         <span className="font-medium">{t.downloadBrochure}</span>
                         <Download className="w-5 h-5" size={20} />
                       </button>
-                      <button className="w-full flex items-center justify-between p-3 bg-gray-50 rounded-xl hover:bg-gray-100 transition-all">
+                      <button className="w-full flex items-center justify-between p-3 bg-primary/5 rounded-xl hover:bg-primary/10 transition-all">
                         <span className="font-medium">{t.shareService}</span>
                         <Share2 className="w-5 h-5 text-gray-600" />
                       </button>
@@ -308,7 +310,7 @@ export default function ServiceDetailPage() {
                   <h2 className="text-3xl font-bold mb-8">{service.coverageDetails.title}</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     {service.coverageDetails.items.map((item: string, index: number) => (
-                      <div key={index} className="p-4 bg-neutral-light rounded-xl border border-gray-100">
+                      <div key={index} className="p-4 bg-white rounded-xl border border-primary/20">
                         <div className="flex items-start gap-3">
                           <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                             <Check className="w-5 h-5" size={20} />
@@ -380,7 +382,7 @@ export default function ServiceDetailPage() {
                         className={`w-full py-3 font-semibold rounded-full transition-all ${
                           plan.recommended
                             ? 'bg-primary text-white hover:bg-primary/90'
-                            : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                            : 'bg-primary/10 text-gray-700 hover:bg-primary/15'
                         }`}
                       >
                         {t.selectPlan}
@@ -440,20 +442,24 @@ export default function ServiceDetailPage() {
                 : 'Obtén tu cotización personalizada en minutos'}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-primary-600 font-semibold rounded-full hover:shadow-xl transition-all"
-              >
-                {t.instantQuote}
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/30 transition-all"
-              >
-                {t.scheduleCall}
-              </motion.button>
+              <Link href="/schedule">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-white text-primary-600 font-semibold rounded-full hover:shadow-xl transition-all"
+                >
+                  {t.instantQuote}
+                </motion.button>
+              </Link>
+              <Link href="/schedule">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-white/20 backdrop-blur-sm text-white font-semibold rounded-full hover:bg-white/30 transition-all"
+                >
+                  {t.scheduleCall}
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>

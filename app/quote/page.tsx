@@ -158,7 +158,7 @@ export default function QuotePage() {
       id: 'business', 
       name: language === 'en' ? 'Business Insurance' : 'Seguro Comercial', 
       icon: Briefcase, 
-      color: 'bg-neutral-dark',
+      color: 'bg-primary-900',
       description: language === 'en'
         ? 'Protect your business and employees'
         : 'Protege tu negocio y empleados',
@@ -329,7 +329,7 @@ export default function QuotePage() {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute top-20 left-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"
+            className="absolute top-20 left-20 w-96 h-96 bg-purple-500 bg-opacity-20 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -342,7 +342,7 @@ export default function QuotePage() {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute bottom-20 right-20 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"
+            className="absolute bottom-20 right-20 w-96 h-96 bg-primary bg-opacity-20 rounded-full blur-3xl"
           />
           <motion.div
             animate={{
@@ -355,7 +355,7 @@ export default function QuotePage() {
               repeat: Infinity,
               ease: "easeInOut"
             }}
-            className="absolute top-1/2 left-1/3 w-80 h-80 bg-yellow-400/10 rounded-full blur-3xl"
+            className="absolute top-1/2 left-1/3 w-80 h-80 bg-yellow-400 bg-opacity-10 rounded-full blur-3xl"
           />
           
           {/* Animated dots */}
@@ -444,7 +444,7 @@ export default function QuotePage() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.6 + index * 0.1 }}
                   whileHover={{ scale: 1.05, y: -5 }}
-                  className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:bg-white/15 transition-all"
+                  className="bg-white bg-opacity-10 backdrop-blur-md rounded-2xl p-6 border border-white border-opacity-20 hover:bg-white hover:bg-opacity-15 transition-all"
                 >
                   <stat.icon className="w-8 h-8 text-yellow-400 mx-auto mb-3" />
                   <div className="text-2xl font-bold mb-1">{stat.label}</div>
@@ -463,7 +463,7 @@ export default function QuotePage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-12 py-5 bg-accent text-primary font-bold text-lg rounded-full hover:bg-accent/90 transition-all inline-flex items-center gap-3"
+                className="button-accent text-lg px-12 py-5 rounded-full inline-flex items-center gap-3"
               >
                 {language === 'en' ? 'Start Your Free Quote' : 'Comienza Tu Cotización Gratis'}
                 <ArrowRight className="w-5 h-5" />
@@ -485,7 +485,7 @@ export default function QuotePage() {
       </section>
 
       {/* Insurance Products Showcase */}
-      <section className="section-padding bg-neutral-light">
+      <section className="section-padding bg-gradient-to-br from-white via-primary/5 to-orange-50/30">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -494,7 +494,7 @@ export default function QuotePage() {
             className="text-center mb-16"
           >
             <motion.span 
-              className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 rounded-full text-sm font-semibold text-primary-700 mb-6"
+              className="badge-primary mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -509,7 +509,7 @@ export default function QuotePage() {
                 <>Soluciones de Seguro <span className="text-primary font-bold">Para Cada Necesidad</span></>
               )}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-primary-700 max-w-3xl mx-auto">
               {language === 'en'
                 ? 'Comprehensive coverage options designed to protect what matters most to you'
                 : 'Opciones de cobertura integral diseñadas para proteger lo que más te importa'}
@@ -527,20 +527,20 @@ export default function QuotePage() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -10, scale: 1.02 }}
-                  className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all"
+                  className="card-hover rounded-3xl overflow-hidden"
                 >
                   <div className="h-2 bg-primary" />
                   <div className="p-8">
-                    <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
+                    <div className="w-16 h-16 icon-primary rounded-2xl mb-6">
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-3">{type.name}</h3>
-                    <p className="text-gray-600 mb-6">{type.description}</p>
+                    <p className="text-primary-700 mb-6">{type.description}</p>
                     <ul className="space-y-2 mb-6">
                       {type.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center gap-2">
                           <Check className="w-5 h-5 text-green-500 flex-shrink-0" />
-                          <span className="text-sm text-gray-700">{feature}</span>
+                          <span className="text-sm text-primary-800">{feature}</span>
                         </li>
                       ))}
                     </ul>
@@ -551,7 +551,7 @@ export default function QuotePage() {
                         setFormData({ ...formData, insuranceType: type.id })
                         document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })
                       }}
-                      className="w-full py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all"
+                      className="button-primary w-full"
                     >
                       {language === 'en' ? 'Get Quote' : 'Obtener Cotización'}
                     </motion.button>
@@ -572,7 +572,7 @@ export default function QuotePage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary-100 rounded-full text-sm font-semibold text-primary-700 mb-6">
+            <span className="badge-primary mb-6">
               <Calculator className="w-4 h-4" />
               {language === 'en' ? 'Quote Calculator' : 'Calculadora de Cotización'}
             </span>
@@ -588,14 +588,14 @@ export default function QuotePage() {
           {/* Progress Bar - Enhanced */}
           <div className="mb-12">
             <div className="flex justify-between items-center mb-4">
-              <span className="text-sm font-medium text-gray-600">
+              <span className="text-sm font-medium text-primary-700">
                 {language === 'en' ? `Step ${currentStep} of ${totalSteps}` : `Paso ${currentStep} de ${totalSteps}`}
               </span>
               <span className="text-sm font-medium text-primary-600">
                 {Math.round(progressPercentage)}% {language === 'en' ? 'Complete' : 'Completado'}
               </span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+            <div className="w-full bg-primary-100 rounded-full h-3 overflow-hidden">
               <motion.div
                 className="h-full bg-primary"
                 initial={{ width: 0 }}
@@ -612,13 +612,13 @@ export default function QuotePage() {
                         ? 'bg-green-500 text-white shadow-lg'
                         : step === currentStep
                         ? 'bg-primary text-white shadow-xl scale-110'
-                        : 'bg-gray-200 text-gray-500'
+                        : 'bg-primary-100 text-primary-600'
                     }`}
                     whileHover={{ scale: step <= currentStep ? 1.1 : 1 }}
                   >
                     {step < currentStep ? <Check className="w-6 h-6" /> : step}
                   </motion.div>
-                  <span className="text-xs mt-2 text-gray-600 hidden sm:block">
+                  <span className="text-xs mt-2 text-primary-700 hidden sm:block">
                     {step === 1 && (language === 'en' ? 'Personal' : 'Personal')}
                     {step === 2 && (language === 'en' ? 'Coverage' : 'Cobertura')}
                     {step === 3 && (language === 'en' ? 'Details' : 'Detalles')}
@@ -637,7 +637,7 @@ export default function QuotePage() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100"
+            className="card-base p-8 md:p-12 rounded-3xl"
           >
             <AnimatePresence mode="wait">
               {/* Step 1: Personal Information */}
@@ -652,7 +652,7 @@ export default function QuotePage() {
                       <User className="w-8 h-8 text-primary-600" />
                       {language === 'en' ? 'Personal Information' : 'Información Personal'}
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-primary-700">
                       {language === 'en' 
                         ? 'Let\'s start with some basic information about you.'
                         : 'Comencemos con información básica sobre ti.'}
@@ -661,19 +661,17 @@ export default function QuotePage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'First Name *' : 'Nombre *'}
                       </label>
                       <div className="relative">
-                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-400 w-5 h-5" />
                         <input
                           type="text"
                           name="firstName"
                           value={formData.firstName}
                           onChange={handleInputChange}
-                          className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all ${
-                            errors.firstName ? 'border-red-500' : 'border-gray-200'
-                          }`}
+                          className={errors.firstName ? 'input-error pl-10 pr-4' : 'input-base pl-10 pr-4'}
                           placeholder={language === 'en' ? 'John' : 'Juan'}
                         />
                       </div>
@@ -686,18 +684,18 @@ export default function QuotePage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'Last Name *' : 'Apellido *'}
                       </label>
                       <div className="relative">
-                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-400 w-5 h-5" />
                         <input
                           type="text"
                           name="lastName"
                           value={formData.lastName}
                           onChange={handleInputChange}
                           className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all ${
-                            errors.lastName ? 'border-red-500' : 'border-gray-200'
+                            errors.lastName ? 'border-red-500' : 'border-primary-200'
                           }`}
                           placeholder={language === 'en' ? 'Doe' : 'Pérez'}
                         />
@@ -711,18 +709,18 @@ export default function QuotePage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'Email Address *' : 'Correo Electrónico *'}
                       </label>
                       <div className="relative">
-                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-400 w-5 h-5" />
                         <input
                           type="email"
                           name="email"
                           value={formData.email}
                           onChange={handleInputChange}
                           className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all ${
-                            errors.email ? 'border-red-500' : 'border-gray-200'
+                            errors.email ? 'border-red-500' : 'border-primary-200'
                           }`}
                           placeholder="john@example.com"
                         />
@@ -736,18 +734,18 @@ export default function QuotePage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'Phone Number *' : 'Número de Teléfono *'}
                       </label>
                       <div className="relative">
-                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-400 w-5 h-5" />
                         <input
                           type="tel"
                           name="phone"
                           value={formData.phone}
                           onChange={handleInputChange}
                           className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all ${
-                            errors.phone ? 'border-red-500' : 'border-gray-200'
+                            errors.phone ? 'border-red-500' : 'border-primary-200'
                           }`}
                           placeholder="(786) 123-4567"
                         />
@@ -761,18 +759,18 @@ export default function QuotePage() {
                     </div>
 
                     <div className="md:col-span-2">
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'Date of Birth *' : 'Fecha de Nacimiento *'}
                       </label>
                       <div className="relative">
-                        <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-400 w-5 h-5" />
                         <input
                           type="date"
                           name="dateOfBirth"
                           value={formData.dateOfBirth}
                           onChange={handleInputChange}
                           className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all ${
-                            errors.dateOfBirth ? 'border-red-500' : 'border-gray-200'
+                            errors.dateOfBirth ? 'border-red-500' : 'border-primary-200'
                           }`}
                         />
                       </div>
@@ -799,7 +797,7 @@ export default function QuotePage() {
                       <Shield className="w-8 h-8 text-primary-600" />
                       {language === 'en' ? 'Select Your Coverage' : 'Selecciona Tu Cobertura'}
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-primary-700">
                       {language === 'en' 
                         ? 'Choose the type of insurance that best fits your needs.'
                         : 'Elige el tipo de seguro que mejor se adapte a tus necesidades.'}
@@ -818,7 +816,7 @@ export default function QuotePage() {
                           className={`relative p-6 rounded-2xl border-2 transition-all text-left ${
                             formData.insuranceType === type.id
                               ? 'border-primary bg-primary/5 shadow-lg'
-                              : 'border-gray-200 hover:border-gray-300 bg-white'
+                              : 'border-primary-200 hover:border-orange-300 bg-white'
                           }`}
                         >
                           {formData.insuranceType === type.id && (
@@ -836,7 +834,7 @@ export default function QuotePage() {
                             <Icon className="w-7 h-7 text-white" />
                           </div>
                           <h3 className="font-bold text-lg mb-2">{type.name}</h3>
-                          <p className="text-sm text-gray-600">{type.description}</p>
+                          <p className="text-sm text-primary-700">{type.description}</p>
                         </motion.button>
                       )
                     })}
@@ -863,7 +861,7 @@ export default function QuotePage() {
                       <FileText className="w-8 h-8 text-primary-600" />
                       {language === 'en' ? 'Additional Details' : 'Detalles Adicionales'}
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-primary-700">
                       {language === 'en' 
                         ? 'Help us customize your quote with a few more details.'
                         : 'Ayúdanos a personalizar tu cotización con algunos detalles más.'}
@@ -872,18 +870,18 @@ export default function QuotePage() {
 
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'ZIP Code *' : 'Código Postal *'}
                       </label>
                       <div className="relative">
-                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-400 w-5 h-5" />
                         <input
                           type="text"
                           name="zipCode"
                           value={formData.zipCode}
                           onChange={handleInputChange}
                           className={`w-full pl-10 pr-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all ${
-                            errors.zipCode ? 'border-red-500' : 'border-gray-200'
+                            errors.zipCode ? 'border-red-500' : 'border-primary-200'
                           }`}
                           placeholder="33166"
                         />
@@ -897,7 +895,7 @@ export default function QuotePage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'Gender *' : 'Género *'}
                       </label>
                       <select
@@ -905,7 +903,7 @@ export default function QuotePage() {
                         value={formData.gender}
                         onChange={handleInputChange}
                         className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all ${
-                          errors.gender ? 'border-red-500' : 'border-gray-200'
+                          errors.gender ? 'border-red-500' : 'border-primary-200'
                         }`}
                       >
                         <option value="">{language === 'en' ? 'Select gender' : 'Seleccionar género'}</option>
@@ -922,14 +920,14 @@ export default function QuotePage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'Marital Status' : 'Estado Civil'}
                       </label>
                       <select
                         name="maritalStatus"
                         value={formData.maritalStatus}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all"
+                        className="w-full px-4 py-3 border border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all"
                       >
                         <option value="">{language === 'en' ? 'Select status' : 'Seleccionar estado'}</option>
                         <option value="single">{language === 'en' ? 'Single' : 'Soltero/a'}</option>
@@ -940,18 +938,18 @@ export default function QuotePage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                      <label className="block text-sm font-medium text-primary-900 mb-2">
                         {language === 'en' ? 'Number of Dependents' : 'Número de Dependientes'}
                       </label>
                       <div className="relative">
-                        <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                        <Users className="absolute left-3 top-1/2 transform -translate-y-1/2 text-primary-400 w-5 h-5" />
                         <input
                           type="number"
                           name="dependents"
                           value={formData.dependents}
                           onChange={handleInputChange}
                           min="0"
-                          className="w-full pl-10 pr-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all"
+                          className="w-full pl-10 pr-4 py-3 border border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 transition-all"
                           placeholder="0"
                         />
                       </div>
@@ -959,7 +957,7 @@ export default function QuotePage() {
 
                     {(formData.insuranceType === 'health' || formData.insuranceType === 'life') && (
                       <div className="md:col-span-2">
-                        <label className="block text-sm font-medium text-gray-700 mb-3">
+                        <label className="block text-sm font-medium text-primary-900 mb-3">
                           {language === 'en' ? 'Do you use tobacco products?' : '¿Usas productos de tabaco?'}
                         </label>
                         <div className="flex gap-4">
@@ -971,7 +969,7 @@ export default function QuotePage() {
                             className={`flex-1 py-3 px-6 rounded-xl border-2 font-medium transition-all ${
                               formData.smoker === 'no'
                                 ? 'border-green-500 bg-green-50 text-green-700'
-                                : 'border-gray-200 hover:border-gray-300'
+                                : 'border-primary-200 hover:border-orange-300'
                             }`}
                           >
                             {language === 'en' ? 'No' : 'No'}
@@ -984,7 +982,7 @@ export default function QuotePage() {
                             className={`flex-1 py-3 px-6 rounded-xl border-2 font-medium transition-all ${
                               formData.smoker === 'yes'
                                 ? 'border-red-500 bg-red-50 text-red-700'
-                                : 'border-gray-200 hover:border-gray-300'
+                                : 'border-primary-200 hover:border-orange-300'
                             }`}
                           >
                             {language === 'en' ? 'Yes' : 'Sí'}
@@ -1008,7 +1006,7 @@ export default function QuotePage() {
                       <Target className="w-8 h-8 text-primary-600" />
                       {language === 'en' ? 'Coverage Preferences' : 'Preferencias de Cobertura'}
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-primary-700">
                       {language === 'en' 
                         ? 'Customize your coverage to match your needs and budget.'
                         : 'Personaliza tu cobertura para que coincida con tus necesidades y presupuesto.'}
@@ -1017,7 +1015,7 @@ export default function QuotePage() {
 
                   <div className="space-y-6">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-3">
+                      <label className="block text-sm font-medium text-primary-900 mb-3">
                         {language === 'en' 
                           ? `Do you currently have ${formData.insuranceType} insurance?`
                           : `¿Actualmente tienes seguro de ${formData.insuranceType}?`}
@@ -1031,7 +1029,7 @@ export default function QuotePage() {
                           className={`flex-1 py-3 px-4 rounded-xl border-2 font-medium transition-all ${
                             formData.currentCoverage === 'yes'
                               ? 'border-primary-500 bg-primary-50 text-primary-700'
-                              : 'border-gray-200 hover:border-gray-300'
+                              : 'border-primary-200 hover:border-orange-300'
                           }`}
                         >
                           {language === 'en' ? 'Yes, I have coverage' : 'Sí, tengo cobertura'}
@@ -1044,7 +1042,7 @@ export default function QuotePage() {
                           className={`flex-1 py-3 px-4 rounded-xl border-2 font-medium transition-all ${
                             formData.currentCoverage === 'no'
                               ? 'border-primary-500 bg-primary-50 text-primary-700'
-                              : 'border-gray-200 hover:border-gray-300'
+                              : 'border-primary-200 hover:border-orange-300'
                           }`}
                         >
                           {language === 'en' ? 'No coverage' : 'Sin cobertura'}
@@ -1054,7 +1052,7 @@ export default function QuotePage() {
 
                     {formData.insuranceType === 'life' && (
                       <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-3">
+                        <label className="block text-sm font-medium text-primary-900 mb-3">
                           {language === 'en' ? 'Coverage Amount' : 'Monto de Cobertura'}
                         </label>
                         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -1068,7 +1066,7 @@ export default function QuotePage() {
                               className={`py-3 px-4 rounded-xl border-2 font-medium transition-all ${
                                 formData.coverageAmount === amount
                                   ? 'border-primary-500 bg-primary-50 text-primary-700'
-                                  : 'border-gray-200 hover:border-gray-300'
+                                  : 'border-primary-200 hover:border-orange-300'
                               }`}
                             >
                               {amount}
@@ -1079,7 +1077,7 @@ export default function QuotePage() {
                     )}
 
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-3">
+                      <label className="block text-sm font-medium text-primary-900 mb-3">
                         {language === 'en' ? 'Deductible Preference' : 'Preferencia de Deducible'}
                       </label>
                       <div className="grid grid-cols-3 gap-4">
@@ -1097,11 +1095,11 @@ export default function QuotePage() {
                             className={`py-4 px-4 rounded-xl border-2 transition-all ${
                               formData.deductiblePreference === option.value
                                 ? 'border-primary-500 bg-primary-50'
-                                : 'border-gray-200 hover:border-gray-300'
+                                : 'border-primary-200 hover:border-orange-300'
                             }`}
                           >
                             <div className="font-medium mb-1">{option.label}</div>
-                            <div className="text-xs text-gray-500">{option.desc}</div>
+                            <div className="text-xs text-primary-600">{option.desc}</div>
                           </motion.button>
                         ))}
                       </div>
@@ -1122,7 +1120,7 @@ export default function QuotePage() {
                       <CheckCircle className="w-8 h-8 text-green-500" />
                       {language === 'en' ? 'Review Your Quote' : 'Revisa Tu Cotización'}
                     </h2>
-                    <p className="text-gray-600">
+                    <p className="text-primary-700">
                       {language === 'en' 
                         ? 'Please review your information before submitting.'
                         : 'Por favor revisa tu información antes de enviar.'}
@@ -1152,27 +1150,27 @@ export default function QuotePage() {
                   </motion.div>
 
                   {/* Information Summary */}
-                  <div className="bg-gray-50 rounded-2xl p-6 mb-6">
+                  <div className="bg-primary-50/30 rounded-2xl p-6 mb-6">
                     <h4 className="font-semibold mb-4">{language === 'en' ? 'Your Information' : 'Tu Información'}</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between py-2 border-b">
-                        <span className="text-gray-600">{language === 'en' ? 'Name' : 'Nombre'}</span>
+                        <span className="text-primary-700">{language === 'en' ? 'Name' : 'Nombre'}</span>
                         <span className="font-medium">{formData.firstName} {formData.lastName}</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span className="text-gray-600">{language === 'en' ? 'Email' : 'Correo'}</span>
+                        <span className="text-primary-700">{language === 'en' ? 'Email' : 'Correo'}</span>
                         <span className="font-medium">{formData.email}</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span className="text-gray-600">{language === 'en' ? 'Phone' : 'Teléfono'}</span>
+                        <span className="text-primary-700">{language === 'en' ? 'Phone' : 'Teléfono'}</span>
                         <span className="font-medium">{formData.phone}</span>
                       </div>
                       <div className="flex justify-between py-2 border-b">
-                        <span className="text-gray-600">{language === 'en' ? 'Insurance Type' : 'Tipo de Seguro'}</span>
+                        <span className="text-primary-700">{language === 'en' ? 'Insurance Type' : 'Tipo de Seguro'}</span>
                         <span className="font-medium capitalize">{formData.insuranceType}</span>
                       </div>
                       <div className="flex justify-between py-2">
-                        <span className="text-gray-600">{language === 'en' ? 'ZIP Code' : 'Código Postal'}</span>
+                        <span className="text-primary-700">{language === 'en' ? 'ZIP Code' : 'Código Postal'}</span>
                         <span className="font-medium">{formData.zipCode}</span>
                       </div>
                     </div>
@@ -1228,7 +1226,7 @@ export default function QuotePage() {
                         onChange={handleInputChange}
                         className="mt-1 w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
                       />
-                      <label htmlFor="agreeToContact" className="text-sm text-gray-600">
+                      <label htmlFor="agreeToContact" className="text-sm text-primary-700">
                         {language === 'en' 
                           ? 'I agree to be contacted by Unity Financial Network regarding my insurance quote. I understand that I am under no obligation to purchase any insurance product.'
                           : 'Acepto ser contactado por Unity Financial Network sobre mi cotización de seguro. Entiendo que no tengo obligación de comprar ningún producto de seguro.'}
@@ -1245,7 +1243,7 @@ export default function QuotePage() {
                         onChange={handleInputChange}
                         className="mt-1 w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
                       />
-                      <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
+                      <label htmlFor="agreeToTerms" className="text-sm text-primary-700">
                         {language === 'en' 
                           ? 'I have read and accept the '
                           : 'He leído y acepto los '}
@@ -1266,7 +1264,7 @@ export default function QuotePage() {
                         onChange={handleInputChange}
                         className="mt-1 w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
                       />
-                      <label htmlFor="agreeToPrivacy" className="text-sm text-gray-600">
+                      <label htmlFor="agreeToPrivacy" className="text-sm text-primary-700">
                         {language === 'en' 
                           ? 'I have read and accept the '
                           : 'He leído y acepto la '}
@@ -1309,7 +1307,7 @@ export default function QuotePage() {
                 className={`px-8 py-4 rounded-xl font-semibold transition-all flex items-center gap-2 ${
                   currentStep === 1
                     ? 'invisible'
-                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    : 'bg-primary-100 text-primary-900 hover:bg-primary-200'
                 }`}
               >
                 <ChevronLeft className="w-5 h-5" />
@@ -1335,7 +1333,7 @@ export default function QuotePage() {
                   className={`px-10 py-4 font-semibold rounded-xl transition-all flex items-center gap-2 ${
                     formData.agreeToContact && formData.agreeToTerms && formData.agreeToPrivacy && turnstileToken && !isSubmitting
                       ? 'bg-green-600 text-white hover:bg-green-700'
-                      : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      : 'bg-primary-300 text-primary-600 cursor-not-allowed'
                   }`}
                 >
                   {isSubmitting ? (
@@ -1406,19 +1404,19 @@ export default function QuotePage() {
             className="mt-12"
           >
             <div className="flex justify-center items-center gap-8 flex-wrap">
-              <div className="flex items-center gap-2 text-gray-600">
+              <div className="flex items-center gap-2 text-primary-700">
                 <Shield className="w-6 h-6 text-green-500" />
                 <span className="font-medium">{language === 'en' ? 'SSL Secured' : 'SSL Seguro'}</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-600">
+              <div className="flex items-center gap-2 text-primary-700">
                 <Clock className="w-6 h-6 text-blue-500" />
                 <span className="font-medium">{language === 'en' ? '24/7 Support' : 'Soporte 24/7'}</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-600">
+              <div className="flex items-center gap-2 text-primary-700">
                 <Award className="w-6 h-6 text-yellow-500" />
                 <span className="font-medium">{language === 'en' ? 'Licensed Agents' : 'Agentes Licenciados'}</span>
               </div>
-              <div className="flex items-center gap-2 text-gray-600">
+              <div className="flex items-center gap-2 text-primary-700">
                 <Users className="w-6 h-6 text-purple-500" />
                 <span className="font-medium">{language === 'en' ? '1000+ Happy Clients' : '1000+ Clientes Felices'}</span>
               </div>
@@ -1428,7 +1426,7 @@ export default function QuotePage() {
       </section>
 
       {/* Why Choose Unity - Final CTA */}
-      <section className="section-padding bg-neutral-light">
+      <section className="section-padding bg-gradient-to-br from-white via-primary/5 to-orange-50/30">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1442,7 +1440,7 @@ export default function QuotePage() {
                 <>¿Por Qué Elegir <span className="text-primary font-bold">Unity Financial?</span></>
               )}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-primary-700 max-w-3xl mx-auto mb-8">
               {language === 'en'
                 ? 'With over 20 years of experience, we\'ve helped thousands of families find the perfect insurance coverage at the best rates.'
                 : 'Con más de 20 años de experiencia, hemos ayudado a miles de familias a encontrar la cobertura de seguro perfecta a las mejores tarifas.'}
@@ -1456,7 +1454,7 @@ export default function QuotePage() {
                 <Mail className="w-6 h-6" />
                 hello@unityfinancialnetwork.com
               </a>
-              <div className="flex items-center gap-2 text-gray-600 text-lg">
+              <div className="flex items-center gap-2 text-primary-700 text-lg">
                 <Building className="w-6 h-6" />
                 7950 NW 53rd St STE 136, Doral, FL 33166
               </div>

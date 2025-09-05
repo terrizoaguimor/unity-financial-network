@@ -95,7 +95,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
   }
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden bg-white">
+    <section id="contact" className="section-padding relative overflow-hidden bg-gradient-to-br from-white via-orange-50/30 to-primary/5">
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +118,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
             <span className="gradient-text">{t.titleHighlight}</span>
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-primary-700 max-w-3xl mx-auto">
             {t.subtitle}
           </p>
         </motion.div>
@@ -145,7 +145,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     value={formData.name}
                     onChange={handleChange}
                     placeholder={t.placeholders.name}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-primary-50/30 border border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                     required
                   />
                 </motion.div>
@@ -160,7 +160,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     value={formData.email}
                     onChange={handleChange}
                     placeholder={t.placeholders.email}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-primary-50/30 border border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                     required
                   />
                 </motion.div>
@@ -177,7 +177,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder={t.placeholders.phone}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 bg-primary-50/30 border border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all"
                     required
                   />
                 </motion.div>
@@ -190,7 +190,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all appearance-none"
+                    className="w-full px-4 py-3 bg-primary-50/30 border border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-300 transition-all appearance-none"
                     required
                   >
                     <option value="">{t.placeholders.service}</option>
@@ -215,7 +215,7 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                   onChange={handleChange}
                   placeholder={t.placeholders.message}
                   rows={4}
-                  className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 bg-primary-50/30 border border-primary/20 rounded-xl focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-300 transition-all resize-none"
                 />
               </motion.div>
 
@@ -229,9 +229,9 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                     checked={formData.acceptTerms}
                     onChange={handleChange}
                     required
-                    className="mt-1 w-4 h-4 text-primary-600 bg-gray-50 border-gray-300 rounded focus:ring-primary-500 focus:ring-2"
+                    className="mt-1 w-4 h-4 text-primary-600 bg-primary-50/30 border-primary-300 rounded focus:ring-orange-500 focus:ring-2"
                   />
-                  <span className="text-sm text-gray-600">
+                  <span className="text-sm text-primary-700">
                     {language === 'en' ? (
                       <>
                         I accept the{' '}
@@ -349,8 +349,8 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 mb-1">{t.callTitle}</h4>
-                  <p className="text-gray-600">{t.callHours}</p>
+                  <h4 className="font-bold text-primary-900 mb-1">{t.callTitle}</h4>
+                  <p className="text-primary-700">{t.callHours}</p>
                   <a href="tel:7868285576" className="text-primary font-semibold hover:text-primary-700">
                     (7868285576
                   </a>
@@ -363,12 +363,12 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
               className="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all"
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 mb-1">{t.emailTitle}</h4>
-                  <p className="text-gray-600">{t.emailSupport}</p>
+                  <h4 className="font-bold text-primary-900 mb-1">{t.emailTitle}</h4>
+                  <p className="text-primary-700">{t.emailSupport}</p>
                   <a href="mailto:hello@unityfinancialnetwork.com" className="text-primary font-semibold hover:text-primary-700">
                     hello@unityfinancialnetwork.com
                   </a>
@@ -385,8 +385,8 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-gray-900 mb-1">{t.visitTitle}</h4>
-                  <p className="text-gray-600">
+                  <h4 className="font-bold text-primary-900 mb-1">{t.visitTitle}</h4>
+                  <p className="text-primary-700">
                     7950 NW 53rd St STE 136<br />
                     Doral, FL 33166
                   </p>

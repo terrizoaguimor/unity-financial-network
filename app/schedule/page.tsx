@@ -438,8 +438,8 @@ export default function SchedulePage() {
       title: t.lifeTitle,
       description: t.lifeDesc,
       icon: Shield,
-      gradient: 'from-blue-500 to-indigo-600',
-      bgGradient: 'from-blue-500/10 to-indigo-600/10',
+      gradient: 'from-primary-500 to-primary-600',
+      bgGradient: 'from-primary-500/10 to-primary-600/10',
       features: language === 'en' 
         ? ['Term Life', 'Whole Life', 'Universal Life', 'Final Expense']
         : ['Vida a Término', 'Vida Entera', 'Vida Universal', 'Gastos Finales']
@@ -449,8 +449,8 @@ export default function SchedulePage() {
       title: t.healthTitle,
       description: t.healthDesc,
       icon: Heart,
-      gradient: 'from-rose-500 to-pink-600',
-      bgGradient: 'from-rose-500/10 to-pink-600/10',
+      gradient: 'from-accent to-orange-600',
+      bgGradient: 'from-accent/10 to-orange-600/10',
       features: language === 'en'
         ? ['Individual Plans', 'Family Coverage', 'Medicare', 'Dental & Vision']
         : ['Planes Individuales', 'Cobertura Familiar', 'Medicare', 'Dental y Visión']
@@ -496,11 +496,11 @@ export default function SchedulePage() {
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-gray-700 font-medium mb-4">
+            <p className="text-xl md:text-2xl text-primary-800 font-medium mb-4">
               {t.subtitle}
             </p>
 
-            <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            <p className="text-lg text-primary-700 mb-12 max-w-2xl mx-auto">
               {t.description}
             </p>
 
@@ -529,7 +529,7 @@ export default function SchedulePage() {
                     <div className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-purple-600 bg-clip-text text-transparent">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                    <div className="text-sm text-primary-600 font-medium">{stat.label}</div>
                   </motion.div>
                 )
               })}
@@ -586,15 +586,15 @@ export default function SchedulePage() {
                       <IconComponent className="w-10 h-10 text-white" />
                     </div>
 
-                    <h3 className="text-2xl font-bold mb-3 text-gray-800">{service.title}</h3>
-                    <p className="text-gray-600 mb-6">{service.description}</p>
+                    <h3 className="text-2xl font-bold mb-3 text-primary-800">{service.title}</h3>
+                    <p className="text-primary-700 mb-6">{service.description}</p>
 
                     {/* Features */}
                     <div className="grid grid-cols-2 gap-3">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-primary-500 rounded-full" />
-                          <span className="text-sm text-gray-600">{feature}</span>
+                          <div className="w-2 h-2 bg-accent rounded-full" />
+                          <span className="text-sm text-primary-700">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -635,14 +635,14 @@ export default function SchedulePage() {
                   >
                     {/* Personal Information */}
                     <div className="space-y-6">
-                      <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
+                      <h3 className="text-lg font-semibold text-primary-800 flex items-center gap-2">
                         <User className="w-5 h-5 text-primary-600" />
                         {language === 'en' ? 'Personal Information' : 'Información Personal'}
                       </h3>
                       
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-primary-800 mb-2">
                             {t.firstName} *
                           </label>
                           <input
@@ -651,12 +651,12 @@ export default function SchedulePage() {
                             value={formData.firstName}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 border-2 border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                             placeholder={language === 'en' ? 'John' : 'Juan'}
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-primary-800 mb-2">
                             {t.lastName} *
                           </label>
                           <input
@@ -665,7 +665,7 @@ export default function SchedulePage() {
                             value={formData.lastName}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 border-2 border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                             placeholder={language === 'en' ? 'Doe' : 'Pérez'}
                           />
                         </div>
@@ -673,7 +673,7 @@ export default function SchedulePage() {
 
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-primary-800 mb-2">
                             {t.email} *
                           </label>
                           <input
@@ -682,12 +682,12 @@ export default function SchedulePage() {
                             value={formData.email}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 border-2 border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                             placeholder="email@example.com"
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-primary-800 mb-2">
                             {t.phone} *
                           </label>
                           <input
@@ -696,7 +696,7 @@ export default function SchedulePage() {
                             value={formData.phone}
                             onChange={handleInputChange}
                             required
-                            className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                            className="w-full px-4 py-3 border-2 border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                             placeholder="(555) 123-4567"
                           />
                         </div>
@@ -712,7 +712,7 @@ export default function SchedulePage() {
 
                       <div className="grid md:grid-cols-2 gap-6">
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-primary-800 mb-2">
                             {t.selectDate} *
                           </label>
                           <div className="relative">
@@ -720,7 +720,7 @@ export default function SchedulePage() {
                               value={selectedDate}
                               onChange={(e) => setSelectedDate(e.target.value)}
                               required
-                              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all appearance-none cursor-pointer"
+                              className="w-full px-4 py-3 border-2 border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all appearance-none cursor-pointer"
                             >
                               <option value="">{t.selectDate}</option>
                               {availableDates.map(date => {
@@ -737,11 +737,11 @@ export default function SchedulePage() {
                                 )
                               })}
                             </select>
-                            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-400 pointer-events-none" />
                           </div>
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700 mb-2">
+                          <label className="block text-sm font-medium text-primary-800 mb-2">
                             {t.selectTime} *
                           </label>
                           <div className="relative">
@@ -750,7 +750,7 @@ export default function SchedulePage() {
                               onChange={(e) => setSelectedTime(e.target.value)}
                               required
                               disabled={!selectedDate}
-                              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                              className="w-full px-4 py-3 border-2 border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all appearance-none cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                               <option value="">{t.selectTime}</option>
                               {timeSlots.map(time => (
@@ -759,7 +759,7 @@ export default function SchedulePage() {
                                 </option>
                               ))}
                             </select>
-                            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+                            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary-400 pointer-events-none" />
                           </div>
                         </div>
                       </div>
@@ -783,7 +783,7 @@ export default function SchedulePage() {
                               className={`flex flex-col items-center justify-center gap-2 p-4 border-2 rounded-xl cursor-pointer transition-all ${
                                 formData.preferredContact === option.value
                                   ? 'border-primary-500 bg-primary-50'
-                                  : 'border-gray-200 hover:border-gray-300'
+                                  : 'border-primary-200 hover:border-primary-300'
                               }`}
                             >
                               <input
@@ -797,12 +797,12 @@ export default function SchedulePage() {
                               <IconComponent className={`w-6 h-6 ${
                                 formData.preferredContact === option.value
                                   ? 'text-primary-600'
-                                  : 'text-gray-500'
+                                  : 'text-primary-500'
                               }`} />
                               <span className={`text-sm font-medium ${
                                 formData.preferredContact === option.value
                                   ? 'text-primary-700'
-                                  : 'text-gray-700'
+                                  : 'text-primary-700'
                               }`}>{option.label}</span>
                             </label>
                           )
@@ -821,12 +821,12 @@ export default function SchedulePage() {
                         onChange={handleInputChange}
                         rows={4}
                         placeholder={t.messagePlaceholder}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all resize-none"
+                        className="w-full px-4 py-3 border-2 border-primary-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all resize-none"
                       />
                     </div>
 
                     {/* Terms */}
-                    <div className="bg-gray-50 rounded-xl p-4">
+                    <div className="bg-primary/5 rounded-xl p-4">
                       <div className="flex items-start gap-3">
                         <input
                           type="checkbox"
@@ -836,7 +836,7 @@ export default function SchedulePage() {
                           onChange={handleInputChange}
                           className="mt-1 w-5 h-5 text-primary-600 rounded focus:ring-primary-500"
                         />
-                        <label htmlFor="agreeToTerms" className="text-sm text-gray-600">
+                        <label htmlFor="agreeToTerms" className="text-sm text-primary-700">
                           {language === 'en' 
                             ? 'I agree to the '
                             : 'Acepto los '}
@@ -882,8 +882,8 @@ export default function SchedulePage() {
                       disabled={isSubmitting || !formData.agreeToTerms || !turnstileToken}
                       className={`w-full py-4 font-bold text-lg rounded-xl transition-all flex items-center justify-center gap-2 ${
                         isSubmitting || !formData.agreeToTerms || !turnstileToken
-                          ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                          : 'bg-gradient-to-r from-primary-600 to-purple-600 text-white hover:shadow-xl'
+                          ? 'bg-primary-200 text-primary-400 cursor-not-allowed'
+                          : 'bg-gradient-to-r from-primary-600 to-accent text-white hover:shadow-xl'
                       }`}
                     >
                       {isSubmitting ? (
@@ -917,7 +917,7 @@ export default function SchedulePage() {
                     <h3 className="text-3xl font-bold mb-4 bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
                       {t.successTitle}
                     </h3>
-                    <p className="text-gray-600 text-lg">{t.successMessage}</p>
+                    <p className="text-primary-700 text-lg">{t.successMessage}</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -930,7 +930,7 @@ export default function SchedulePage() {
               transition={{ delay: 0.7 }}
               className="mt-12"
             >
-              <h3 className="text-2xl font-bold text-center mb-8 text-gray-800">
+              <h3 className="text-2xl font-bold text-center mb-8 text-primary-800">
                 {t.whyChoose}
               </h3>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -945,7 +945,7 @@ export default function SchedulePage() {
                     <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
                       <CheckCircle className="w-6 h-6 text-white" />
                     </div>
-                    <span className="text-gray-700 font-medium">{benefit}</span>
+                    <span className="text-primary-800 font-medium">{benefit}</span>
                   </motion.div>
                 ))}
               </div>
@@ -960,7 +960,7 @@ export default function SchedulePage() {
             >
               <div className="flex items-center justify-center gap-3">
                 <Clock className="w-6 h-6 text-primary-600" />
-                <p className="text-gray-700 font-semibold text-lg">{t.availability}</p>
+                <p className="text-primary-800 font-semibold text-lg">{t.availability}</p>
               </div>
             </motion.div>
           </div>

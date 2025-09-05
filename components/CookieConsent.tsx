@@ -202,7 +202,7 @@ export default function CookieConsent() {
                     </button>
                     <button
                       onClick={handleRejectAll}
-                      className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors font-medium text-sm"
+                      className="flex-1 px-4 py-2 border border-primary/20 text-gray-700 rounded-lg hover:bg-primary/5 transition-colors font-medium text-sm"
                     >
                       {t.rejectAll}
                     </button>
@@ -244,7 +244,7 @@ export default function CookieConsent() {
                 </h2>
                 <button
                   onClick={() => setShowCustomize(false)}
-                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                  className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
                 >
                   <X className="w-5 h-5 text-gray-500" />
                 </button>
@@ -269,7 +269,7 @@ export default function CookieConsent() {
                               <h3 className="font-medium text-gray-900">
                                 {category.name}
                                 {category.required && (
-                                  <span className="ml-2 text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">
+                                  <span className="ml-2 text-xs bg-primary/10 text-gray-600 px-2 py-1 rounded-full">
                                     {language === 'en' ? 'Required' : 'Requerido'}
                                   </span>
                                 )}
@@ -302,7 +302,7 @@ export default function CookieConsent() {
               <div className="flex gap-3 p-6 border-t border-gray-200">
                 <button
                   onClick={handleRejectAll}
-                  className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors"
+                  className="flex-1 px-4 py-2 border border-primary/20 text-gray-700 rounded-lg hover:bg-primary/5 transition-colors"
                 >
                   {t.rejectAll}
                 </button>

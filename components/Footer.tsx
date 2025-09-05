@@ -57,7 +57,7 @@ const getFooterLinks = (lang: 'en' | 'es') => ({
     { name: lang === 'en' ? 'Services' : 'Servicios', href: '/services' },
   ],
   resources: [
-    { name: lang === 'en' ? 'Get a Quote' : 'Obtener Cotización', href: '/quote' },
+    { name: lang === 'en' ? 'Get a Quote' : 'Obtener Cotización', href: '/schedule' },
     { name: lang === 'en' ? 'FAQ' : 'Preguntas Frecuentes', href: '/contact#faq' },
     { name: lang === 'en' ? 'Privacy Policy' : 'Política de Privacidad', href: '/privacy' },
     { name: lang === 'en' ? 'Terms of Service' : 'Términos de Servicio', href: '/terms' },

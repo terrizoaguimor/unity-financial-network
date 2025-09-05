@@ -1,20 +1,20 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { ArrowRight, Shield, TrendingUp, Users, Sparkles } from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { translations } from '@/lib/translations'
+import { motion } from "framer-motion";
+import { ArrowRight, Shield, TrendingUp, Users, Sparkles } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { translations } from "@/lib/translations";
 
 interface HeroSectionProps {
-  language: 'en' | 'es'
+  language: "en" | "es";
 }
 
 export default function HeroSection({ language }: HeroSectionProps) {
-  const t = translations[language].hero
-  
+  const t = translations[language].hero;
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 bg-neutral-50">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 bg-gradient-to-br from-primary/5 via-white to-orange-50">
       {/* Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full filter blur-xl" />
@@ -52,17 +52,14 @@ export default function HeroSection({ language }: HeroSectionProps) {
               transition={{ delay: 0.3 }}
               className="heading-1 mb-4 sm:mb-6"
             >
-              {t.title}{' '}
-              <span className="gradient-text">
-                {t.subtitle}
-              </span>
+              {t.title} <span className="gradient-text">{t.subtitle}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="body-text text-gray-600 mb-6 sm:mb-8"
+              className="body-text text-primary-700 mb-6 sm:mb-8"
             >
               {t.description}
             </motion.p>
@@ -73,7 +70,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <Link href="/contact">
+              <Link href="/schedule">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -83,7 +80,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                   <ArrowRight className="inline-block ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
                 </motion.button>
               </Link>
-              <Link href="/quote">
+              <Link href="/schedule">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -104,23 +101,35 @@ export default function HeroSection({ language }: HeroSectionProps) {
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
                   <Shield className="w-5 h-5 text-primary-600" />
-                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">11+</span>
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-900">
+                    11+
+                  </span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600">{t.stats.plans}</p>
+                <p className="text-xs sm:text-sm text-primary-700">
+                  {t.stats.plans}
+                </p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
                   <Users className="w-5 h-5 text-primary-600" />
-                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">1000+</span>
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-900">
+                    1000+
+                  </span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600">{t.stats.clients}</p>
+                <p className="text-xs sm:text-sm text-primary-700">
+                  {t.stats.clients}
+                </p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
-                  <TrendingUp className="w-5 h-5 text-primary-600" />
-                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">24/7</span>
+                  <TrendingUp className="w-5 h-5 text-orange-600" />
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-900">
+                    24/7
+                  </span>
                 </div>
-                <p className="text-xs sm:text-sm text-gray-600">{t.stats.support}</p>
+                <p className="text-xs sm:text-sm text-primary-700">
+                  {t.stats.support}
+                </p>
               </div>
             </motion.div>
           </motion.div>
@@ -142,17 +151,17 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 transition={{
                   duration: 6,
                   repeat: Infinity,
-                  ease: "easeInOut"
+                  ease: "easeInOut",
                 }}
                 className="absolute top-0 right-0 bg-white rounded-2xl shadow-2xl p-6 z-10"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Protected</p>
-                    <p className="text-xl font-bold">100%</p>
+                    <p className="text-sm text-primary-600">Protected</p>
+                    <p className="text-xl font-bold text-primary-900">100%</p>
                   </div>
                 </div>
               </motion.div>
@@ -166,7 +175,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                   duration: 5,
                   repeat: Infinity,
                   ease: "easeInOut",
-                  delay: 1
+                  delay: 1,
                 }}
                 className="absolute bottom-10 left-0 bg-white rounded-2xl shadow-2xl p-6 z-10"
               >
@@ -175,8 +184,8 @@ export default function HeroSection({ language }: HeroSectionProps) {
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Savings</p>
-                    <p className="text-xl font-bold">$2,500+</p>
+                    <p className="text-sm text-primary-600">Savings</p>
+                    <p className="text-xl font-bold text-primary-900">$2,500+</p>
                   </div>
                 </div>
               </motion.div>
@@ -185,12 +194,20 @@ export default function HeroSection({ language }: HeroSectionProps) {
               <div className="relative w-96 h-96 mx-auto">
                 <motion.div
                   animate={{ rotate: 360 }}
-                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  transition={{
+                    duration: 20,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                   className="absolute inset-0 rounded-full bg-primary/20"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  transition={{
+                    duration: 15,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                   className="absolute inset-4 rounded-full bg-accent/10"
                 />
                 <div className="absolute inset-8 rounded-full bg-white/50 backdrop-blur-sm flex items-center justify-center">
@@ -233,5 +250,5 @@ export default function HeroSection({ language }: HeroSectionProps) {
         </svg>
       </div>
     </section>
-  )
+  );
 }

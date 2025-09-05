@@ -337,7 +337,7 @@ export default function OptOutPage() {
                           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-left ${
                             activeSection === section.id
                               ? 'bg-primary-100 text-primary-700 font-medium'
-                              : 'hover:bg-gray-100 text-gray-600'
+                              : 'hover:bg-primary/10 text-gray-600'
                           }`}
                         >
                           <Icon className="w-4 h-4 flex-shrink-0" />
@@ -478,7 +478,7 @@ export default function OptOutPage() {
                                       </li>
                                     ))}
                                   </ul>
-                                  <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
+                                  <div className="flex items-center gap-2 p-3 bg-primary/5 rounded-lg">
                                     <Clock className="w-4 h-4 text-gray-500" />
                                     <span className="text-sm font-medium text-gray-700">
                                       {language === 'en' ? 'Timeframe:' : 'Plazo:'} {method.timeframe}
@@ -602,7 +602,7 @@ export default function OptOutPage() {
                     </a>
                   </div>
                 </div>
-                <div className="mt-6 p-4 bg-gray-50 rounded-lg">
+                <div className="mt-6 p-4 bg-primary/5 rounded-lg">
                   <div className="flex items-start gap-3">
                     <MapPin className="w-5 h-5 text-gray-500 flex-shrink-0 mt-0.5" />
                     <div>

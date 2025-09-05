@@ -190,7 +190,7 @@ export const getServicesData = (lang: 'en' | 'es') => [
       : 'Seguro de vida entera asequible diseñado para cubrir costos funerarios y gastos finales.',
     icon: FileText,
     color: 'from-gray-400 to-gray-600',
-    bgColor: 'bg-gray-50',
+    bgColor: 'bg-primary/5',
     features: lang === 'en' ? [
       'Guaranteed acceptance options',
       'No medical exam required',

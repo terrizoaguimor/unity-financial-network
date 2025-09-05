@@ -389,7 +389,7 @@ export default function PrivacyPage() {
                           className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all text-left ${
                             activeSection === section.id
                               ? 'bg-primary-100 text-primary-700 font-medium'
-                              : 'hover:bg-gray-100 text-gray-600'
+                              : 'hover:bg-primary/10 text-gray-600'
                           }`}
                         >
                           <Icon className="w-4 h-4 flex-shrink-0" />

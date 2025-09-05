@@ -237,7 +237,7 @@ export default function ServicesPage() {
                   className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
                     selectedCategory === category.id
                       ? 'bg-primary text-white shadow-lg'
-                      : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                      : 'bg-primary/10 text-gray-700 hover:bg-primary/15'
                   }`}
                 >
                   <Icon className="w-5 h-5" />
@@ -250,7 +250,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-neutral-light">
+      <section className="section-padding bg-primary/10">
         <div className="container-custom">
           <AnimatePresence mode="wait">
             <motion.div
@@ -387,7 +387,7 @@ export default function ServicesPage() {
                       </div>
                       <button
                         onClick={() => setSelectedService(null)}
-                        className="p-2 hover:bg-gray-100 rounded-full transition-colors"
+                        className="p-2 hover:bg-primary/10 rounded-full transition-colors"
                       >
                         <X className="w-6 h-6 text-gray-500" />
                       </button>
@@ -423,14 +423,16 @@ export default function ServicesPage() {
                     </div>
 
                     <div className="flex gap-4">
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex-1 px-6 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
-                      >
-                        <Calculator className="w-5 h-5" />
-                        Get Your Quote
-                      </motion.button>
+                      <Link href="/schedule" className="flex-1">
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          className="w-full px-6 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
+                        >
+                          <Calculator className="w-5 h-5" />
+                          Get Your Quote
+                        </motion.button>
+                      </Link>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
@@ -464,20 +466,24 @@ export default function ServicesPage() {
               for your needs and budget.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-white text-primary-600 font-semibold rounded-full hover:shadow-xl transition-all"
-              >
-                Get Your Free Quote
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all"
-              >
-                Schedule Consultation
-              </motion.button>
+              <Link href="/schedule">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-white text-primary-600 font-semibold rounded-full hover:shadow-xl transition-all"
+                >
+                  Get Your Free Quote
+                </motion.button>
+              </Link>
+              <Link href="/schedule">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-full hover:bg-white/10 transition-all"
+                >
+                  Schedule Consultation
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         </div>

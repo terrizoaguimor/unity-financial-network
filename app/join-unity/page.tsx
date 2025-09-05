@@ -326,7 +326,7 @@ export default function JoinUnityPage() {
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-md rounded-full text-sm font-semibold mb-8 border border-white/20"
             >
-              <Zap className="w-4 h-4 text-yellow-400" />
+              <Zap className="w-4 h-4 text-accent" />
               {language === 'en' ? 'Join Our Elite Team' : 'Únete a Nuestro Equipo Élite'}
             </motion.span>
 
@@ -388,7 +388,7 @@ export default function JoinUnityPage() {
                   transition={{ delay: 0.6 + index * 0.1 }}
                   className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20"
                 >
-                  <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">{stat.value}</div>
+                  <div className="text-3xl md:text-4xl font-bold text-accent mb-2">{stat.value}</div>
                   <div className="text-white/80">{stat.label}</div>
                 </motion.div>
               ))}
@@ -454,7 +454,7 @@ export default function JoinUnityPage() {
                 <>Tu Éxito es <span className="text-primary font-bold">Nuestra Misión</span></>
               )}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-primary-700 max-w-3xl mx-auto">
               {language === 'en'
                 ? 'We provide the tools, training, and support you need to build a thriving insurance business'
                 : 'Proporcionamos las herramientas, capacitación y apoyo que necesitas para construir un negocio de seguros próspero'}
@@ -471,13 +471,13 @@ export default function JoinUnityPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100"
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-primary/20"
               >
                 <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mb-6">
                   <benefit.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
+                <p className="text-primary-700">{benefit.description}</p>
               </motion.div>
             ))}
           </div>
@@ -485,7 +485,7 @@ export default function JoinUnityPage() {
       </section>
 
       {/* Training Programs Section */}
-      <section id="training" className="section-padding bg-neutral-light">
+      <section id="training" className="section-padding bg-gradient-to-br from-orange-50/40 via-white to-primary/5">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -504,7 +504,7 @@ export default function JoinUnityPage() {
                 <>Programas de <span className="text-primary font-bold">Capacitación de Clase Mundial</span></>
               )}
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-xl text-primary-700 max-w-3xl mx-auto">
               {language === 'en'
                 ? 'From beginner to expert, our training programs ensure your success at every level'
                 : 'De principiante a experto, nuestros programas de capacitación aseguran tu éxito en cada nivel'}
@@ -531,7 +531,7 @@ export default function JoinUnityPage() {
                   </div>
                 </div>
                 <div className="p-8">
-                  <p className="text-gray-600 mb-6">{program.description}</p>
+                  <p className="text-primary-700 mb-6">{program.description}</p>
                   <div className="space-y-3">
                     {program.modules.map((module, idx) => (
                       <div key={idx} className="flex items-center gap-3">
@@ -548,7 +548,7 @@ export default function JoinUnityPage() {
       </section>
 
       {/* Commission Structure */}
-      <section className="section-padding bg-neutral-dark text-white">
+      <section className="section-padding bg-gradient-to-br from-primary via-primary-800 to-primary-900 text-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -557,14 +557,14 @@ export default function JoinUnityPage() {
             className="text-center mb-16"
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm font-semibold mb-6 border border-white/20">
-              <DollarSign className="w-4 h-4 text-yellow-400" />
+              <DollarSign className="w-4 h-4 text-accent" />
               {language === 'en' ? 'Earning Potential' : 'Potencial de Ganancias'}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {language === 'en' ? (
-                <>Rewarding <span className="text-yellow-400">Career Growth</span></>
+                <>Rewarding <span className="text-accent">Career Growth</span></>
               ) : (
-                <>Crecimiento <span className="text-yellow-400">Profesional Gratificante</span></>
+                <>Crecimiento <span className="text-accent">Profesional Gratificante</span></>
               )}
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
@@ -586,14 +586,14 @@ export default function JoinUnityPage() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -10 }}
-                  className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 hover:bg-white/15 transition-all"
+                  className="relative bg-white rounded-3xl p-6 border border-primary/20 hover:shadow-xl transition-all"
                 >
                   <div className="absolute top-0 left-0 w-full h-1 bg-primary rounded-t-3xl" />
                   <div className="text-center">
-                    <Icon className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
-                    <h3 className="text-lg font-semibold mb-2">{tier.level}</h3>
-                    <div className="text-2xl font-bold text-yellow-400 mb-2">{tier.range}</div>
-                    <div className="text-sm text-white/80">{tier.description}</div>
+                    <Icon className="w-10 h-10 text-accent mx-auto mb-3" />
+                    <h3 className="text-lg font-semibold text-primary-900 mb-2">{tier.level}</h3>
+                    <div className="text-2xl font-bold text-accent mb-2">{tier.range}</div>
+                    <div className="text-sm text-primary-700">{tier.description}</div>
                   </div>
                 </motion.div>
               )
@@ -605,23 +605,23 @@ export default function JoinUnityPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-12 bg-white/10 backdrop-blur-md rounded-3xl p-8 border border-white/20"
+            className="mt-12 bg-white rounded-3xl p-8 border border-primary/20 shadow-xl"
           >
             <div className="grid md:grid-cols-3 gap-8 text-center">
               <div>
-                <Percent className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
-                <h4 className="text-xl font-semibold mb-2">{language === 'en' ? 'Renewal Commissions' : 'Comisiones de Renovación'}</h4>
-                <p className="text-white/80">{language === 'en' ? 'Earn on policy renewals' : 'Gana en renovaciones de pólizas'}</p>
+                <Percent className="w-10 h-10 text-accent mx-auto mb-3" />
+                <h4 className="text-xl font-semibold text-primary-900 mb-2">{language === 'en' ? 'Renewal Commissions' : 'Comisiones de Renovación'}</h4>
+                <p className="text-primary-700">{language === 'en' ? 'Earn on policy renewals' : 'Gana en renovaciones de pólizas'}</p>
               </div>
               <div>
-                <Trophy className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
-                <h4 className="text-xl font-semibold mb-2">{language === 'en' ? 'Performance Bonuses' : 'Bonos de Rendimiento'}</h4>
-                <p className="text-white/80">{language === 'en' ? 'Monthly & quarterly rewards' : 'Recompensas mensuales y trimestrales'}</p>
+                <Trophy className="w-10 h-10 text-accent mx-auto mb-3" />
+                <h4 className="text-xl font-semibold text-primary-900 mb-2">{language === 'en' ? 'Performance Bonuses' : 'Bonos de Rendimiento'}</h4>
+                <p className="text-primary-700">{language === 'en' ? 'Monthly & quarterly rewards' : 'Recompensas mensuales y trimestrales'}</p>
               </div>
               <div>
-                <Users className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
-                <h4 className="text-xl font-semibold mb-2">{language === 'en' ? 'Team Overrides' : 'Comisiones de Equipo'}</h4>
-                <p className="text-white/80">{language === 'en' ? 'Build and earn from your team' : 'Construye y gana de tu equipo'}</p>
+                <Users className="w-10 h-10 text-accent mx-auto mb-3" />
+                <h4 className="text-xl font-semibold text-primary-900 mb-2">{language === 'en' ? 'Team Overrides' : 'Comisiones de Equipo'}</h4>
+                <p className="text-primary-700">{language === 'en' ? 'Build and earn from your team' : 'Construye y gana de tu equipo'}</p>
               </div>
             </div>
           </motion.div>
@@ -660,14 +660,14 @@ export default function JoinUnityPage() {
                 className="bg-primary/5 rounded-3xl p-8 shadow-lg"
               >
                 <Quote className="w-10 h-10 text-primary-600 mb-4" />
-                <p className="text-lg text-gray-700 italic mb-6">{story.quote}</p>
+                <p className="text-lg text-primary-800 italic mb-6">{story.quote}</p>
                 <div className="flex items-center gap-4">
                   <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
                     {story.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">{story.name}</h4>
-                    <p className="text-gray-600">{story.role}</p>
+                    <p className="text-primary-700">{story.role}</p>
                     <p className="text-primary-600 font-semibold">{story.achievement}</p>
                   </div>
                 </div>
@@ -678,7 +678,7 @@ export default function JoinUnityPage() {
       </section>
 
       {/* Application Form */}
-      <section id="application" className="section-padding bg-neutral-light">
+      <section id="application" className="section-padding bg-gradient-to-br from-primary/5 via-orange-50/30 to-white">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -697,7 +697,7 @@ export default function JoinUnityPage() {
                 <>Comienza Tu <span className="text-primary font-bold">Historia de Éxito</span></>
               )}
             </h2>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-primary-700">
               {language === 'en'
                 ? 'Take the first step towards a rewarding career in insurance'
                 : 'Da el primer paso hacia una carrera gratificante en seguros'}
@@ -713,7 +713,7 @@ export default function JoinUnityPage() {
           >
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-primary-900 mb-2">
                   {language === 'en' ? 'Full Name *' : 'Nombre Completo *'}
                 </label>
                 <input
@@ -722,13 +722,13 @@ export default function JoinUnityPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-primary/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                   placeholder={language === 'en' ? 'John Doe' : 'Juan Pérez'}
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-primary-900 mb-2">
                   {language === 'en' ? 'Email Address *' : 'Correo Electrónico *'}
                 </label>
                 <input
@@ -737,7 +737,7 @@ export default function JoinUnityPage() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-primary/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                   placeholder="john@example.com"
                 />
               </div>
@@ -745,7 +745,7 @@ export default function JoinUnityPage() {
 
             <div className="grid md:grid-cols-2 gap-6 mb-6">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-primary-900 mb-2">
                   {language === 'en' ? 'Phone Number *' : 'Número de Teléfono *'}
                 </label>
                 <input
@@ -754,20 +754,20 @@ export default function JoinUnityPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-primary/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                   placeholder="(786) 123-4567"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="block text-sm font-medium text-primary-900 mb-2">
                   {language === 'en' ? 'Years of Experience' : 'Años de Experiencia'}
                 </label>
                 <select
                   name="experience"
                   value={formData.experience}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 border border-primary/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
                 >
                   <option value="">{language === 'en' ? 'Select Experience' : 'Seleccionar Experiencia'}</option>
                   <option value="none">{language === 'en' ? 'No Experience' : 'Sin Experiencia'}</option>
@@ -779,14 +779,14 @@ export default function JoinUnityPage() {
             </div>
 
             <div className="mb-6">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-neutral-800 mb-2">
                 {language === 'en' ? 'Insurance License Status' : 'Estado de Licencia de Seguros'}
               </label>
               <select
                 name="license"
                 value={formData.license}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 border border-primary/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all"
               >
                 <option value="">{language === 'en' ? 'Select Status' : 'Seleccionar Estado'}</option>
                 <option value="licensed">{language === 'en' ? 'Currently Licensed' : 'Actualmente Licenciado'}</option>
@@ -797,7 +797,7 @@ export default function JoinUnityPage() {
             </div>
 
             <div className="mb-8">
-              <label className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium text-neutral-800 mb-2">
                 {language === 'en' ? 'Why do you want to join Unity Financial?' : '¿Por qué quieres unirte a Unity Financial?'}
               </label>
               <textarea
@@ -805,7 +805,7 @@ export default function JoinUnityPage() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all resize-none"
+                className="w-full px-4 py-3 border border-primary/30 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent transition-all resize-none"
                 placeholder={language === 'en' 
                   ? 'Tell us about your goals and aspirations...' 
                   : 'Cuéntanos sobre tus metas y aspiraciones...'}
@@ -820,9 +820,9 @@ export default function JoinUnityPage() {
                   checked={formData.acceptTerms}
                   onChange={handleChange}
                   required
-                  className="mt-1 w-4 h-4 text-primary-600 bg-gray-50 border-gray-300 rounded focus:ring-primary-500 focus:ring-2"
+                  className="mt-1 w-4 h-4 text-primary-600 bg-primary/5 border-primary/40 rounded focus:ring-primary-500 focus:ring-2"
                 />
-                <span className="text-sm text-gray-600">
+                <span className="text-sm text-primary-700">
                   {language === 'en' ? (
                     <>
                       I accept the{' '}
@@ -863,7 +863,7 @@ export default function JoinUnityPage() {
               disabled={isSubmitting}
               className={`w-full px-8 py-4 font-semibold text-lg rounded-xl transition-all flex items-center justify-center gap-2 ${
                 isSubmitting 
-                  ? 'bg-gray-400 cursor-not-allowed' 
+                  ? 'bg-primary-400 cursor-not-allowed' 
                   : 'bg-primary text-white hover:bg-primary/90'
               }`}
             >
@@ -922,7 +922,7 @@ export default function JoinUnityPage() {
               </motion.div>
             )}
 
-            <p className="text-center text-sm text-gray-500 mt-6">
+            <p className="text-center text-sm text-primary-700 mt-6">
               {language === 'en' 
                 ? 'By submitting this form, you agree to be contacted by Unity Financial Network regarding career opportunities.'
                 : 'Al enviar este formulario, aceptas ser contactado por Unity Financial Network sobre oportunidades profesionales.'}
@@ -936,7 +936,7 @@ export default function JoinUnityPage() {
             viewport={{ once: true }}
             className="mt-12 text-center"
           >
-            <p className="text-lg text-gray-600 mb-6">
+            <p className="text-lg text-primary-700 mb-6">
               {language === 'en' ? 'Ready to elevate your career? Contact us today!' : '¿Listo para elevar tu carrera? ¡Contáctanos hoy!'}
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
@@ -948,7 +948,7 @@ export default function JoinUnityPage() {
                 <Mail className="w-5 h-5" />
                 careers@unityfinancialnetwork.com
               </a>
-              <div className="flex items-center gap-2 text-gray-600">
+              <div className="flex items-center gap-2 text-primary-700">
                 <Building className="w-5 h-5" />
                 7950 NW 53rd St STE 136, Doral, FL 33166
               </div>

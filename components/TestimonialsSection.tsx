@@ -45,7 +45,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
   const [activeIndex, setActiveIndex] = useState(0)
 
   return (
-    <section className="section-padding relative overflow-hidden bg-neutral-50">
+    <section className="section-padding relative overflow-hidden bg-gradient-to-br from-primary/5 via-white to-orange-50/40">
       <div className="container-custom relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -68,7 +68,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
             <span className="gradient-text">{language === 'en' ? 'Clients Say' : 'Clientes Dicen'}</span>
           </h2>
           
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-primary-700 max-w-3xl mx-auto">
             {language === 'en' 
               ? 'Real stories from real people who have transformed their financial future with Unity'
               : 'Historias reales de personas reales que han transformado su futuro financiero con Unity'}
@@ -112,18 +112,18 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
                 </div>
 
                 {/* Content */}
-                <p className="text-gray-700 mb-6 italic">
+                <p className="text-primary-800 mb-6 italic">
                   "{testimonial.content}"
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-white font-bold">
+                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
-                    <p className="font-bold text-gray-900">{testimonial.name}</p>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
+                    <p className="font-bold text-primary-900">{testimonial.name}</p>
+                    <p className="text-sm text-primary-700">{testimonial.role}</p>
                   </div>
                 </div>
 
@@ -151,7 +151,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
           transition={{ delay: 0.6, duration: 0.6 }}
           className="text-center mt-16"
         >
-          <p className="text-lg text-gray-600 mb-6">
+          <p className="text-lg text-primary-700 mb-6">
             {language === 'en' 
               ? 'Join thousands of satisfied clients who trust Unity Financial Network'
               : 'Únete a miles de clientes satisfechos que confían en Unity Financial Network'}
@@ -177,7 +177,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-yellow-200 to-orange-200 rounded-full opacity-10 blur-3xl"
+        className="absolute top-10 right-10 w-64 h-64 bg-gradient-to-br from-orange-300 to-orange-500 rounded-full opacity-20 blur-3xl"
       />
       
       <motion.div
@@ -190,7 +190,7 @@ export default function TestimonialsSection({ language = 'en' }: TestimonialsSec
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute bottom-10 left-10 w-64 h-64 bg-gradient-to-tr from-blue-200 to-cyan-200 rounded-full opacity-10 blur-3xl"
+        className="absolute bottom-10 left-10 w-64 h-64 bg-gradient-to-tr from-primary-300 to-primary-500 rounded-full opacity-20 blur-3xl"
       />
     </section>
   )

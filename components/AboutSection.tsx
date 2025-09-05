@@ -18,7 +18,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
     { number: '10+', label: language === 'en' ? 'Years Experience' : 'Años de Experiencia', icon: Award },
   ]
   return (
-    <section id="about" className="section-padding relative overflow-hidden bg-white">
+    <section id="about" className="section-padding relative overflow-hidden bg-gradient-to-br from-orange-50/30 via-white to-primary/5">
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -42,7 +42,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
               <span className="gradient-text">{t.titleHighlight}</span>
             </h2>
             
-            <p className="text-lg text-gray-600 mb-8">
+            <p className="text-lg text-primary-700 mb-8">
               {t.description}
             </p>
 
@@ -53,14 +53,14 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl hover:bg-primary/5 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Target className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-1">{t.missionTitle}</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-bold text-primary-900 mb-1">{t.missionTitle}</h3>
+                  <p className="text-sm text-primary-700">
                     {t.missionText}
                   </p>
                 </div>
@@ -71,14 +71,14 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl hover:bg-orange-50/50 transition-all duration-300"
               >
-                <div className="w-12 h-12 bg-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-orange-500 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Eye className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-1">{t.visionTitle}</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-bold text-primary-900 mb-1">{t.visionTitle}</h3>
+                  <p className="text-sm text-primary-700">
                     {t.visionText}
                   </p>
                 </div>
@@ -89,14 +89,14 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                className="flex gap-4 p-4 bg-white rounded-xl shadow-lg hover:shadow-xl hover:bg-primary/5 transition-all duration-300"
               >
                 <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center flex-shrink-0">
                   <Lightbulb className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 mb-1">{t.valuesTitle}</h3>
-                  <p className="text-sm text-gray-600">
+                  <h3 className="font-bold text-primary-900 mb-1">{t.valuesTitle}</h3>
+                  <p className="text-sm text-primary-700">
                     {t.valuesText}
                   </p>
                 </div>
@@ -155,20 +155,20 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.1 }}
-                        className="flex items-center justify-between p-4 bg-primary/5 rounded-xl hover:bg-primary/10 transition-colors"
+                        className="flex items-center justify-between p-4 bg-gradient-to-r from-primary/5 to-orange-50/50 rounded-xl hover:from-primary/10 hover:to-orange-100/50 transition-all duration-300"
                       >
                         <div className="flex items-center gap-4">
                           <div className="w-12 h-12 bg-white rounded-lg shadow-md flex items-center justify-center">
                             <Icon className="w-6 h-6 text-primary" />
                           </div>
                           <div>
-                            <p className="text-3xl font-bold text-gray-900">{stat.number}</p>
-                            <p className="text-sm text-gray-600">{stat.label}</p>
+                            <p className="text-3xl font-bold text-primary-900">{stat.number}</p>
+                            <p className="text-sm text-primary-700">{stat.label}</p>
                           </div>
                         </div>
                         <motion.div
                           whileHover={{ scale: 1.2, rotate: 90 }}
-                          className="w-8 h-8 bg-accent/20 rounded-full"
+                          className="w-8 h-8 bg-orange-200 rounded-full"
                         />
                       </motion.div>
                     )
@@ -195,7 +195,7 @@ export default function AboutSection({ language = 'en' }: AboutSectionProps) {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-20 left-20 w-20 h-20 bg-accent/20 rounded-full blur-xl"
+        className="absolute top-20 left-20 w-20 h-20 bg-orange-300/30 rounded-full blur-xl"
       />
       
       <motion.div

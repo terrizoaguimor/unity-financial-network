@@ -192,7 +192,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Mission - Premium Section */}
-      <section className="section-padding bg-neutral-light">
+      <section className="section-padding bg-primary/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0 }}
@@ -559,7 +559,7 @@ export default function AboutPage() {
       </section>
 
       {/* Elite Team Section */}
-      <section className="section-padding bg-neutral-light">
+      <section className="section-padding bg-primary/10">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -689,7 +689,7 @@ export default function AboutPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/quote">
+              <Link href="/schedule">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

@@ -426,14 +426,14 @@ export default function BlogPage() {
                           className={`w-full flex items-center justify-between p-3 rounded-lg transition-all ${
                             selectedCategory === category.name
                               ? 'bg-primary-100 text-primary-700'
-                              : 'hover:bg-gray-100'
+                              : 'hover:bg-primary/10'
                           }`}
                         >
                           <span className="flex items-center gap-2">
                             <Icon className="w-4 h-4" />
                             {category.name}
                           </span>
-                          <span className="text-sm font-semibold bg-gray-100 px-2 py-1 rounded-full">
+                          <span className="text-sm font-semibold bg-primary/10 px-2 py-1 rounded-full">
                             {category.count}
                           </span>
                         </button>
@@ -453,7 +453,7 @@ export default function BlogPage() {
                       <button
                         key={tag}
                         onClick={() => setSearchTerm(tag)}
-                        className="px-3 py-1 bg-gray-100 hover:bg-primary-100 hover:text-primary-700 rounded-full text-sm transition-all"
+                        className="px-3 py-1 bg-primary/10 hover:bg-primary-100 hover:text-primary-700 rounded-full text-sm transition-all"
                       >
                         {tag}
                       </button>
@@ -474,7 +474,7 @@ export default function BlogPage() {
                     placeholder={language === 'en' ? 'Your email' : 'Tu correo electrónico'}
                     className="w-full px-4 py-2 rounded-lg text-gray-900 mb-3"
                   />
-                  <button className="w-full px-4 py-2 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition-all">
+                  <button className="w-full px-4 py-2 bg-white text-primary-600 font-semibold rounded-lg hover:bg-primary/10 transition-all">
                     {language === 'en' ? 'Subscribe' : 'Suscribirse'}
                   </button>
                 </div>
@@ -554,7 +554,7 @@ export default function BlogPage() {
                               <MessageCircle className="w-4 h-4" />
                               {post.comments}
                             </span>
-                            <button className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+                            <button className="p-2 hover:bg-primary/10 rounded-full transition-colors">
                               <Share2 className="w-4 h-4 text-gray-500" />
                             </button>
                           </div>
@@ -594,7 +594,7 @@ export default function BlogPage() {
                   transition={{ delay: 0.5 }}
                   className="flex justify-center gap-2 mt-12"
                 >
-                  <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-all">
+                  <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-primary/5 transition-all">
                     {language === 'en' ? 'Previous' : 'Anterior'}
                   </button>
                   {[1, 2, 3, 4, 5].map(page => (
@@ -603,13 +603,13 @@ export default function BlogPage() {
                       className={`px-4 py-2 rounded-lg transition-all ${
                         page === 1
                           ? 'bg-primary-600 text-white'
-                          : 'bg-white border border-gray-200 hover:bg-gray-50'
+                          : 'bg-white border border-gray-200 hover:bg-primary/5'
                       }`}
                     >
                       {page}
                     </button>
                   ))}
-                  <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-gray-50 transition-all">
+                  <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg hover:bg-primary/5 transition-all">
                     {language === 'en' ? 'Next' : 'Siguiente'}
                   </button>
                 </motion.div>

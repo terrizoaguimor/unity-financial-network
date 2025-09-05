@@ -350,10 +350,10 @@ export default function AlbaEstevezPage() {
   return (
     <>
       <HeaderSimple />
-      <main className="min-h-screen bg-neutral-light">
+      <main className="min-h-screen bg-primary/10">
         {/* Hero Section */}
         <section className="relative py-12 md:py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-primary opacity-95" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-900 opacity-95" />
           <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
@@ -366,7 +366,7 @@ export default function AlbaEstevezPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="inline-block px-4 py-2 bg-white/20 backdrop-blur rounded-full text-sm font-semibold mb-4"
+                    className="badge-primary bg-white bg-opacity-20 backdrop-blur mb-4"
                   >
                     ⭐ {language === 'en' ? 'Top-Rated Insurance Agent in Florida' : 'Agente de Seguros Mejor Calificado en Florida'}
                   </motion.div>
@@ -395,11 +395,11 @@ export default function AlbaEstevezPage() {
                   
                   {/* Languages & Certifications */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                    <div className="flex items-center gap-3 bg-white/10 backdrop-blur rounded-lg px-4 py-2">
+                    <div className="flex items-center gap-3 bg-white bg-opacity-10 backdrop-blur rounded-lg px-4 py-2">
                       <Globe className="w-5 h-5 text-purple-200" />
                       <span className="text-sm">{agentData.languages.join(' • ')}</span>
                     </div>
-                    <div className="flex items-center gap-3 bg-white/10 backdrop-blur rounded-lg px-4 py-2">
+                    <div className="flex items-center gap-3 bg-white bg-opacity-10 backdrop-blur rounded-lg px-4 py-2">
                       <Award className="w-5 h-5 text-purple-200" />
                       <span className="text-sm">{language === 'en' ? '4 Certifications' : '4 Certificaciones'}</span>
                     </div>
@@ -409,7 +409,7 @@ export default function AlbaEstevezPage() {
                   <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                     <button
                       onClick={() => setShowAppointmentModal(true)}
-                      className="inline-flex items-center justify-center gap-2 bg-white text-primary-600 px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-purple-50 transition-colors text-sm sm:text-base"
+                      className="button-secondary rounded-full text-sm sm:text-base"
                     >
                       <Calendar className="w-4 sm:w-5 h-4 sm:h-5" />
                       <span className="truncate">{language === 'en' ? 'Schedule' : 'CITA'}</span>
@@ -417,14 +417,14 @@ export default function AlbaEstevezPage() {
                     </button>
                     <button
                       onClick={() => setShowCallModal(true)}
-                      className="inline-flex items-center justify-center gap-2 bg-yellow-500 text-primary-800 px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-colors text-sm sm:text-base"
+                      className="button-accent rounded-full text-sm sm:text-base bg-yellow-500 hover:bg-yellow-400 text-primary-800"
                     >
                       <Phone className="w-4 sm:w-5 h-4 sm:h-5" />
                       <span>{language === 'en' ? 'Call Me' : 'LLAMADA'}</span>
                     </button>
                     <button
                       onClick={() => setShowQuoteModal(true)}
-                      className="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-4 sm:px-6 py-3 rounded-full font-semibold hover:bg-primary-700 transition-colors text-sm sm:text-base"
+                      className="button-primary rounded-full text-sm sm:text-base"
                     >
                       <Calculator className="w-4 sm:w-5 h-4 sm:h-5" />
                       <span>{language === 'en' ? 'Quote' : 'COTIZACIÓN'}</span>
@@ -477,21 +477,21 @@ export default function AlbaEstevezPage() {
               >
                 <div className="relative max-w-sm mx-auto lg:max-w-none">
                   <div className="absolute inset-0 bg-accent rounded-3xl blur-2xl opacity-30" />
-                  <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
-                    <div className="aspect-[3/4] max-h-[400px] sm:max-h-[500px] lg:max-h-none bg-primary/10 rounded-2xl overflow-hidden relative">
+                  <div className="relative card-base p-2 rounded-3xl">
+                    <div className="aspect-[3/4] max-h-[400px] sm:max-h-[500px] lg:max-h-none bg-primary bg-opacity-10 rounded-2xl overflow-hidden relative">
                       {/* Alba's Professional Photo */}
-                      <div className="w-full h-full bg-neutral-light flex items-center justify-center">
+                      <div className="w-full h-full bg-primary/10 flex items-center justify-center">
                         <div className="text-center p-6">
-                          <UserCheck className="w-24 h-24 text-purple-400 mx-auto mb-4" />
-                          <p className="text-purple-600 font-semibold">Alba Estévez</p>
-                          <p className="text-purple-500 text-sm">Professional Photo</p>
+                          <UserCheck className="w-24 h-24 text-primary-400 mx-auto mb-4" />
+                          <p className="text-primary-700 font-semibold">Alba Estévez</p>
+                          <p className="text-primary-600 text-sm">Professional Photo</p>
                         </div>
                       </div>
                       {/* Unity Badge */}
-                      <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur rounded-xl p-3 shadow-lg">
+                      <div className="absolute bottom-4 left-4 right-4 bg-white bg-opacity-95 backdrop-blur rounded-xl p-3 shadow-lg">
                         <div className="text-center">
                           <p className="text-sm font-semibold text-primary-700">Unity Financial Network</p>
-                          <p className="text-xs text-gray-600">{agentData.license}</p>
+                          <p className="text-xs text-primary-600">{agentData.license}</p>
                         </div>
                       </div>
                     </div>
@@ -503,8 +503,8 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 md:py-20 bg-primary relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10" />
+        <section className="py-12 md:py-20 bg-gradient-to-br from-primary to-primary-900 relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/5" />
           <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => {
@@ -560,7 +560,7 @@ export default function AlbaEstevezPage() {
                     : 'La Promesa de una Madre de Proteger Familias'
                   }
                 </h2>
-                <div className="space-y-4 text-gray-700 leading-relaxed">
+                <div className="space-y-4 text-primary-700 leading-relaxed">
                   <p className="text-lg">
                     {language === 'en'
                       ? 'As a mother myself, I understand the profound responsibility of protecting our loved ones. Every day, I wake up driven by the same commitment I have to my own family - ensuring that yours has the security and peace of mind you deserve.'
@@ -573,8 +573,8 @@ export default function AlbaEstevezPage() {
                       : 'Mi camino en los seguros no es solo una carrera, es una vocación nacida de la experiencia personal. Habiendo enfrentado los desafíos inesperados de la vida, he hecho mi misión asegurar que ninguna familia pase por dificultades financieras durante sus momentos más difíciles.'
                     }
                   </p>
-                  <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-primary">
-                    <p className="font-semibold text-purple-800 italic">
+                  <div className="bg-primary/10 rounded-xl p-6 border-l-4 border-accent">
+                    <p className="font-semibold text-primary-800 italic">
                       "{agentData.personalInfo[language as 'en' | 'es']}"
                     </p>
                   </div>
@@ -629,7 +629,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Why Choose Me Section */}
-        <section className="py-12 md:py-20 bg-neutral-light">
+        <section className="py-12 md:py-20 bg-primary/10">
           <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -643,7 +643,7 @@ export default function AlbaEstevezPage() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-primary px-4">
                 {language === 'en' ? 'Your Success Is My Mission' : 'Tu Éxito Es Mi Misión'}
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              <p className="text-base sm:text-lg md:text-xl text-primary-600 max-w-3xl mx-auto px-4">
                 {agentData.mission[language as 'en' | 'es']}
               </p>
             </motion.div>
@@ -660,14 +660,14 @@ export default function AlbaEstevezPage() {
                     transition={{ delay: index * 0.1 }}
                     className="group"
                   >
-                    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all h-full border border-purple-100 hover:border-purple-300">
+                    <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all h-full border border-primary-200 hover:border-primary-400">
                       <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <Icon className="w-7 h-7 text-white" />
                       </div>
-                      <h3 className="text-xl font-bold mb-3 text-gray-800">
+                      <h3 className="text-xl font-bold mb-3 text-primary-800">
                         {reason.title[language as 'en' | 'es']}
                       </h3>
-                      <p className="text-gray-600 leading-relaxed">
+                      <p className="text-primary-600 leading-relaxed">
                         {reason.description[language as 'en' | 'es']}
                       </p>
                     </div>
@@ -679,7 +679,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Services Section */}
-        <section className="py-12 md:py-20 bg-neutral-light">
+        <section className="py-12 md:py-20 bg-primary/10">
           <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -687,13 +687,13 @@ export default function AlbaEstevezPage() {
               viewport={{ once: true }}
               className="text-center mb-8 md:mb-12"
             >
-              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary-100 rounded-full text-xs sm:text-sm font-semibold text-primary-700 mb-3 sm:mb-4">
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary-100 rounded-full text-xs sm:text-sm font-semibold text-primary-800 mb-3 sm:mb-4">
                 {language === 'en' ? 'Services' : 'Servicios'}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
                 {language === 'en' ? 'Insurance Solutions' : 'Soluciones de Seguro'}
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+              <p className="text-base sm:text-lg md:text-xl text-primary-600 max-w-3xl mx-auto px-4">
                 {language === 'en' 
                   ? 'Comprehensive insurance coverage tailored to your needs'
                   : 'Cobertura de seguro integral adaptada a sus necesidades'
@@ -719,7 +719,7 @@ export default function AlbaEstevezPage() {
                     <h3 className="text-xl font-bold mb-2">
                       {service.title[language as 'en' | 'es']}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-primary-600">
                       {service.description[language as 'en' | 'es']}
                     </p>
                   </motion.div>
@@ -730,17 +730,17 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Achievements Section */}
-        <section className="py-12 md:py-16 bg-accent/10">
+        <section className="py-12 md:py-16 bg-accent/20">
           <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-3xl shadow-2xl p-8 border-2 border-yellow-200"
+              className="bg-white rounded-3xl shadow-2xl p-8 border-2 border-accent/30"
             >
               <div className="flex items-center gap-4 mb-6">
                 <Trophy className="w-10 h-10 text-yellow-500" />
-                <h3 className="text-2xl font-bold text-gray-800">
+                <h3 className="text-2xl font-bold text-primary-800">
                   {language === 'en' ? 'Achievements & Recognition' : 'Logros y Reconocimientos'}
                 </h3>
               </div>
@@ -755,7 +755,7 @@ export default function AlbaEstevezPage() {
                     className="flex items-center gap-3"
                   >
                     <div className="w-2 h-2 bg-yellow-500 rounded-full" />
-                    <p className="text-gray-700 font-medium">
+                    <p className="text-primary-700 font-medium">
                       {achievement[language as 'en' | 'es']}
                     </p>
                   </motion.div>
@@ -774,7 +774,7 @@ export default function AlbaEstevezPage() {
               viewport={{ once: true }}
               className="text-center mb-8 md:mb-12"
             >
-              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary-100 rounded-full text-xs sm:text-sm font-semibold text-primary-700 mb-3 sm:mb-4">
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary-100 rounded-full text-xs sm:text-sm font-semibold text-primary-800 mb-3 sm:mb-4">
                 {language === 'en' ? 'Testimonials' : 'Testimonios'}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4">
@@ -794,7 +794,7 @@ export default function AlbaEstevezPage() {
                 >
                   <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-purple-100 relative overflow-hidden">
                     {/* Background Pattern */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 opacity-20" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary bg-opacity-10 rounded-full -mr-16 -mt-16 opacity-20" />
                     
                     {/* Verified Badge */}
                     {testimonial.verified && (
@@ -809,8 +809,8 @@ export default function AlbaEstevezPage() {
                         {testimonial.name.charAt(0)}
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-bold text-lg text-gray-800">{testimonial.name}</h4>
-                        <p className="text-sm text-gray-600">{testimonial.role[language as 'en' | 'es']}</p>
+                        <h4 className="font-bold text-lg text-primary-800">{testimonial.name}</h4>
+                        <p className="text-sm text-primary-600">{testimonial.role[language as 'en' | 'es']}</p>
                         <div className="flex gap-1 mt-1">
                           {[...Array(testimonial.rating)].map((_, i) => (
                             <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
@@ -819,7 +819,7 @@ export default function AlbaEstevezPage() {
                       </div>
                     </div>
                     
-                    <blockquote className="text-gray-700 mb-4 italic leading-relaxed">
+                    <blockquote className="text-primary-700 mb-4 italic leading-relaxed">
                       "{testimonial.text[language as 'en' | 'es']}"
                     </blockquote>
                     
@@ -839,7 +839,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Schedule Appointment Section */}
-        <section id="schedule" className="py-20 bg-neutral-light">
+        <section id="schedule" className="py-20 bg-primary/10">
           <div className="container-custom max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -853,7 +853,7 @@ export default function AlbaEstevezPage() {
               <h2 className="text-4xl font-bold mb-4">
                 {language === 'en' ? 'Schedule Your Free Consultation' : 'Programe Su Consulta Gratuita'}
               </h2>
-              <p className="text-xl text-gray-600">
+              <p className="text-xl text-primary-600">
                 {language === 'en' 
                   ? "Let's discuss your insurance needs and find the perfect coverage"
                   : 'Hablemos de sus necesidades de seguro y encontremos la cobertura perfecta'
@@ -920,7 +920,7 @@ export default function AlbaEstevezPage() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-primary-700 mb-2">
                       {language === 'en' ? 'Full Name *' : 'Nombre Completo *'}
                     </label>
                     <input
@@ -929,13 +929,13 @@ export default function AlbaEstevezPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       placeholder={language === 'en' ? 'John Doe' : 'Juan Pérez'}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-primary-700 mb-2">
                       {language === 'en' ? 'Email *' : 'Correo Electrónico *'}
                     </label>
                     <input
@@ -944,13 +944,13 @@ export default function AlbaEstevezPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       placeholder={language === 'en' ? 'john@example.com' : 'juan@ejemplo.com'}
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-primary-700 mb-2">
                       {language === 'en' ? 'Phone *' : 'Teléfono *'}
                     </label>
                     <input
@@ -959,13 +959,13 @@ export default function AlbaEstevezPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                       placeholder="(786) 000-0000"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-primary-700 mb-2">
                       {language === 'en' ? 'Service Needed *' : 'Servicio Necesario *'}
                     </label>
                     <select
@@ -973,7 +973,7 @@ export default function AlbaEstevezPage() {
                       value={formData.service}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     >
                       <option value="">
                         {language === 'en' ? 'Select a service' : 'Seleccione un servicio'}
@@ -987,7 +987,7 @@ export default function AlbaEstevezPage() {
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-primary-700 mb-2">
                       {language === 'en' ? 'Preferred Date' : 'Fecha Preferida'}
                     </label>
                     <input
@@ -996,19 +996,19 @@ export default function AlbaEstevezPage() {
                       value={formData.preferredDate}
                       onChange={handleChange}
                       min={new Date().toISOString().split('T')[0]}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-primary-700 mb-2">
                       {language === 'en' ? 'Preferred Time' : 'Hora Preferida'}
                     </label>
                     <select
                       name="preferredTime"
                       value={formData.preferredTime}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                      className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     >
                       <option value="">
                         {language === 'en' ? 'Select a time' : 'Seleccione una hora'}
@@ -1027,7 +1027,7 @@ export default function AlbaEstevezPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="block text-sm font-medium text-primary-700 mb-2">
                     {language === 'en' ? 'Additional Information' : 'Información Adicional'}
                   </label>
                   <textarea
@@ -1035,7 +1035,7 @@ export default function AlbaEstevezPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={4}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                    className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
                     placeholder={language === 'en' 
                       ? 'Tell us more about your insurance needs...'
                       : 'Cuéntenos más sobre sus necesidades de seguro...'
@@ -1053,7 +1053,7 @@ export default function AlbaEstevezPage() {
                       required
                       className="mt-1"
                     />
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-primary-600">
                       {language === 'en' 
                         ? 'I agree to be contacted by Alba Estévez regarding my insurance needs. I understand that my information will be handled according to Unity Financial Network\'s privacy policy.'
                         : 'Acepto ser contactado por Alba Estévez con respecto a mis necesidades de seguro. Entiendo que mi información será manejada de acuerdo con la política de privacidad de Unity Financial Network.'
@@ -1067,7 +1067,7 @@ export default function AlbaEstevezPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-white py-4 px-8 rounded-xl font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full bg-primary text-white py-4 px-8 rounded-xl font-semibold hover:bg-primary bg-opacity-90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -1127,7 +1127,7 @@ export default function AlbaEstevezPage() {
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-1">{language === 'en' ? 'Office Hours' : 'Horario'}</h3>
-                <p className="text-gray-600 text-sm whitespace-pre-line">{agentData.schedule[language as 'en' | 'es']}</p>
+                <p className="text-primary-600 text-sm whitespace-pre-line">{agentData.schedule[language as 'en' | 'es']}</p>
               </motion.div>
             </div>
           </div>
@@ -1141,7 +1141,7 @@ export default function AlbaEstevezPage() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="bg-white/95 backdrop-blur rounded-3xl p-8 lg:p-12 shadow-2xl"
+              className="bg-gradient-to-br from-white via-primary-50/30 to-accent/10 backdrop-blur rounded-3xl p-8 lg:p-12 shadow-2xl border border-primary-200"
             >
               <div className="text-center">
                 <motion.div
@@ -1151,13 +1151,13 @@ export default function AlbaEstevezPage() {
                 >
                   <Zap className="w-16 h-16 text-orange-500 mx-auto mb-4" />
                 </motion.div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-primary-800 to-accent bg-clip-text text-transparent">
                   {language === 'en' 
                     ? '🎉 Limited Time Offer!'
                     : '🎉 ¡Oferta por Tiempo Limitado!'
                   }
                 </h2>
-                <p className="text-xl text-gray-700 mb-6 max-w-2xl mx-auto">
+                <p className="text-xl text-primary-700 mb-6 max-w-2xl mx-auto">
                   {language === 'en'
                     ? 'Schedule your FREE consultation today and receive a complimentary insurance review worth $150!'
                     : '¡Programe su consulta GRATUITA hoy y reciba una revisión de seguros complementaria valorada en $150!'
@@ -1186,7 +1186,7 @@ export default function AlbaEstevezPage() {
                   onClick={() => setShowAppointmentModal(true)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+                  className="bg-gradient-to-r from-white to-primary-50 hover:from-primary-50 hover:to-accent/10 text-primary px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all border border-primary-200"
                 >
                   {language === 'en' ? 'Claim Your Free Consultation Now' : 'Reclame Su Consulta Gratuita Ahora'}
                 </motion.button>
@@ -1244,7 +1244,7 @@ export default function AlbaEstevezPage() {
                 >
                   <Phone className="w-5 sm:w-6 h-5 sm:h-6 group-hover:animate-bounce" />
                   <div className="text-left">
-                    <div className="text-xs sm:text-sm font-normal text-gray-600">{language === 'en' ? 'Call Now' : 'Llame Ahora'}</div>
+                    <div className="text-xs sm:text-sm font-normal text-primary-600">{language === 'en' ? 'Call Now' : 'Llame Ahora'}</div>
                     <div className="text-sm sm:text-base">{agentData.phone}</div>
                   </div>
                 </motion.a>
@@ -1319,7 +1319,7 @@ export default function AlbaEstevezPage() {
             >
               <button
                 onClick={() => setShowQuoteModal(false)}
-                className="absolute right-4 top-4 z-10 text-gray-400 hover:text-gray-600"
+                className="absolute right-4 top-4 z-10 text-neutral-400 hover:text-primary-600"
               >
                 <X className="w-6 h-6" />
               </button>
@@ -1350,17 +1350,17 @@ export default function AlbaEstevezPage() {
             >
               <button
                 onClick={() => setShowAppointmentModal(false)}
-                className="absolute right-4 top-4 text-gray-400 hover:text-gray-600"
+                className="absolute right-4 top-4 text-neutral-400 hover:text-primary-600"
               >
                 <X className="w-6 h-6" />
               </button>
               
               <div className="text-center mb-6">
                 <Calendar className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-                <h2 className="text-3xl font-bold text-primary-800 mb-2">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-800 to-accent bg-clip-text text-transparent mb-2">
                   {language === 'es' ? 'Solicite una Cita' : 'Schedule an Appointment'}
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-primary-600">
                   {language === 'es' 
                     ? 'Complete el formulario y Alba se pondrá en contacto con usted'
                     : 'Fill out the form and Alba will contact you'
@@ -1376,7 +1376,7 @@ export default function AlbaEstevezPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                     placeholder={language === 'es' ? 'Nombre Completo *' : 'Full Name *'}
                   />
                 </div>
@@ -1388,7 +1388,7 @@ export default function AlbaEstevezPage() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                     placeholder={language === 'es' ? 'Correo Electrónico *' : 'Email *'}
                   />
                 </div>
@@ -1400,7 +1400,7 @@ export default function AlbaEstevezPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                     placeholder={language === 'es' ? 'Teléfono *' : 'Phone *'}
                   />
                 </div>
@@ -1411,7 +1411,7 @@ export default function AlbaEstevezPage() {
                     value={formData.service}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="">
                       {language === 'es' ? 'Seleccione un servicio *' : 'Select a service *'}
@@ -1431,14 +1431,14 @@ export default function AlbaEstevezPage() {
                     value={formData.preferredDate}
                     onChange={handleChange}
                     min={new Date().toISOString().split('T')[0]}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                     placeholder={language === 'es' ? 'Fecha Preferida' : 'Preferred Date'}
                   />
                   <select
                     name="preferredTime"
                     value={formData.preferredTime}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                   >
                     <option value="">
                       {language === 'es' ? 'Hora Preferida' : 'Preferred Time'}
@@ -1461,7 +1461,7 @@ export default function AlbaEstevezPage() {
                     value={formData.message}
                     onChange={handleChange}
                     rows={3}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                    className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                     placeholder={language === 'es' 
                       ? 'Información adicional...'
                       : 'Additional information...'
@@ -1479,7 +1479,7 @@ export default function AlbaEstevezPage() {
                       required
                       className="mt-1"
                     />
-                    <span className="text-sm text-gray-600">
+                    <span className="text-sm text-primary-600">
                       {language === 'es' 
                         ? 'Acepto los términos y condiciones'
                         : 'I accept the terms and conditions'
@@ -1493,7 +1493,7 @@ export default function AlbaEstevezPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary/90 transition-all disabled:opacity-50"
+                  className="w-full bg-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary bg-opacity-90 transition-all disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <span>{language === 'es' ? 'Enviando...' : 'Sending...'}</span>
@@ -1526,17 +1526,17 @@ export default function AlbaEstevezPage() {
             >
               <button
                 onClick={() => setShowCallModal(false)}
-                className="absolute right-4 top-4 text-gray-400 hover:text-gray-600"
+                className="absolute right-4 top-4 text-neutral-400 hover:text-primary-600"
               >
                 <X className="w-6 h-6" />
               </button>
               
               <div className="text-center mb-6">
                 <Phone className="w-12 h-12 text-yellow-500 mx-auto mb-4" />
-                <h2 className="text-3xl font-bold text-primary-800 mb-2">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-800 to-accent bg-clip-text text-transparent mb-2">
                   {language === 'es' ? 'Solicite una Llamada' : 'Request a Call'}
                 </h2>
-                <p className="text-gray-600">
+                <p className="text-primary-600">
                   {language === 'es' 
                     ? 'Deje sus datos y Alba le llamará lo antes posible'
                     : 'Leave your details and Alba will call you as soon as possible'
@@ -1551,7 +1551,7 @@ export default function AlbaEstevezPage() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                   placeholder={language === 'es' ? 'Nombre Completo *' : 'Full Name *'}
                 />
                 
@@ -1561,7 +1561,7 @@ export default function AlbaEstevezPage() {
                   value={formData.phone}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                   placeholder={language === 'es' ? 'Teléfono *' : 'Phone *'}
                 />
                 
@@ -1569,7 +1569,7 @@ export default function AlbaEstevezPage() {
                   name="preferredTime"
                   value={formData.preferredTime}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500"
+                  className="w-full px-4 py-3 border border-primary-300 rounded-xl focus:ring-2 focus:ring-primary-500"
                 >
                   <option value="">
                     {language === 'es' ? 'Mejor hora para llamar' : 'Best time to call'}

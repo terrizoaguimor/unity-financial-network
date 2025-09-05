@@ -235,7 +235,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Contact Form & Info */}
-      <section className="section-padding bg-neutral-light">
+      <section className="section-padding bg-primary/10">
         <div className="container-custom">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact Form */}
@@ -365,7 +365,7 @@ export default function ContactPage() {
                         checked={formData.acceptTerms}
                         onChange={handleChange}
                         required
-                        className="mt-1 w-4 h-4 text-primary-600 bg-gray-50 border-gray-300 rounded focus:ring-primary-500 focus:ring-2"
+                        className="mt-1 w-4 h-4 text-primary-600 bg-primary/5 border-primary/20 rounded focus:ring-primary-500 focus:ring-2"
                       />
                       <span className="text-sm text-gray-600">
                         {language === 'en' ? (
@@ -487,7 +487,7 @@ export default function ContactPage() {
                         href={social.link}
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
-                        className={`w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center ${social.color} hover:text-white transition-all`}
+                        className={`w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center ${social.color} hover:text-white transition-all`}
                       >
                         <Icon className="w-5 h-5" />
                       </motion.a>
@@ -581,7 +581,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-neutral-light">
+      <section className="section-padding bg-primary/10">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
