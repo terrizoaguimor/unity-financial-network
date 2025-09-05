@@ -22,7 +22,7 @@ const contactMethods = [
     description: 'Mon-Fri 9AM-6PM EST',
     value: '(786) 828-5576',
     link: 'tel:7868285576',
-    color: 'from-blue-400 to-blue-600'
+    color: 'bg-primary'
   },
   {
     icon: Mail,
@@ -135,7 +135,7 @@ export default function ContactPage() {
       
       {/* Hero Section */}
       <section className="relative min-h-[50vh] flex items-center justify-center pt-40 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-100 via-purple-50 to-white" />
+        <div className="absolute inset-0 bg-primary/10" />
         <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5" />
         
         <motion.div
@@ -148,7 +148,7 @@ export default function ContactPage() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, type: "spring" }}
-            className="w-20 h-20 bg-gradient-to-br from-primary-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6"
+            className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6"
           >
             <HeadphonesIcon className="w-10 h-10 text-white" />
           </motion.div>
@@ -185,7 +185,7 @@ export default function ContactPage() {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-primary-200 to-purple-200 rounded-full opacity-20 blur-3xl"
+          className="absolute top-20 right-20 w-64 h-64 bg-primary/20 rounded-full opacity-20 blur-3xl"
         />
       </section>
 
@@ -221,7 +221,7 @@ export default function ContactPage() {
                   whileHover={{ y: -10 }}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all text-center group"
                 >
-                  <div className={`w-16 h-16 bg-gradient-to-br ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                  <div className={`w-16 h-16 ${method.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform text-white`}>
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="font-bold text-lg mb-1">{method.title}</h3>
@@ -235,7 +235,7 @@ export default function ContactPage() {
       </section>
 
       {/* Main Contact Form & Info */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding bg-neutral-light">
         <div className="container-custom">
           <div className="grid lg:grid-cols-5 gap-12">
             {/* Contact Form */}
@@ -581,7 +581,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding bg-neutral-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

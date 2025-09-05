@@ -71,7 +71,7 @@ export default function ServiceDetailPage() {
       
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-100 via-purple-50 to-white" />
+        <div className="absolute inset-0 bg-primary/10" />
         <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5" />
         
         <motion.div
@@ -95,7 +95,7 @@ export default function ServiceDetailPage() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2, type: "spring" }}
-                className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6`}
+                className="w-20 h-20 bg-primary rounded-2xl flex items-center justify-center mb-6"
               >
                 <Icon className="w-10 h-10 text-white" />
               </motion.div>
@@ -136,7 +136,7 @@ export default function ServiceDetailPage() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-xl transition-all flex items-center gap-2"
+                  className="px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition-all flex items-center gap-2"
                 >
                   <Calculator className="w-5 h-5" size={20} />
                   {t.getQuote}
@@ -160,7 +160,7 @@ export default function ServiceDetailPage() {
               transition={{ delay: 0.5 }}
               className="relative"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-200 to-purple-200 rounded-3xl blur-3xl opacity-30" />
+              <div className="absolute inset-0 bg-primary/20 rounded-3xl blur-3xl opacity-30" />
               <div className="relative bg-white rounded-3xl p-8 shadow-2xl">
                 <h3 className="text-2xl font-bold mb-6">{t.keyFeatures}</h3>
                 <ul className="space-y-4">
@@ -206,7 +206,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Tab Content */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding bg-neutral-light">
         <div className="container-custom">
           <AnimatePresence mode="wait">
             {/* Overview Tab */}
@@ -249,7 +249,7 @@ export default function ServiceDetailPage() {
                 {/* Sidebar */}
                 <div className="space-y-6">
                   {/* Quick Actions */}
-                  <div className="bg-gradient-to-br from-primary-50 to-purple-50 rounded-2xl p-6">
+                  <div className="bg-primary/5 rounded-2xl p-6">
                     <h3 className="font-bold text-lg mb-4">{t.needHelp}</h3>
                     <p className="text-sm text-gray-600 mb-6">{t.expertAdvice}</p>
                     
@@ -308,7 +308,7 @@ export default function ServiceDetailPage() {
                   <h2 className="text-3xl font-bold mb-8">{service.coverageDetails.title}</h2>
                   <div className="grid md:grid-cols-2 gap-6">
                     {service.coverageDetails.items.map((item: string, index: number) => (
-                      <div key={index} className="p-4 bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-100">
+                      <div key={index} className="p-4 bg-neutral-light rounded-xl border border-gray-100">
                         <div className="flex items-start gap-3">
                           <div className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
                             <Check className="w-5 h-5" size={20} />
@@ -353,7 +353,7 @@ export default function ServiceDetailPage() {
                     >
                       {plan.recommended && (
                         <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                          <span className="bg-gradient-to-r from-primary-600 to-purple-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+                          <span className="bg-primary text-white px-4 py-1 rounded-full text-sm font-semibold">
                             {t.mostPopular}
                           </span>
                         </div>
@@ -361,7 +361,7 @@ export default function ServiceDetailPage() {
                       
                       <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                       <div className="flex items-baseline mb-6">
-                        <span className="text-4xl font-bold gradient-text">{plan.price}</span>
+                        <span className="text-4xl font-bold text-primary">{plan.price}</span>
                         <span className="text-gray-600 ml-1">{plan.period}</span>
                       </div>
                       
@@ -379,7 +379,7 @@ export default function ServiceDetailPage() {
                         whileTap={{ scale: 0.95 }}
                         className={`w-full py-3 font-semibold rounded-full transition-all ${
                           plan.recommended
-                            ? 'bg-gradient-to-r from-primary-600 to-purple-600 text-white hover:shadow-lg'
+                            ? 'bg-primary text-white hover:bg-primary/90'
                             : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                         }`}
                       >
@@ -427,7 +427,7 @@ export default function ServiceDetailPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mt-16 bg-gradient-to-br from-primary-600 to-purple-600 rounded-3xl p-12 text-center text-white"
+            className="mt-16 bg-primary rounded-3xl p-12 text-center text-white"
           >
             <h2 className="text-3xl font-bold mb-4">
               {language === 'en' 

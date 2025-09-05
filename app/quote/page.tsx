@@ -88,7 +88,7 @@ export default function QuotePage() {
       id: 'health', 
       name: language === 'en' ? 'Health Insurance' : 'Seguro de Salud', 
       icon: Heart, 
-      color: 'from-red-400 to-pink-600',
+      color: 'bg-primary',
       description: language === 'en' 
         ? 'Comprehensive medical coverage for you and your family'
         : 'Cobertura médica integral para ti y tu familia',
@@ -102,7 +102,7 @@ export default function QuotePage() {
       id: 'life', 
       name: language === 'en' ? 'Life Insurance' : 'Seguro de Vida', 
       icon: Shield, 
-      color: 'from-blue-400 to-cyan-600',
+      color: 'bg-primary',
       description: language === 'en'
         ? 'Protect your loved ones\' financial future'
         : 'Protege el futuro financiero de tus seres queridos',
@@ -116,7 +116,7 @@ export default function QuotePage() {
       id: 'auto', 
       name: language === 'en' ? 'Auto Insurance' : 'Seguro de Auto', 
       icon: Car, 
-      color: 'from-green-400 to-emerald-600',
+      color: 'bg-primary',
       description: language === 'en'
         ? 'Complete protection for your vehicle'
         : 'Protección completa para tu vehículo',
@@ -130,7 +130,7 @@ export default function QuotePage() {
       id: 'home', 
       name: language === 'en' ? 'Home Insurance' : 'Seguro de Hogar', 
       icon: Home, 
-      color: 'from-yellow-400 to-orange-600',
+      color: 'bg-accent',
       description: language === 'en'
         ? 'Safeguard your most valuable asset'
         : 'Protege tu activo más valioso',
@@ -144,7 +144,7 @@ export default function QuotePage() {
       id: 'medicare', 
       name: language === 'en' ? 'Medicare Plans' : 'Planes Medicare', 
       icon: Users, 
-      color: 'from-purple-400 to-indigo-600',
+      color: 'bg-primary',
       description: language === 'en'
         ? 'Comprehensive Medicare coverage options'
         : 'Opciones completas de cobertura Medicare',
@@ -158,7 +158,7 @@ export default function QuotePage() {
       id: 'business', 
       name: language === 'en' ? 'Business Insurance' : 'Seguro Comercial', 
       icon: Briefcase, 
-      color: 'from-gray-400 to-gray-600',
+      color: 'bg-neutral-dark',
       description: language === 'en'
         ? 'Protect your business and employees'
         : 'Protege tu negocio y empleados',
@@ -314,7 +314,7 @@ export default function QuotePage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-purple-800 to-primary-700" />
+          <div className="absolute inset-0 bg-primary" />
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]" />
           
           {/* Floating Orbs */}
@@ -398,7 +398,7 @@ export default function QuotePage() {
               {language === 'en' ? (
                 <>
                   <span className="block">Get Your</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 bg-[length:200%_auto] animate-gradient">
+                  <span className="text-accent font-bold">
                     Personalized Quote
                   </span>
                   <span className="block">Today</span>
@@ -406,7 +406,7 @@ export default function QuotePage() {
               ) : (
                 <>
                   <span className="block">Obtén Tu</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 bg-[length:200%_auto] animate-gradient">
+                  <span className="text-accent font-bold">
                     Cotización Personalizada
                   </span>
                   <span className="block">Hoy</span>
@@ -463,7 +463,7 @@ export default function QuotePage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-12 py-5 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold text-lg rounded-full hover:shadow-2xl transition-all inline-flex items-center gap-3"
+                className="px-12 py-5 bg-accent text-primary font-bold text-lg rounded-full hover:bg-accent/90 transition-all inline-flex items-center gap-3"
               >
                 {language === 'en' ? 'Start Your Free Quote' : 'Comienza Tu Cotización Gratis'}
                 <ArrowRight className="w-5 h-5" />
@@ -485,7 +485,7 @@ export default function QuotePage() {
       </section>
 
       {/* Insurance Products Showcase */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 via-white to-primary-50/30">
+      <section className="section-padding bg-neutral-light">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -504,9 +504,9 @@ export default function QuotePage() {
             </motion.span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {language === 'en' ? (
-                <>Insurance Solutions <span className="gradient-text animate-gradient">For Every Need</span></>
+                <>Insurance Solutions <span className="text-primary font-bold">For Every Need</span></>
               ) : (
-                <>Soluciones de Seguro <span className="gradient-text animate-gradient">Para Cada Necesidad</span></>
+                <>Soluciones de Seguro <span className="text-primary font-bold">Para Cada Necesidad</span></>
               )}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -529,9 +529,9 @@ export default function QuotePage() {
                   whileHover={{ y: -10, scale: 1.02 }}
                   className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all"
                 >
-                  <div className={`h-2 bg-gradient-to-r ${type.color}`} />
+                  <div className="h-2 bg-primary" />
                   <div className="p-8">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${type.color} rounded-2xl flex items-center justify-center mb-6`}>
+                    <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6">
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold mb-3">{type.name}</h3>
@@ -551,7 +551,7 @@ export default function QuotePage() {
                         setFormData({ ...formData, insuranceType: type.id })
                         document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' })
                       }}
-                      className={`w-full py-3 bg-gradient-to-r ${type.color} text-white font-semibold rounded-xl hover:shadow-lg transition-all`}
+                      className="w-full py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all"
                     >
                       {language === 'en' ? 'Get Quote' : 'Obtener Cotización'}
                     </motion.button>
@@ -578,9 +578,9 @@ export default function QuotePage() {
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               {language === 'en' ? (
-                <>Your Custom <span className="gradient-text">Insurance Quote</span></>
+                <>Your Custom <span className="text-primary font-bold">Insurance Quote</span></>
               ) : (
-                <>Tu Cotización <span className="gradient-text">Personalizada</span></>
+                <>Tu Cotización <span className="text-primary font-bold">Personalizada</span></>
               )}
             </h2>
           </motion.div>
@@ -597,7 +597,7 @@ export default function QuotePage() {
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
               <motion.div
-                className="h-full bg-gradient-to-r from-primary-600 to-purple-600"
+                className="h-full bg-primary"
                 initial={{ width: 0 }}
                 animate={{ width: `${progressPercentage}%` }}
                 transition={{ duration: 0.5 }}
@@ -611,7 +611,7 @@ export default function QuotePage() {
                       step < currentStep
                         ? 'bg-green-500 text-white shadow-lg'
                         : step === currentStep
-                        ? 'bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-xl scale-110'
+                        ? 'bg-primary text-white shadow-xl scale-110'
                         : 'bg-gray-200 text-gray-500'
                     }`}
                     whileHover={{ scale: step <= currentStep ? 1.1 : 1 }}
@@ -637,7 +637,7 @@ export default function QuotePage() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
-            className="bg-gradient-to-br from-white to-gray-50 rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100"
+            className="bg-white rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100"
           >
             <AnimatePresence mode="wait">
               {/* Step 1: Personal Information */}
@@ -817,7 +817,7 @@ export default function QuotePage() {
                           onClick={() => setFormData({ ...formData, insuranceType: type.id })}
                           className={`relative p-6 rounded-2xl border-2 transition-all text-left ${
                             formData.insuranceType === type.id
-                              ? 'border-primary-500 bg-gradient-to-br from-primary-50 to-purple-50 shadow-lg'
+                              ? 'border-primary bg-primary/5 shadow-lg'
                               : 'border-gray-200 hover:border-gray-300 bg-white'
                           }`}
                         >
@@ -832,7 +832,7 @@ export default function QuotePage() {
                               </div>
                             </motion.div>
                           )}
-                          <div className={`w-14 h-14 bg-gradient-to-br ${type.color} rounded-xl flex items-center justify-center mb-4`}>
+                          <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-4">
                             <Icon className="w-7 h-7 text-white" />
                           </div>
                           <h3 className="font-bold text-lg mb-2">{type.name}</h3>
@@ -1133,7 +1133,7 @@ export default function QuotePage() {
                   <motion.div
                     initial={{ scale: 0.95 }}
                     animate={{ scale: 1 }}
-                    className="bg-gradient-to-br from-primary-600 to-purple-600 text-white rounded-3xl p-8 mb-8 shadow-2xl"
+                    className="bg-primary text-white rounded-3xl p-8 mb-8 shadow-2xl"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <h3 className="text-xl font-semibold">
@@ -1179,7 +1179,7 @@ export default function QuotePage() {
                   </div>
 
                   {/* Next Steps */}
-                  <div className="bg-gradient-to-br from-yellow-50 to-orange-50 border border-yellow-200 rounded-2xl p-6 mb-6">
+                  <div className="bg-accent/10 border border-accent/30 rounded-2xl p-6 mb-6">
                     <div className="flex items-start gap-3">
                       <Info className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-0.5" />
                       <div>
@@ -1321,7 +1321,7 @@ export default function QuotePage() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={handleNext}
-                  className="px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-xl transition-all flex items-center gap-2"
+                  className="px-8 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all flex items-center gap-2"
                 >
                   {language === 'en' ? 'Next' : 'Siguiente'}
                   <ChevronRight className="w-5 h-5" />
@@ -1334,7 +1334,7 @@ export default function QuotePage() {
                   disabled={!formData.agreeToContact || !formData.agreeToTerms || !formData.agreeToPrivacy || !turnstileToken || isSubmitting}
                   className={`px-10 py-4 font-semibold rounded-xl transition-all flex items-center gap-2 ${
                     formData.agreeToContact && formData.agreeToTerms && formData.agreeToPrivacy && turnstileToken && !isSubmitting
-                      ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white hover:shadow-xl'
+                      ? 'bg-green-600 text-white hover:bg-green-700'
                       : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                   }`}
                 >
@@ -1428,7 +1428,7 @@ export default function QuotePage() {
       </section>
 
       {/* Why Choose Unity - Final CTA */}
-      <section className="section-padding bg-gradient-to-br from-primary-50 to-purple-50">
+      <section className="section-padding bg-neutral-light">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -1437,9 +1437,9 @@ export default function QuotePage() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               {language === 'en' ? (
-                <>Why Choose <span className="gradient-text">Unity Financial?</span></>
+                <>Why Choose <span className="text-primary font-bold">Unity Financial?</span></>
               ) : (
-                <>¿Por Qué Elegir <span className="gradient-text">Unity Financial?</span></>
+                <>¿Por Qué Elegir <span className="text-primary font-bold">Unity Financial?</span></>
               )}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">

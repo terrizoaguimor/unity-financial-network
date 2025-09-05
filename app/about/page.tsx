@@ -54,7 +54,7 @@ export default function AboutPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-purple-800 to-primary-700" />
+          <div className="absolute inset-0 bg-primary" />
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]" />
           
           {/* Additional animated elements */}
@@ -133,12 +133,12 @@ export default function AboutPage() {
               {language === 'en' 
                 ? <>
                     <span className="block">Empowering</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 bg-[length:200%_auto] animate-gradient">Financial</span>
+                    <span className="text-accent font-bold">Financial</span>
                     <span className="block">Futures</span>
                   </>
                 : <>
                     <span className="block">Empoderando</span>
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 bg-[length:200%_auto] animate-gradient">Futuros</span>
+                    <span className="text-accent font-bold">Futuros</span>
                     <span className="block">Financieros</span>
                   </>}
             </motion.h1>
@@ -192,7 +192,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Mission - Premium Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 via-white to-primary-50/30">
+      <section className="section-padding bg-neutral-light">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0 }}
@@ -264,7 +264,7 @@ export default function AboutPage() {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-8 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-full font-semibold hover:shadow-xl transition-all flex items-center gap-2"
+                      className="px-8 py-4 bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transition-all flex items-center gap-2"
                     >
                       {language === 'en' ? 'Explore Services' : 'Explorar Servicios'}
                       <ArrowRight className="w-5 h-5" />
@@ -317,7 +317,7 @@ export default function AboutPage() {
       </section>
 
       {/* Founder Section - Premium Design */}
-      <section className="section-padding bg-gradient-to-br from-primary-900 via-purple-900 to-primary-800 text-white relative overflow-hidden">
+      <section className="section-padding bg-primary text-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid-white/[0.03] bg-[size:30px_30px]" />
@@ -503,8 +503,8 @@ export default function AboutPage() {
                 description: language === 'en' 
                   ? 'We conduct business with honesty, transparency, and unwavering ethical standards'
                   : 'Realizamos negocios con honestidad, transparencia y estándares éticos inquebrantables',
-                color: 'from-blue-500 to-indigo-600',
-                bgColor: 'from-blue-50 to-indigo-50'
+                color: 'bg-primary',
+                bgColor: 'bg-primary/5'
               },
               {
                 icon: Heart,
@@ -512,8 +512,8 @@ export default function AboutPage() {
                 description: language === 'en'
                   ? 'Every client is unique, and we tailor solutions to fit individual needs and dreams'
                   : 'Cada cliente es único, y adaptamos soluciones para satisfacer necesidades y sueños individuales',
-                color: 'from-pink-500 to-rose-600',
-                bgColor: 'from-pink-50 to-rose-50'
+                color: 'bg-primary',
+                bgColor: 'bg-primary/5'
               },
               {
                 icon: Lightbulb,
@@ -521,8 +521,8 @@ export default function AboutPage() {
                 description: language === 'en'
                   ? 'We embrace cutting-edge solutions to provide the best financial services'
                   : 'Adoptamos soluciones de vanguardia para brindar los mejores servicios financieros',
-                color: 'from-yellow-500 to-orange-600',
-                bgColor: 'from-yellow-50 to-orange-50'
+                color: 'bg-accent',
+                bgColor: 'bg-accent/5'
               },
               {
                 icon: HandshakeIcon,
@@ -530,8 +530,8 @@ export default function AboutPage() {
                 description: language === 'en'
                   ? 'We build lasting relationships based on trust, respect, and mutual success'
                   : 'Construimos relaciones duraderas basadas en confianza, respeto y éxito mutuo',
-                color: 'from-green-500 to-emerald-600',
-                bgColor: 'from-green-50 to-emerald-50'
+                color: 'bg-green-600',
+                bgColor: 'bg-green-50'
               }
             ].map((value, index) => (
               <motion.div
@@ -541,12 +541,12 @@ export default function AboutPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -10, transition: { duration: 0.3 } }}
-                className={`relative bg-gradient-to-br ${value.bgColor} p-8 rounded-3xl overflow-hidden group cursor-pointer`}
+                className={`relative ${value.bgColor} p-8 rounded-3xl overflow-hidden group cursor-pointer`}
               >
                 {/* Background decoration */}
-                <div className={`absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br ${value.color} rounded-full opacity-10 group-hover:scale-150 transition-transform duration-500`} />
+                <div className={`absolute -top-20 -right-20 w-40 h-40 ${value.color} opacity-10 rounded-full group-hover:scale-150 transition-transform duration-500`} />
                 
-                <div className={`w-14 h-14 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
+                <div className={`w-14 h-14 ${value.color} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform text-white`}>
                   <value.icon className="w-7 h-7 text-white" />
                 </div>
                 
@@ -559,7 +559,7 @@ export default function AboutPage() {
       </section>
 
       {/* Elite Team Section */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding bg-neutral-light">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -600,7 +600,7 @@ export default function AboutPage() {
       </section>
 
       {/* Premium Stats Section */}
-      <section className="section-padding bg-gradient-to-br from-primary-600 via-purple-600 to-primary-700 text-white relative overflow-hidden">
+      <section className="section-padding bg-primary text-white relative overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:30px_30px]" />
@@ -663,7 +663,7 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="section-padding bg-gradient-to-br from-white via-primary-50/30 to-white">
+      <section className="section-padding bg-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -693,7 +693,7 @@ export default function AboutPage() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-10 py-5 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:shadow-2xl transition-all flex items-center gap-3 group"
+                  className="px-10 py-5 bg-primary text-white rounded-full font-semibold text-lg hover:bg-primary/90 transition-all flex items-center gap-3 group"
                 >
                   {language === 'en' ? 'Get Your Free Quote' : 'Obtén Tu Cotización Gratis'}
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

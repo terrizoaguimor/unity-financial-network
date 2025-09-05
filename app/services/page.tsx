@@ -147,7 +147,7 @@ export default function ServicesPage() {
             alt="Insurance services"
             className="w-full h-full object-cover opacity-10"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-100/90 via-purple-50/90 to-white/90" />
+          <div className="absolute inset-0 bg-primary/10" />
         </div>
         <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-5" />
         
@@ -173,7 +173,7 @@ export default function ServicesPage() {
             className="text-5xl md:text-6xl font-bold mb-6"
           >
             {language === 'en' ? 'Insurance Solutions' : 'Soluciones de Seguros'}{' '}
-            <span className="gradient-text">{language === 'en' ? 'Tailored for You' : 'Hechos a tu Medida'}</span>
+            <span className="text-primary font-bold">{language === 'en' ? 'Tailored for You' : 'Hechos a tu Medida'}</span>
           </motion.h1>
           
           <motion.p
@@ -218,7 +218,7 @@ export default function ServicesPage() {
             repeat: Infinity,
             ease: "linear"
           }}
-          className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-primary-200 to-purple-200 rounded-full opacity-20 blur-3xl"
+          className="absolute top-20 right-20 w-64 h-64 bg-primary/20 rounded-full opacity-20 blur-3xl"
         />
       </section>
 
@@ -236,7 +236,7 @@ export default function ServicesPage() {
                   onClick={() => setSelectedCategory(category.id)}
                   className={`flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all ${
                     selectedCategory === category.id
-                      ? 'bg-gradient-to-r from-primary-600 to-purple-600 text-white shadow-lg'
+                      ? 'bg-primary text-white shadow-lg'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -250,7 +250,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="section-padding bg-gradient-to-br from-gray-50 to-white">
+      <section className="section-padding bg-neutral-light">
         <div className="container-custom">
           <AnimatePresence mode="wait">
             <motion.div
@@ -274,7 +274,7 @@ export default function ServicesPage() {
                   >
                     <div className={`${service.bgColor} rounded-3xl p-8 h-full border border-gray-100 hover:border-transparent hover:shadow-2xl transition-all duration-300`}>
                       {service.popularPlan && (
-                        <div className="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                        <div className="absolute -top-3 -right-3 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
                           POPULAR
                         </div>
                       )}
@@ -282,7 +282,7 @@ export default function ServicesPage() {
                       <motion.div
                         whileHover={{ rotate: 360 }}
                         transition={{ duration: 0.5 }}
-                        className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6 shadow-lg`}
+                        className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center mb-6 shadow-lg text-white"
                       >
                         <Icon className="w-8 h-8 text-white" />
                       </motion.div>
@@ -315,7 +315,7 @@ export default function ServicesPage() {
                           <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                            className="w-full px-4 py-3 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
                           >
                             Learn More
                             <ArrowRight className="w-4 h-4" />
@@ -377,7 +377,7 @@ export default function ServicesPage() {
                   <div className="p-8">
                     <div className="flex justify-between items-start mb-6">
                       <div className="flex items-center gap-4">
-                        <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center shadow-lg`}>
+                        <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg">
                           <Icon className="w-8 h-8 text-white" />
                         </div>
                         <div>
@@ -410,7 +410,7 @@ export default function ServicesPage() {
                       
                       <div>
                         <h3 className="text-xl font-bold mb-4">Pricing</h3>
-                        <div className="bg-gradient-to-br from-primary-50 to-purple-50 rounded-2xl p-6">
+                        <div className="bg-primary/5 rounded-2xl p-6">
                           <div className="text-4xl font-bold text-primary-600 mb-2">
                             {service.startingPrice}
                           </div>
@@ -426,7 +426,7 @@ export default function ServicesPage() {
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex-1 px-6 py-4 bg-gradient-to-r from-primary-600 to-purple-600 text-white font-semibold rounded-xl hover:shadow-lg transition-all flex items-center justify-center gap-2"
+                        className="flex-1 px-6 py-4 bg-primary text-white font-semibold rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-2"
                       >
                         <Calculator className="w-5 h-5" />
                         Get Your Quote
@@ -449,7 +449,7 @@ export default function ServicesPage() {
       </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary-600 to-purple-700 text-white">
+      <section className="py-20 bg-primary text-white">
         <div className="container-custom text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

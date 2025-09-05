@@ -103,7 +103,7 @@ const services = [
       en: 'ACA/Obamacare plans with subsidies and comprehensive coverage',
       es: 'Planes ACA/Obamacare con subsidios y cobertura completa'
     },
-    color: 'from-red-400 to-red-600'
+    color: 'bg-primary'
   },
   {
     icon: Stethoscope,
@@ -112,7 +112,7 @@ const services = [
       en: 'Medicare Advantage, Supplement, and Part D prescription plans',
       es: 'Medicare Advantage, Suplementario y planes de prescripción Parte D'
     },
-    color: 'from-blue-400 to-blue-600'
+    color: 'bg-primary'
   },
   {
     icon: Shield,
@@ -121,7 +121,7 @@ const services = [
       en: 'Term and whole life insurance to protect your loved ones',
       es: 'Seguro de vida temporal y permanente para proteger a sus seres queridos'
     },
-    color: 'from-green-400 to-green-600'
+    color: 'bg-primary'
   },
   {
     icon: Home,
@@ -130,7 +130,7 @@ const services = [
       en: 'Complete protection for your home and belongings',
       es: 'Protección completa para su hogar y pertenencias'
     },
-    color: 'from-purple-400 to-purple-600'
+    color: 'bg-primary'
   },
   {
     icon: Car,
@@ -139,7 +139,7 @@ const services = [
       en: 'Comprehensive auto coverage at competitive rates',
       es: 'Cobertura de auto completa a tarifas competitivas'
     },
-    color: 'from-yellow-400 to-yellow-600'
+    color: 'bg-accent'
   },
   {
     icon: Building,
@@ -148,7 +148,7 @@ const services = [
       en: 'Protect your business with comprehensive commercial coverage',
       es: 'Proteja su negocio con cobertura comercial completa'
     },
-    color: 'from-indigo-400 to-indigo-600'
+    color: 'bg-primary'
   }
 ]
 
@@ -210,25 +210,25 @@ const stats = [
     number: '2,500+', 
     label: { en: 'Families Protected', es: 'Familias Protegidas' },
     icon: Users,
-    color: 'from-blue-400 to-blue-600' 
+    color: 'bg-primary' 
   },
   { 
     number: '10+', 
     label: { en: 'Years of Excellence', es: 'Años de Excelencia' },
     icon: Award,
-    color: 'from-yellow-400 to-yellow-600' 
+    color: 'bg-accent' 
   },
   { 
     number: '75+', 
     label: { en: 'Insurance Partners', es: 'Socios Aseguradores' },
     icon: Building,
-    color: 'from-green-400 to-green-600' 
+    color: 'bg-primary' 
   },
   { 
     number: '98%', 
     label: { en: 'Client Satisfaction', es: 'Satisfacción del Cliente' },
     icon: Star,
-    color: 'from-purple-400 to-purple-600' 
+    color: 'bg-primary' 
   }
 ]
 
@@ -350,10 +350,10 @@ export default function AlbaEstevezPage() {
   return (
     <>
       <HeaderSimple />
-      <main className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-purple-50">
+      <main className="min-h-screen bg-neutral-light">
         {/* Hero Section */}
         <section className="relative py-12 md:py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-800 opacity-95" />
+          <div className="absolute inset-0 bg-primary opacity-95" />
           <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
@@ -371,7 +371,7 @@ export default function AlbaEstevezPage() {
                     ⭐ {language === 'en' ? 'Top-Rated Insurance Agent in Florida' : 'Agente de Seguros Mejor Calificado en Florida'}
                   </motion.div>
                   
-                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
                     {agentData.name}
                   </h1>
                   <p className="text-lg sm:text-xl md:text-2xl mb-2 text-purple-200">
@@ -476,11 +476,11 @@ export default function AlbaEstevezPage() {
                 className="relative mt-8 lg:mt-0"
               >
                 <div className="relative max-w-sm mx-auto lg:max-w-none">
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-pink-400 rounded-3xl blur-2xl opacity-30" />
+                  <div className="absolute inset-0 bg-accent rounded-3xl blur-2xl opacity-30" />
                   <div className="relative bg-white p-2 rounded-3xl shadow-2xl">
-                    <div className="aspect-[3/4] max-h-[400px] sm:max-h-[500px] lg:max-h-none bg-gradient-to-br from-purple-100 to-purple-200 rounded-2xl overflow-hidden relative">
+                    <div className="aspect-[3/4] max-h-[400px] sm:max-h-[500px] lg:max-h-none bg-primary/10 rounded-2xl overflow-hidden relative">
                       {/* Alba's Professional Photo */}
-                      <div className="w-full h-full bg-gradient-to-br from-pink-100 via-purple-100 to-blue-100 flex items-center justify-center">
+                      <div className="w-full h-full bg-neutral-light flex items-center justify-center">
                         <div className="text-center p-6">
                           <UserCheck className="w-24 h-24 text-purple-400 mx-auto mb-4" />
                           <p className="text-purple-600 font-semibold">Alba Estévez</p>
@@ -503,8 +503,8 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-r from-primary-600 to-primary-800 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
+        <section className="py-12 md:py-20 bg-primary relative overflow-hidden">
+          <div className="absolute inset-0 bg-black/10" />
           <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
               {stats.map((stat, index) => {
@@ -522,7 +522,7 @@ export default function AlbaEstevezPage() {
                     }}
                     className="text-center"
                   >
-                    <div className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br ${stat.color} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 shadow-xl transform hover:scale-110 transition-transform`}>
+                    <div className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 ${stat.color} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 shadow-xl transform hover:scale-110 transition-transform`}>
                       <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
                     </div>
                     <motion.div 
@@ -542,7 +542,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Personal Story Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-white via-purple-50 to-white">
+        <section className="py-12 md:py-20 bg-white">
           <div className="container-custom px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
@@ -551,10 +551,10 @@ export default function AlbaEstevezPage() {
                 viewport={{ once: true }}
                 className="order-2 lg:order-1"
               >
-                <span className="inline-block px-4 py-2 bg-gradient-to-r from-pink-500 to-purple-600 rounded-full text-sm font-semibold text-white mb-4">
+                <span className="inline-block px-4 py-2 bg-primary rounded-full text-sm font-semibold text-white mb-4">
                   {language === 'en' ? 'My Story' : 'Mi Historia'}
                 </span>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary-600 to-pink-600 bg-clip-text text-transparent leading-tight">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-primary leading-tight">
                   {language === 'en' 
                     ? 'A Mother\'s Promise to Protect Families'
                     : 'La Promesa de una Madre de Proteger Familias'
@@ -573,7 +573,7 @@ export default function AlbaEstevezPage() {
                       : 'Mi camino en los seguros no es solo una carrera, es una vocación nacida de la experiencia personal. Habiendo enfrentado los desafíos inesperados de la vida, he hecho mi misión asegurar que ninguna familia pase por dificultades financieras durante sus momentos más difíciles.'
                     }
                   </p>
-                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 border-l-4 border-purple-500">
+                  <div className="bg-primary/5 rounded-xl p-6 border-l-4 border-primary">
                     <p className="font-semibold text-purple-800 italic">
                       "{agentData.personalInfo[language as 'en' | 'es']}"
                     </p>
@@ -602,7 +602,7 @@ export default function AlbaEstevezPage() {
                 className="order-1 lg:order-2"
               >
                 <div className="relative">
-                  <div className="absolute inset-0 bg-gradient-to-br from-pink-300 to-purple-300 rounded-3xl blur-2xl opacity-20" />
+                  <div className="absolute inset-0 bg-accent rounded-3xl blur-2xl opacity-20" />
                   <div className="relative bg-white p-3 rounded-3xl shadow-2xl">
                     <div className="rounded-2xl overflow-hidden">
                       <Image
@@ -613,7 +613,7 @@ export default function AlbaEstevezPage() {
                         className="w-full h-auto object-cover"
                       />
                     </div>
-                    <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-yellow-400 to-orange-400 text-white rounded-2xl p-4 shadow-xl max-w-[200px]">
+                    <div className="absolute -bottom-4 -right-4 bg-accent text-white rounded-2xl p-4 shadow-xl max-w-[200px]">
                       <p className="text-sm font-semibold">
                         {language === 'en' 
                           ? '"Protecting families like my own"'
@@ -629,7 +629,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Why Choose Me Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-purple-50 via-white to-pink-50">
+        <section className="py-12 md:py-20 bg-neutral-light">
           <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -637,10 +637,10 @@ export default function AlbaEstevezPage() {
               viewport={{ once: true }}
               className="text-center mb-8 md:mb-12"
             >
-              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full text-xs sm:text-sm font-semibold text-white mb-3 sm:mb-4">
+              <span className="inline-block px-3 sm:px-4 py-1.5 sm:py-2 bg-primary rounded-full text-xs sm:text-sm font-semibold text-white mb-3 sm:mb-4">
                 {language === 'en' ? 'Why Choose Alba' : 'Por Qué Elegir a Alba'}
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-primary-600 to-primary-800 bg-clip-text text-transparent px-4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-primary px-4">
                 {language === 'en' ? 'Your Success Is My Mission' : 'Tu Éxito Es Mi Misión'}
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
@@ -661,7 +661,7 @@ export default function AlbaEstevezPage() {
                     className="group"
                   >
                     <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all h-full border border-purple-100 hover:border-purple-300">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                      <div className="w-14 h-14 bg-primary rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                         <Icon className="w-7 h-7 text-white" />
                       </div>
                       <h3 className="text-xl font-bold mb-3 text-gray-800">
@@ -679,7 +679,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Services Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-12 md:py-20 bg-neutral-light">
           <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -713,7 +713,7 @@ export default function AlbaEstevezPage() {
                     transition={{ delay: index * 0.1 }}
                     className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all group"
                   >
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                    <div className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold mb-2">
@@ -730,7 +730,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Achievements Section */}
-        <section className="py-12 md:py-16 bg-gradient-to-r from-yellow-50 to-orange-50">
+        <section className="py-12 md:py-16 bg-accent/10">
           <div className="container-custom px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0 }}
@@ -794,7 +794,7 @@ export default function AlbaEstevezPage() {
                 >
                   <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all border border-purple-100 relative overflow-hidden">
                     {/* Background Pattern */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100 to-purple-100 rounded-full -mr-16 -mt-16 opacity-20" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full -mr-16 -mt-16 opacity-20" />
                     
                     {/* Verified Badge */}
                     {testimonial.verified && (
@@ -805,7 +805,7 @@ export default function AlbaEstevezPage() {
                     )}
                     
                     <div className="flex items-start gap-4 mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-primary-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
                         {testimonial.name.charAt(0)}
                       </div>
                       <div className="flex-1">
@@ -824,7 +824,7 @@ export default function AlbaEstevezPage() {
                     </blockquote>
                     
                     {testimonial.savings && (
-                      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg px-4 py-2 inline-flex items-center gap-2">
+                      <div className="bg-green-50 rounded-lg px-4 py-2 inline-flex items-center gap-2">
                         <Sparkles className="w-5 h-5 text-green-600" />
                         <span className="font-semibold text-green-700">
                           {language === 'en' ? 'Saved:' : 'Ahorró:'} {testimonial.savings}
@@ -839,7 +839,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Schedule Appointment Section */}
-        <section id="schedule" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <section id="schedule" className="py-20 bg-neutral-light">
           <div className="container-custom max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -1067,7 +1067,7 @@ export default function AlbaEstevezPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-4 px-8 rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full bg-primary text-white py-4 px-8 rounded-xl font-semibold hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {isSubmitting ? (
                     <>
@@ -1094,7 +1094,7 @@ export default function AlbaEstevezPage() {
                 transition={{ delay: 0.1 }}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all text-center group"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-1">{language === 'en' ? 'Call Us' : 'Llámenos'}</h3>
@@ -1109,7 +1109,7 @@ export default function AlbaEstevezPage() {
                 transition={{ delay: 0.2 }}
                 className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all text-center group"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-1">{language === 'en' ? 'Email Us' : 'Correo'}</h3>
@@ -1123,7 +1123,7 @@ export default function AlbaEstevezPage() {
                 transition={{ delay: 0.3 }}
                 className="bg-white rounded-2xl p-6 shadow-lg text-center"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="font-semibold mb-1">{language === 'en' ? 'Office Hours' : 'Horario'}</h3>
@@ -1134,7 +1134,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Special Offer Section */}
-        <section className="py-16 bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 relative overflow-hidden">
+        <section className="py-16 bg-accent relative overflow-hidden">
           <div className="absolute inset-0 bg-black/10" />
           <div className="container-custom relative z-10">
             <motion.div
@@ -1151,7 +1151,7 @@ export default function AlbaEstevezPage() {
                 >
                   <Zap className="w-16 h-16 text-orange-500 mx-auto mb-4" />
                 </motion.div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+                <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white">
                   {language === 'en' 
                     ? '🎉 Limited Time Offer!'
                     : '🎉 ¡Oferta por Tiempo Limitado!'
@@ -1163,7 +1163,7 @@ export default function AlbaEstevezPage() {
                     : '¡Programe su consulta GRATUITA hoy y reciba una revisión de seguros complementaria valorada en $150!'
                   }
                 </p>
-                <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl p-6 mb-6 max-w-xl mx-auto">
+                <div className="bg-green-50 rounded-2xl p-6 mb-6 max-w-xl mx-auto">
                   <p className="text-lg font-semibold text-green-800 mb-2">
                     {language === 'en' ? '✅ What You Get:' : '✅ Lo Que Obtiene:'}
                   </p>
@@ -1186,7 +1186,7 @@ export default function AlbaEstevezPage() {
                   onClick={() => setShowAppointmentModal(true)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-orange-500 to-red-500 text-white px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
+                  className="bg-white text-primary px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all"
                 >
                   {language === 'en' ? 'Claim Your Free Consultation Now' : 'Reclame Su Consulta Gratuita Ahora'}
                 </motion.button>
@@ -1196,7 +1196,7 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white relative overflow-hidden">
+        <section className="py-20 bg-primary text-white relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
@@ -1255,7 +1255,7 @@ export default function AlbaEstevezPage() {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-green-500 to-green-600 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold hover:from-green-600 hover:to-green-700 transition-all text-base sm:text-lg shadow-2xl"
+                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-green-600 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold hover:bg-green-700 transition-all text-base sm:text-lg shadow-2xl"
                 >
                   <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6 group-hover:animate-bounce" />
                   <div className="text-left">
@@ -1493,7 +1493,7 @@ export default function AlbaEstevezPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-6 rounded-xl font-semibold hover:from-primary-700 hover:to-primary-800 transition-all disabled:opacity-50"
+                  className="w-full bg-primary text-white py-3 px-6 rounded-xl font-semibold hover:bg-primary/90 transition-all disabled:opacity-50"
                 >
                   {isSubmitting ? (
                     <span>{language === 'es' ? 'Enviando...' : 'Sending...'}</span>

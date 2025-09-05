@@ -180,28 +180,28 @@ export default function JoinUnityPage() {
       level: language === 'en' ? 'Entry Level' : 'Nivel Inicial',
       range: language === 'en' ? 'Competitive' : 'Competitivo',
       description: language === 'en' ? 'Starting Agents' : 'Agentes Iniciales',
-      color: 'from-blue-400 to-cyan-500',
+      color: 'bg-primary',
       icon: TrendingUp
     },
     {
       level: language === 'en' ? 'Professional' : 'Profesional',
       range: language === 'en' ? 'Enhanced' : 'Mejorado',
       description: language === 'en' ? 'Experienced Agents' : 'Agentes Experimentados',
-      color: 'from-green-400 to-emerald-500',
+      color: 'bg-primary',
       icon: Award
     },
     {
       level: language === 'en' ? 'Senior Agent' : 'Agente Senior',
       range: language === 'en' ? 'Premium' : 'Premium',
       description: language === 'en' ? 'Top Performers' : 'Alto Rendimiento',
-      color: 'from-purple-400 to-indigo-500',
+      color: 'bg-primary',
       icon: Star
     },
     {
       level: language === 'en' ? 'Elite Producer' : 'Productor Élite',
       range: language === 'en' ? 'Industry-Leading' : 'Líder en la Industria',
       description: language === 'en' ? 'Elite Achievers' : 'Élite de Logros',
-      color: 'from-yellow-400 to-orange-500',
+      color: 'bg-accent',
       icon: Trophy
     }
   ]
@@ -282,7 +282,7 @@ export default function JoinUnityPage() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-900 via-purple-800 to-primary-700" />
+          <div className="absolute inset-0 bg-primary" />
           <div className="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]" />
           
           {/* Floating Elements */}
@@ -340,7 +340,7 @@ export default function JoinUnityPage() {
               {language === 'en' ? (
                 <>
                   <span className="block">Become an</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 bg-[length:200%_auto] animate-gradient">
+                  <span className="text-accent font-bold">
                     Insurance Leader
                   </span>
                   <span className="block">with Unity</span>
@@ -348,7 +348,7 @@ export default function JoinUnityPage() {
               ) : (
                 <>
                   <span className="block">Conviértete en</span>
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-400 bg-[length:200%_auto] animate-gradient">
+                  <span className="text-accent font-bold">
                     Líder de Seguros
                   </span>
                   <span className="block">con Unity</span>
@@ -405,7 +405,7 @@ export default function JoinUnityPage() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => document.getElementById('application')?.scrollIntoView({ behavior: 'smooth' })}
-                className="px-10 py-5 bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 font-bold text-lg rounded-full hover:shadow-2xl transition-all flex items-center gap-2 justify-center"
+                className="px-10 py-5 bg-accent text-primary font-bold text-lg rounded-full hover:bg-accent/90 transition-all flex items-center gap-2 justify-center"
               >
                 {language === 'en' ? 'Start Your Journey' : 'Comienza Tu Viaje'}
                 <ArrowUpRight className="w-5 h-5" />
@@ -449,9 +449,9 @@ export default function JoinUnityPage() {
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {language === 'en' ? (
-                <>Your Success is <span className="gradient-text animate-gradient">Our Mission</span></>
+                <>Your Success is <span className="text-primary font-bold">Our Mission</span></>
               ) : (
-                <>Tu Éxito es <span className="gradient-text animate-gradient">Nuestra Misión</span></>
+                <>Tu Éxito es <span className="text-primary font-bold">Nuestra Misión</span></>
               )}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -471,9 +471,9 @@ export default function JoinUnityPage() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
-                className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100"
+                className="bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border border-gray-100"
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-primary-400 to-purple-600 rounded-2xl flex items-center justify-center mb-6">
+                <div className="w-14 h-14 bg-primary rounded-2xl flex items-center justify-center mb-6">
                   <benefit.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
@@ -485,7 +485,7 @@ export default function JoinUnityPage() {
       </section>
 
       {/* Training Programs Section */}
-      <section id="training" className="section-padding bg-gradient-to-br from-primary-50 via-white to-purple-50">
+      <section id="training" className="section-padding bg-neutral-light">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -499,9 +499,9 @@ export default function JoinUnityPage() {
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {language === 'en' ? (
-                <>World-Class <span className="gradient-text animate-gradient">Training Programs</span></>
+                <>World-Class <span className="text-primary font-bold">Training Programs</span></>
               ) : (
-                <>Programas de <span className="gradient-text animate-gradient">Capacitación de Clase Mundial</span></>
+                <>Programas de <span className="text-primary font-bold">Capacitación de Clase Mundial</span></>
               )}
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -522,7 +522,7 @@ export default function JoinUnityPage() {
                 transition={{ delay: index * 0.15 }}
                 className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all"
               >
-                <div className="bg-gradient-to-br from-primary-600 to-purple-600 p-8 text-white">
+                <div className="bg-primary p-8 text-white">
                   <program.icon className="w-12 h-12 mb-4" />
                   <h3 className="text-2xl font-bold mb-2">{program.title}</h3>
                   <div className="flex items-center gap-2 text-white/90">
@@ -548,7 +548,7 @@ export default function JoinUnityPage() {
       </section>
 
       {/* Commission Structure */}
-      <section className="section-padding bg-gradient-to-br from-gray-900 to-primary-900 text-white">
+      <section className="section-padding bg-neutral-dark text-white">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -588,7 +588,7 @@ export default function JoinUnityPage() {
                   whileHover={{ y: -10 }}
                   className="relative bg-white/10 backdrop-blur-md rounded-3xl p-6 border border-white/20 hover:bg-white/15 transition-all"
                 >
-                  <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${tier.color} rounded-t-3xl`} />
+                  <div className="absolute top-0 left-0 w-full h-1 bg-primary rounded-t-3xl" />
                   <div className="text-center">
                     <Icon className="w-10 h-10 text-yellow-400 mx-auto mb-3" />
                     <h3 className="text-lg font-semibold mb-2">{tier.level}</h3>
@@ -643,9 +643,9 @@ export default function JoinUnityPage() {
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {language === 'en' ? (
-                <>Real Agents, <span className="gradient-text animate-gradient">Real Success</span></>
+                <>Real Agents, <span className="text-primary font-bold">Real Success</span></>
               ) : (
-                <>Agentes Reales, <span className="gradient-text animate-gradient">Éxito Real</span></>
+                <>Agentes Reales, <span className="text-primary font-bold">Éxito Real</span></>
               )}
             </h2>
           </motion.div>
@@ -657,12 +657,12 @@ export default function JoinUnityPage() {
                 initial={{ opacity: 0, x: index === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="bg-gradient-to-br from-primary-50 to-purple-50 rounded-3xl p-8 shadow-lg"
+                className="bg-primary/5 rounded-3xl p-8 shadow-lg"
               >
                 <Quote className="w-10 h-10 text-primary-600 mb-4" />
                 <p className="text-lg text-gray-700 italic mb-6">{story.quote}</p>
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary-400 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
                     {story.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
@@ -678,7 +678,7 @@ export default function JoinUnityPage() {
       </section>
 
       {/* Application Form */}
-      <section id="application" className="section-padding bg-gradient-to-br from-primary-50 via-white to-purple-50">
+      <section id="application" className="section-padding bg-neutral-light">
         <div className="container-custom max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -692,9 +692,9 @@ export default function JoinUnityPage() {
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               {language === 'en' ? (
-                <>Start Your <span className="gradient-text animate-gradient">Success Story</span></>
+                <>Start Your <span className="text-primary font-bold">Success Story</span></>
               ) : (
-                <>Comienza Tu <span className="gradient-text animate-gradient">Historia de Éxito</span></>
+                <>Comienza Tu <span className="text-primary font-bold">Historia de Éxito</span></>
               )}
             </h2>
             <p className="text-xl text-gray-600">
@@ -864,7 +864,7 @@ export default function JoinUnityPage() {
               className={`w-full px-8 py-4 font-semibold text-lg rounded-xl transition-all flex items-center justify-center gap-2 ${
                 isSubmitting 
                   ? 'bg-gray-400 cursor-not-allowed' 
-                  : 'bg-gradient-to-r from-primary-600 to-purple-600 text-white hover:shadow-2xl'
+                  : 'bg-primary text-white hover:bg-primary/90'
               }`}
             >
               {isSubmitting ? (
