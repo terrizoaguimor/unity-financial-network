@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Mail, Phone, MapPin, Clock, Send, MessageCircle,
-  Facebook, Twitter, Instagram, Linkedin, Youtube,
+  Facebook, Instagram, Linkedin,
   CheckCircle, AlertCircle, Loader2, Building,
   Globe, Users, HeadphonesIcon, ChevronRight
 } from 'lucide-react'
@@ -21,7 +21,7 @@ const contactMethods = [
     title: 'Call Us',
     description: 'Mon-Fri 9AM-6PM EST',
     value: '(786) 828-5576',
-    link: 'tel:7868285576',
+    link: 'tel:(786) 828-5576',
     color: 'bg-primary'
   },
   {
@@ -474,17 +474,17 @@ export default function ContactPage() {
                 </p>
                 <div className="flex gap-3">
                   {[
-                    { icon: Facebook, color: 'hover:bg-blue-600', link: '#' },
-                    { icon: Twitter, color: 'hover:bg-sky-500', link: '#' },
-                    { icon: Instagram, color: 'hover:bg-pink-600', link: '#' },
-                    { icon: Linkedin, color: 'hover:bg-blue-700', link: '#' },
-                    { icon: Youtube, color: 'hover:bg-red-600', link: '#' }
+                    { icon: Facebook, color: 'hover:bg-blue-600', link: 'https://www.facebook.com/unityfinancialnetworkfb' },
+                    { icon: Instagram, color: 'hover:bg-pink-600', link: 'https://www.instagram.com/unityfinancialnetwork' },
+                    { icon: Linkedin, color: 'hover:bg-blue-700', link: 'https://www.linkedin.com/company/unityfinancialnetwork' }
                   ].map((social, index) => {
                     const Icon = social.icon
                     return (
                       <motion.a
                         key={index}
                         href={social.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         whileHover={{ scale: 1.1 }}
                         whileTap={{ scale: 0.9 }}
                         className={`w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center ${social.color} hover:text-white transition-all`}

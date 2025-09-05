@@ -351,8 +351,8 @@ export default function ContactSection({ language = 'en' }: ContactSectionProps)
                 <div>
                   <h4 className="font-bold text-primary-900 mb-1">{t.callTitle}</h4>
                   <p className="text-primary-700">{t.callHours}</p>
-                  <a href="tel:7868285576" className="text-primary font-semibold hover:text-primary-700">
-                    (7868285576
+                  <a href="tel:(786) 828-5576" className="text-primary font-semibold hover:text-primary-700">
+                    ((786) 828-5576
                   </a>
                 </div>
               </div>

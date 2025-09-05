@@ -317,7 +317,7 @@ export default function AlbaEstevezPage() {
         },
         body: JSON.stringify({
           ...formData,
-          agent: 'Alba Estévez',
+          agent: 'alba-estevez',
           language,
           turnstileToken
         }),
@@ -352,8 +352,8 @@ export default function AlbaEstevezPage() {
       <HeaderSimple />
       <main className="min-h-screen bg-primary/10">
         {/* Hero Section */}
-        <section className="relative py-12 md:py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary-900 opacity-95" />
+        <section className="relative py-16 md:py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-primary" />
           <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <motion.div
@@ -366,9 +366,10 @@ export default function AlbaEstevezPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="badge-primary bg-white bg-opacity-20 backdrop-blur mb-4"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur rounded-full text-sm font-semibold text-white mb-6"
                   >
-                    ⭐ {language === 'en' ? 'Top-Rated Insurance Agent in Florida' : 'Agente de Seguros Mejor Calificado en Florida'}
+                    <Shield className="w-4 h-4" />
+                    {language === 'en' ? 'Licensed Insurance Professional' : 'Profesional de Seguros Licenciada'}
                   </motion.div>
                   
                   <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-white">
@@ -406,28 +407,20 @@ export default function AlbaEstevezPage() {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <button
                       onClick={() => setShowAppointmentModal(true)}
-                      className="button-secondary rounded-full text-sm sm:text-base"
+                      className="bg-white text-primary hover:bg-gray-50 px-6 py-3 rounded-xl font-semibold transition-all shadow-lg inline-flex items-center gap-3 justify-center"
                     >
-                      <Calendar className="w-4 sm:w-5 h-4 sm:h-5" />
-                      <span className="truncate">{language === 'en' ? 'Schedule' : 'CITA'}</span>
-                      <span className="hidden sm:inline">{language === 'en' ? 'Appointment' : ''}</span>
+                      <Calendar className="w-5 h-5" />
+                      <span>{language === 'en' ? 'Schedule Consultation' : 'Programar Consulta'}</span>
                     </button>
                     <button
                       onClick={() => setShowCallModal(true)}
-                      className="button-accent rounded-full text-sm sm:text-base bg-yellow-500 hover:bg-yellow-400 text-primary-800"
+                      className="bg-accent hover:bg-accent-600 text-white px-6 py-3 rounded-xl font-semibold transition-all shadow-lg inline-flex items-center gap-3 justify-center"
                     >
-                      <Phone className="w-4 sm:w-5 h-4 sm:h-5" />
-                      <span>{language === 'en' ? 'Call Me' : 'LLAMADA'}</span>
-                    </button>
-                    <button
-                      onClick={() => setShowQuoteModal(true)}
-                      className="button-primary rounded-full text-sm sm:text-base"
-                    >
-                      <Calculator className="w-4 sm:w-5 h-4 sm:h-5" />
-                      <span>{language === 'en' ? 'Quote' : 'COTIZACIÓN'}</span>
+                      <Phone className="w-5 h-5" />
+                      <span>{language === 'en' ? 'Request Call' : 'Solicitar Llamada'}</span>
                     </button>
                   </div>
 
@@ -503,40 +496,43 @@ export default function AlbaEstevezPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-12 md:py-20 bg-gradient-to-br from-primary to-primary-900 relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/5" />
-          <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-              {stats.map((stat, index) => {
-                const Icon = stat.icon
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.5 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ 
-                      delay: index * 0.1,
-                      type: "spring",
-                      stiffness: 100
-                    }}
-                    className="text-center"
-                  >
-                    <div className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 ${stat.color} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-2 sm:mb-4 shadow-xl transform hover:scale-110 transition-transform`}>
-                      <Icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
-                    </div>
-                    <motion.div 
-                      className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ delay: index * 0.1 + 0.3 }}
+        <section className="py-16 bg-white">
+          <div className="container-custom px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl font-bold text-primary-800 mb-4">
+                  {language === 'en' ? 'Professional Excellence' : 'Excelencia Profesional'}
+                </h2>
+                <p className="text-primary-600">
+                  {language === 'en' 
+                    ? 'Numbers that reflect our commitment to client service'
+                    : 'Números que reflejan nuestro compromiso con el servicio al cliente'
+                  }
+                </p>
+              </div>
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+                {stats.map((stat, index) => {
+                  const Icon = stat.icon
+                  return (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, y: 30 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="text-center bg-primary/5 rounded-xl p-6 border border-primary-100"
                     >
-                      {stat.number}
+                      <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mx-auto mb-4">
+                        <Icon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="text-3xl font-bold text-primary-800 mb-2">
+                        {stat.number}
+                      </div>
+                      <div className="text-sm text-primary-600 font-medium">{stat.label[language as 'en' | 'es']}</div>
                     </motion.div>
-                    <div className="text-xs sm:text-sm md:text-base text-purple-100 font-medium px-2">{stat.label[language as 'en' | 'es']}</div>
-                  </motion.div>
-                )
-              })}
+                  )
+                })}
+              </div>
             </div>
           </div>
         </section>
@@ -1133,141 +1129,153 @@ export default function AlbaEstevezPage() {
           </div>
         </section>
 
-        {/* Special Offer Section */}
-        <section className="py-16 bg-accent relative overflow-hidden">
-          <div className="absolute inset-0 bg-black/10" />
-          <div className="container-custom relative z-10">
+        {/* Professional Consultation Section */}
+        <section className="py-16 bg-white">
+          <div className="container-custom">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="bg-gradient-to-br from-white via-primary-50/30 to-accent/10 backdrop-blur rounded-3xl p-8 lg:p-12 shadow-2xl border border-primary-200"
+              className="max-w-4xl mx-auto"
             >
-              <div className="text-center">
-                <motion.div
-                  animate={{ rotate: [0, 5, -5, 0] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                  className="inline-block"
-                >
-                  <Zap className="w-16 h-16 text-orange-500 mx-auto mb-4" />
-                </motion.div>
-                <h2 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-primary-800 to-accent bg-clip-text text-transparent">
-                  {language === 'en' 
-                    ? '🎉 Limited Time Offer!'
-                    : '🎉 ¡Oferta por Tiempo Limitado!'
-                  }
-                </h2>
-                <p className="text-xl text-primary-700 mb-6 max-w-2xl mx-auto">
-                  {language === 'en'
-                    ? 'Schedule your FREE consultation today and receive a complimentary insurance review worth $150!'
-                    : '¡Programe su consulta GRATUITA hoy y reciba una revisión de seguros complementaria valorada en $150!'
-                  }
-                </p>
-                <div className="bg-green-50 rounded-2xl p-6 mb-6 max-w-xl mx-auto">
-                  <p className="text-lg font-semibold text-green-800 mb-2">
-                    {language === 'en' ? '✅ What You Get:' : '✅ Lo Que Obtiene:'}
+              <div className="bg-primary/10 rounded-2xl p-8 lg:p-12 border border-primary-200">
+                <div className="text-center mb-8">
+                  <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Calendar className="w-8 h-8 text-white" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-primary-800 mb-4">
+                    {language === 'en' 
+                      ? 'Free Professional Insurance Consultation'
+                      : 'Consulta Profesional de Seguros Gratuita'
+                    }
+                  </h2>
+                  <p className="text-lg text-primary-700 max-w-2xl mx-auto">
+                    {language === 'en'
+                      ? 'Schedule a comprehensive review of your insurance needs with a licensed professional at no cost to you.'
+                      : 'Programe una revisión completa de sus necesidades de seguro con una profesional licenciada sin costo alguno.'
+                    }
                   </p>
-                  <ul className="text-left text-green-700 space-y-2">
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>{language === 'en' ? 'Complete coverage analysis' : 'Análisis completo de cobertura'}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>{language === 'en' ? 'Personalized savings report' : 'Informe personalizado de ahorros'}</span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <CheckCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                      <span>{language === 'en' ? 'No-obligation quote comparison' : 'Comparación de cotizaciones sin compromiso'}</span>
-                    </li>
-                  </ul>
                 </div>
-                <motion.button
-                  onClick={() => setShowAppointmentModal(true)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-white to-primary-50 hover:from-primary-50 hover:to-accent/10 text-primary px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all border border-primary-200"
-                >
-                  {language === 'en' ? 'Claim Your Free Consultation Now' : 'Reclame Su Consulta Gratuita Ahora'}
-                </motion.button>
+
+                <div className="grid md:grid-cols-3 gap-6 mb-8">
+                  <div className="bg-white rounded-xl p-6 shadow-sm">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                      <FileText className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-primary-800 mb-2">
+                      {language === 'en' ? 'Coverage Analysis' : 'Análisis de Cobertura'}
+                    </h3>
+                    <p className="text-sm text-primary-600">
+                      {language === 'en' 
+                        ? 'Comprehensive review of your current coverage and gaps'
+                        : 'Revisión completa de su cobertura actual y vacíos'
+                      }
+                    </p>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 shadow-sm">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                      <Calculator className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-primary-800 mb-2">
+                      {language === 'en' ? 'Savings Report' : 'Informe de Ahorros'}
+                    </h3>
+                    <p className="text-sm text-primary-600">
+                      {language === 'en' 
+                        ? 'Personalized savings opportunities and cost optimization'
+                        : 'Oportunidades personalizadas de ahorro y optimización de costos'
+                      }
+                    </p>
+                  </div>
+                  <div className="bg-white rounded-xl p-6 shadow-sm">
+                    <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center mb-4">
+                      <Shield className="w-6 h-6 text-white" />
+                    </div>
+                    <h3 className="font-semibold text-primary-800 mb-2">
+                      {language === 'en' ? 'Plan Recommendations' : 'Recomendaciones de Planes'}
+                    </h3>
+                    <p className="text-sm text-primary-600">
+                      {language === 'en' 
+                        ? 'Tailored insurance solutions based on your specific needs'
+                        : 'Soluciones de seguro adaptadas a sus necesidades específicas'
+                      }
+                    </p>
+                  </div>
+                </div>
+
+                <div className="text-center">
+                  <motion.button
+                    onClick={() => setShowAppointmentModal(true)}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="bg-primary hover:bg-primary-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all shadow-lg inline-flex items-center gap-3"
+                  >
+                    <Calendar className="w-5 h-5" />
+                    {language === 'en' ? 'Schedule Your Free Consultation' : 'Programe Su Consulta Gratuita'}
+                  </motion.button>
+                  <p className="text-sm text-primary-600 mt-4">
+                    {language === 'en' 
+                      ? 'No obligation • Licensed Professional • Personalized Service'
+                      : 'Sin compromiso • Profesional Licenciada • Servicio Personalizado'
+                    }
+                  </p>
+                </div>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-primary text-white relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-purple-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-pink-500 rounded-full filter blur-3xl opacity-20 animate-pulse" />
-          </div>
-          <div className="container-custom relative z-10">
+        {/* Contact Section */}
+        <section className="py-20 bg-primary-800 text-white">
+          <div className="container-custom">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-center"
+              className="text-center max-w-4xl mx-auto"
             >
-              <motion.div
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
-                className="inline-block mb-6"
-              >
-                <Shield className="w-20 h-20 text-white/80 mx-auto" />
-              </motion.div>
+              <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
               
-              <h2 className="text-4xl lg:text-5xl font-bold mb-6 leading-tight">
+              <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                 {language === 'en' 
-                  ? 'Your Family\'s Financial Security Starts Here'
-                  : 'La Seguridad Financiera de Su Familia Comienza Aquí'
+                  ? 'Ready to Protect Your Family\'s Future?'
+                  : '¿Listo para Proteger el Futuro de Su Familia?'
                 }
               </h2>
-              <p className="text-xl mb-4 text-purple-100 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl mb-8 text-purple-100 max-w-2xl mx-auto">
                 {language === 'en' 
-                  ? "With over 2,500 families protected and $10M+ in claims successfully processed, I have the experience and dedication to ensure you get the coverage you deserve."
-                  : 'Con más de 2,500 familias protegidas y más de $10M en reclamos procesados exitosamente, tengo la experiencia y dedicación para asegurar que obtenga la cobertura que merece.'
-                }
-              </p>
-              <p className="text-2xl font-semibold mb-8 text-yellow-300">
-                {language === 'en' 
-                  ? "Don't wait for tomorrow. Your peace of mind is just one call away."
-                  : 'No espere hasta mañana. Su tranquilidad está a solo una llamada de distancia.'
+                  ? "Let's work together to find the perfect insurance coverage for your unique needs."
+                  : 'Trabajemos juntos para encontrar la cobertura de seguro perfecta para sus necesidades únicas.'
                 }
               </p>
               
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center px-4">
-                <motion.a
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <a
                   href={`tel:${agentData.phone.replace(/\D/g, '')}`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-white text-primary-700 px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold hover:bg-yellow-50 transition-all text-base sm:text-lg shadow-2xl"
+                  className="inline-flex items-center justify-center gap-3 bg-white text-primary px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all shadow-lg"
                 >
-                  <Phone className="w-5 sm:w-6 h-5 sm:h-6 group-hover:animate-bounce" />
+                  <Phone className="w-5 h-5" />
                   <div className="text-left">
-                    <div className="text-xs sm:text-sm font-normal text-primary-600">{language === 'en' ? 'Call Now' : 'Llame Ahora'}</div>
-                    <div className="text-sm sm:text-base">{agentData.phone}</div>
+                    <div className="text-sm font-medium">{language === 'en' ? 'Call Now' : 'Llame Ahora'}</div>
+                    <div className="text-base">{agentData.phone}</div>
                   </div>
-                </motion.a>
+                </a>
                 
-                <motion.a
+                <a
                   href={`https://wa.me/${agentData.whatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-green-600 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-full font-bold hover:bg-green-700 transition-all text-base sm:text-lg shadow-2xl"
+                  className="inline-flex items-center justify-center gap-3 bg-green-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-green-700 transition-all shadow-lg"
                 >
-                  <MessageCircle className="w-5 sm:w-6 h-5 sm:h-6 group-hover:animate-bounce" />
-                  <div className="text-left">
-                    <div className="text-xs sm:text-sm font-normal text-green-100">{language === 'en' ? 'Message Us' : 'Escríbanos'}</div>
-                    <div className="text-sm sm:text-base">WhatsApp</div>
-                  </div>
-                </motion.a>
+                  <MessageCircle className="w-5 h-5" />
+                  <span>{language === 'en' ? 'WhatsApp' : 'WhatsApp'}</span>
+                </a>
               </div>
               
-              <div className="mt-12 pt-8 border-t border-purple-400/30">
-                <p className="text-purple-200 mb-4">
-                  {language === 'en' ? 'Connect with me on social media' : 'Conéctate conmigo en redes sociales'}
+              <div className="border-t border-white/20 pt-8">
+                <p className="text-purple-200 mb-6">
+                  {language === 'en' ? 'Follow me on social media for insurance tips and updates' : 'Sígueme en redes sociales para consejos de seguros y actualizaciones'}
                 </p>
                 <div className="flex gap-4 justify-center">
                   {Object.entries(agentData.social).map(([platform, url]) => {
@@ -1280,16 +1288,15 @@ export default function AlbaEstevezPage() {
                     };
                     const Icon = icons[platform as keyof typeof icons];
                     return (
-                      <motion.a
+                      <a
                         key={platform}
                         href={url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        whileHover={{ scale: 1.2, rotate: 5 }}
-                        className="w-12 h-12 bg-white/20 backdrop-blur rounded-full flex items-center justify-center hover:bg-white/30 transition-all"
+                        className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-all"
                       >
-                        <Icon className="w-6 h-6 text-white" />
-                      </motion.a>
+                        <Icon className="w-5 h-5 text-white" />
+                      </a>
                     );
                   })}
                 </div>

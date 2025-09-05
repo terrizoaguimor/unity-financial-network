@@ -45,7 +45,8 @@
       "WebFetch(domain:enterateconalbaestevez.com)",
       "Bash(taskkill:*)",
       "Bash(git checkout:*)",
-      "Bash(pkill:*)"
+      "Bash(pkill:*)",
+      "WebFetch(domain:enterateconlinagomez.com)"
     ],
     "deny": [],
     "ask": [],

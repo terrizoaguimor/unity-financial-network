@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Shield, TrendingUp, Users, Sparkles } from "lucide-react";
+import { ArrowRight, Shield, TrendingUp, Users, Sparkles, Award } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { translations } from "@/lib/translations";
@@ -106,18 +106,18 @@ export default function HeroSection({ language }: HeroSectionProps) {
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-primary-700">
-                  {t.stats.plans}
+                  {language === 'en' ? 'Insurance Plans' : 'Planes de Seguro'}
                 </p>
               </div>
               <div className="text-center lg:text-left">
                 <div className="flex items-center justify-center lg:justify-start gap-2 mb-2">
                   <Users className="w-5 h-5 text-primary-600" />
                   <span className="text-xl sm:text-2xl md:text-3xl font-bold text-primary-900">
-                    1000+
+                    10,000+
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-primary-700">
-                  {t.stats.clients}
+                  {language === 'en' ? 'Happy Clients' : 'Clientes Felices'}
                 </p>
               </div>
               <div className="text-center lg:text-left">
@@ -128,7 +128,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                   </span>
                 </div>
                 <p className="text-xs sm:text-sm text-primary-700">
-                  {t.stats.support}
+                  {language === 'en' ? 'Support Available' : 'Soporte Disponible'}
                 </p>
               </div>
             </motion.div>
@@ -142,7 +142,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
             className="relative hidden lg:block"
           >
             <div className="relative">
-              {/* Floating Cards Animation */}
+              {/* Protected 100% Card - Top Right */}
               <motion.div
                 animate={{
                   y: [0, -20, 0],
@@ -153,10 +153,10 @@ export default function HeroSection({ language }: HeroSectionProps) {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute top-0 right-0 bg-white rounded-2xl shadow-2xl p-6 z-10"
+                className="absolute top-8 right-8 bg-white rounded-2xl shadow-2xl p-6 z-10"
               >
                 <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
                     <Shield className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -166,6 +166,7 @@ export default function HeroSection({ language }: HeroSectionProps) {
                 </div>
               </motion.div>
 
+              {/* Insurance Plans Card - Bottom Left */}
               <motion.div
                 animate={{
                   y: [0, 20, 0],
@@ -177,15 +178,90 @@ export default function HeroSection({ language }: HeroSectionProps) {
                   ease: "easeInOut",
                   delay: 1,
                 }}
-                className="absolute bottom-10 left-0 bg-white rounded-2xl shadow-2xl p-6 z-10"
+                className="absolute bottom-8 left-8 bg-white rounded-2xl shadow-2xl p-6 z-10"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-primary-600">{language === 'en' ? 'Insurance Plans' : 'Planes de Seguro'}</p>
+                    <p className="text-xl font-bold text-primary-900">11+</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Support 24/7 Card - Top Left */}
+              <motion.div
+                animate={{
+                  y: [0, -15, 0],
+                  rotate: [0, 3, 0],
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2,
+                }}
+                className="absolute top-8 left-8 bg-white rounded-2xl shadow-2xl p-6 z-10"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center">
                     <TrendingUp className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm text-primary-600">Savings</p>
-                    <p className="text-xl font-bold text-primary-900">$2,500+</p>
+                    <p className="text-sm text-primary-600">{language === 'en' ? 'Support' : 'Soporte'}</p>
+                    <p className="text-xl font-bold text-primary-900">24/7</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Happy Clients Card - Bottom Right */}
+              <motion.div
+                animate={{
+                  y: [0, 25, 0],
+                  rotate: [0, -2, 0],
+                }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 3,
+                }}
+                className="absolute bottom-8 right-8 bg-white rounded-2xl shadow-2xl p-6 z-10"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center">
+                    <Users className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-primary-600">{language === 'en' ? 'Happy Clients' : 'Clientes Felices'}</p>
+                    <p className="text-xl font-bold text-primary-900">10,000+</p>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Licensed Professionals Card - Top Center */}
+              <motion.div
+                animate={{
+                  y: [0, -18, 0],
+                  rotate: [0, 2, 0],
+                }}
+                transition={{
+                  duration: 4.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2.5,
+                }}
+                className="absolute -top-16 left-1/2 transform -translate-x-1/2 -ml-28 bg-white rounded-2xl shadow-2xl p-6 z-10"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                    <Award className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm text-primary-600">{language === 'en' ? 'Licensed' : 'Licenciados'}</p>
+                    <p className="text-xl font-bold text-primary-900">{language === 'en' ? 'Professionals' : 'Profesionales'}</p>
                   </div>
                 </div>
               </motion.div>

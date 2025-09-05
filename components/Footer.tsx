@@ -26,7 +26,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Facebook, Instagram, Linkedin, Twitter, Youtube, Heart, ArrowUp } from 'lucide-react'
+import { Facebook, Instagram, Linkedin, Heart, ArrowUp } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 
@@ -189,10 +189,16 @@ export default function Footer({ language = 'en' }: FooterProps) {
                 : 'Tu conserje financiero personal, brindando soluciones integrales de seguros para un futuro seguro.'}
             </p>
             <div className="flex gap-3">
-              {[Facebook, Instagram, Linkedin, Twitter, Youtube].map((Icon, index) => (
+              {[
+                { Icon: Facebook, href: "https://www.facebook.com/unityfinancialnetworkfb" },
+                { Icon: Instagram, href: "https://www.instagram.com/unityfinancialnetwork" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/company/unityfinancialnetwork" }
+              ].map(({ Icon, href }, index) => (
                 <motion.a
                   key={index}
-                  href="#"
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="w-10 h-10 bg-white/10 hover:bg-accent rounded-full flex items-center justify-center transition-colors"

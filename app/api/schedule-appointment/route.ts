@@ -17,7 +17,8 @@ export async function POST(request: Request) {
       preferredContact,
       message,
       turnstileToken,
-      language = 'en'
+      language = 'en',
+      agent = null
     } = body
 
     // Verify Turnstile token
@@ -39,14 +40,25 @@ export async function POST(request: Request) {
       day: 'numeric'
     })
 
-    // Determine department based on appointment type
-    const department = appointmentType === 'health' 
-      ? (isSpanish ? 'Departamento de Seguros de Salud' : 'Health Insurance Department')
-      : (isSpanish ? 'Departamento de Seguros de Vida' : 'Life Insurance Department')
-    
-    const departmentEmail = appointmentType === 'health' 
-      ? 'health@unityfinancialnetwork.com'
-      : 'life@unityfinancialnetwork.com'
+    // Determine department based on appointment type and agent
+    let department, departmentEmail, agentInfo = null
+
+    if (agent === 'alba-estevez') {
+      department = isSpanish ? 'Alba Estévez - Agente de Seguros' : 'Alba Estévez - Insurance Agent'
+      departmentEmail = 'alba.estevez@unityfinancialnetwork.com'
+      agentInfo = {
+        name: 'Alba Estévez',
+        email: 'alba.estevez@unityfinancialnetwork.com'
+      }
+    } else {
+      department = appointmentType === 'health' 
+        ? (isSpanish ? 'Departamento de Seguros de Salud' : 'Health Insurance Department')
+        : (isSpanish ? 'Departamento de Seguros de Vida' : 'Life Insurance Department')
+      
+      departmentEmail = appointmentType === 'health' 
+        ? 'health@unityfinancialnetwork.com'
+        : 'life@unityfinancialnetwork.com'
+    }
 
     // Preferred contact method display
     const contactMethodDisplay = {
@@ -147,7 +159,7 @@ export async function POST(request: Request) {
             ${isSpanish ? '¿Necesitas ayuda?' : 'Need Help?'}
           </h3>
           <p style="margin: 10px 0;">
-            ${isSpanish ? 'Teléfono' : 'Phone'}: <a href="tel:7868285576" style="color: #f18918; text-decoration: none;">(786) 828-5576</a>
+            ${isSpanish ? 'Teléfono' : 'Phone'}: <a href="tel:(786) 828-5576" style="color: #f18918; text-decoration: none;">(786) 828-5576</a>
           </p>
           <p style="margin: 10px 0;">
             ${isSpanish ? 'Correo' : 'Email'}: <a href="mailto:hello@unityfinancialnetwork.com" style="color: #f18918; text-decoration: none;">hello@unityfinancialnetwork.com</a>
@@ -173,7 +185,13 @@ export async function POST(request: Request) {
     // Email to department (internal)
     const departmentEmailHtml = `
       <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
-        <h2 style="color: #522784;">New Appointment Scheduled</h2>
+        <h2 style="color: #522784;">${agent === 'alba-estevez' ? 'Nueva Cita con Alba Estévez' : 'New Appointment Scheduled'}</h2>
+        ${agent === 'alba-estevez' ? `
+        <div style="background-color: #e8f4fd; border-left: 4px solid #522784; padding: 15px; margin-bottom: 20px;">
+          <p style="margin: 0; color: #522784; font-weight: bold;">📧 Esta cita está asignada específicamente a Alba Estévez</p>
+          <p style="margin: 5px 0 0 0; color: #666; font-size: 14px;">Correo: alba.estevez@unityfinancialnetwork.com</p>
+        </div>
+        ` : ''}
         
         <div style="background-color: #f5f5f5; padding: 20px; border-radius: 10px; margin-bottom: 20px;">
           <h3 style="color: #333; margin-top: 0;">Client Information</h3>
@@ -266,8 +284,8 @@ export async function POST(request: Request) {
       // Continue with email sending even if HubSpot fails
     }
 
-    // Send emails
-    const [customerEmail, departmentEmailResult, adminEmail] = await Promise.all([
+    // Prepare email recipients based on agent
+    let emailPromises = [
       // Email to customer
       resend.emails.send({
         from: emailConfig.from,
@@ -276,25 +294,44 @@ export async function POST(request: Request) {
           ? `✅ Cita Confirmada - Unity Financial Network`
           : `✅ Appointment Confirmed - Unity Financial Network`,
         html: customerEmailHtml
-      }),
-
-      // Email to specific department
-      resend.emails.send({
-        from: emailConfig.from,
-        to: departmentEmail,
-        cc: emailConfig.adminEmail, // CC to main admin
-        subject: `New ${appointmentType === 'health' ? 'Health' : 'Life'} Insurance Appointment - ${firstName} ${lastName}`,
-        html: departmentEmailHtml
-      }),
-
-      // Email to main admin
-      resend.emails.send({
-        from: emailConfig.from,
-        to: emailConfig.adminEmail,
-        subject: `New Appointment Scheduled - ${firstName} ${lastName}`,
-        html: departmentEmailHtml
       })
-    ])
+    ]
+
+    if (agent === 'alba-estevez') {
+      // For Alba Estévez: Send to Alba and CC to IT
+      emailPromises.push(
+        resend.emails.send({
+          from: emailConfig.from,
+          to: 'alba.estevez@unityfinancialnetwork.com',
+          cc: 'it@unityfinancialnetwork.com',
+          subject: `Nueva Cita Programada con Alba Estévez - ${firstName} ${lastName}`,
+          html: departmentEmailHtml
+        })
+      )
+    } else {
+      // Regular department emails
+      emailPromises.push(
+        // Email to specific department
+        resend.emails.send({
+          from: emailConfig.from,
+          to: departmentEmail,
+          cc: emailConfig.adminEmail, // CC to main admin
+          subject: `New ${appointmentType === 'health' ? 'Health' : 'Life'} Insurance Appointment - ${firstName} ${lastName}`,
+          html: departmentEmailHtml
+        }),
+
+        // Email to main admin
+        resend.emails.send({
+          from: emailConfig.from,
+          to: emailConfig.adminEmail,
+          subject: `New Appointment Scheduled - ${firstName} ${lastName}`,
+          html: departmentEmailHtml
+        })
+      )
+    }
+
+    // Send all emails
+    const emailResults = await Promise.all(emailPromises)
 
     return NextResponse.json({
       success: true,

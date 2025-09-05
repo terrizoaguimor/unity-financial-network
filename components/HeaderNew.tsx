@@ -62,9 +62,9 @@ export default function HeaderNew({ locale }: { locale: string }) {
         {/* Top Bar for Desktop */}
         <div className="hidden lg:flex justify-between items-center mb-4 pb-3 border-b border-gray-100/50">
           <div className="flex items-center gap-6 text-sm">
-            <a href="tel:7868285576" className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors">
+            <a href="tel:(786) 828-5576" className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors">
               <Phone className="h-3.5 w-3.5" />
-              <span className="font-medium">(7868285576</span>
+              <span className="font-medium">((786) 828-5576</span>
             </a>
             <a href="mailto:hello@unityfinancialnetwork.com" className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors">
               <Mail className="h-3.5 w-3.5" />
@@ -196,9 +196,9 @@ export default function HeaderNew({ locale }: { locale: string }) {
             <div className="container-custom py-4 space-y-3">
               {/* Contact Info Mobile */}
               <div className="flex flex-col gap-2 pb-3 border-b border-gray-100">
-                <a href="tel:7868285576" className="flex items-center gap-2 text-gray-600">
+                <a href="tel:(786) 828-5576" className="flex items-center gap-2 text-gray-600">
                   <Phone className="h-4 w-4" />
-                  <span>(7868285576</span>
+                  <span>((786) 828-5576</span>
                 </a>
                 <a href="mailto:hello@unityfinancialnetwork.com" className="flex items-center gap-2 text-gray-600 text-sm">
                   <Mail className="h-4 w-4" />

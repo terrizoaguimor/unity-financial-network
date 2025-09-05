@@ -76,7 +76,7 @@ export default function OptOutPage() {
               color: 'purple',
               instructions: [
                 'Request to be added to our internal "Do Not Call" list',
-                'Call (7868285576 or email us',
+                'Call ((786) 828-5576 or email us',
                 'Implementation within reasonable timeframe (up to 30 days for legacy systems)',
                 'Maintained for at least 5 years per industry practices'
               ],
@@ -131,7 +131,7 @@ export default function OptOutPage() {
           title: '6. Questions',
           icon: HelpCircle,
           content: `
-            <p>Write to us at <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> or call us at (7868285576.</p>
+            <p>Write to us at <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> or call us at ((786) 828-5576.</p>
           `
         }
       ]
@@ -184,7 +184,7 @@ export default function OptOutPage() {
               color: 'purple',
               instructions: [
                 'Solicita ser agregado a nuestra lista interna "Do Not Call"',
-                'Llama al (7868285576 o envíanos un email',
+                'Llama al ((786) 828-5576 o envíanos un email',
                 'Implementación en plazo razonable (hasta 30 días en sistemas heredados)',
                 'Se mantiene por al menos 5 años según prácticas del sector'
               ],
@@ -239,7 +239,7 @@ export default function OptOutPage() {
           title: '6. Preguntas',
           icon: HelpCircle,
           content: `
-            <p>Escríbenos a <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> o llámanos al (7868285576.</p>
+            <p>Escríbenos a <a href="mailto:hello@unityfinancialnetwork.com" class="text-primary-600 hover:text-primary-700">hello@unityfinancialnetwork.com</a> o llámanos al ((786) 828-5576.</p>
           `
         }
       ]
@@ -368,7 +368,7 @@ export default function OptOutPage() {
                       {language === 'en' ? 'Email Opt-Out' : 'Opt-Out Email'}
                     </a>
                     <a
-                      href="tel:7868285576"
+                      href="tel:(786) 828-5576"
                       className="flex items-center gap-2 text-sm text-red-700 hover:text-red-800"
                     >
                       <Phone className="w-4 h-4" />
@@ -579,13 +579,13 @@ export default function OptOutPage() {
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-3">
                     <a
-                      href="tel:7868285576"
+                      href="tel:(786) 828-5576"
                       className="flex items-center gap-3 p-4 border border-gray-200 rounded-lg hover:border-primary-400 hover:bg-primary-50 transition-all"
                     >
                       <Phone className="w-5 h-5 text-primary-600" />
                       <div>
                         <p className="font-semibold text-gray-900">{language === 'en' ? 'Call Us' : 'Llámanos'}</p>
-                        <p className="text-sm text-gray-600">(7868285576</p>
+                        <p className="text-sm text-gray-600">((786) 828-5576</p>
                       </div>
                     </a>
                   </div>

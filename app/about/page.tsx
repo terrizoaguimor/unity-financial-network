@@ -152,7 +152,7 @@ export default function AboutPage() {
             <div className="flex flex-wrap gap-6 justify-center">
               {[
                 { value: '20+', label: language === 'en' ? 'Years Experience' : 'Años de Experiencia' },
-                { value: '1000+', label: language === 'en' ? 'Happy Families' : 'Familias Felices' },
+                { value: '10,000+', label: language === 'en' ? 'Happy Families' : 'Familias Felices' },
                 { value: '11+', label: language === 'en' ? 'Insurance Products' : 'Productos de Seguro' }
               ].map((stat, index) => (
                 <motion.div
@@ -448,7 +448,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4 pt-6">
                 {[
                   { icon: Briefcase, label: language === 'en' ? '20+ Years Experience' : '20+ Años de Experiencia' },
-                  { icon: Users, label: language === 'en' ? '1000+ Lives Impacted' : '1000+ Vidas Impactadas' },
+                  { icon: Users, label: language === 'en' ? '10,000+ Lives Impacted' : '10,000+ Vidas Impactadas' },
                   { icon: Award, label: language === 'en' ? 'Industry Leader' : 'Líder de la Industria' },
                   { icon: Heart, label: language === 'en' ? 'Client-First Philosophy' : 'Filosofía Cliente Primero' }
                 ].map((item, index) => (
@@ -629,7 +629,7 @@ export default function AboutPage() {
                 icon: Clock 
               },
               { 
-                number: '1,000+', 
+                number: '10,000+', 
                 label: language === 'en' ? 'Families Protected' : 'Familias Protegidas',
                 icon: Users 
               },
@@ -719,8 +719,8 @@ export default function AboutPage() {
               </div>
               <div className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary-600" />
-                <a href="tel:7868285576" className="text-primary-600 font-semibold hover:text-primary-700">
-                  (7868285576
+                <a href="tel:(786) 828-5576" className="text-primary-600 font-semibold hover:text-primary-700">
+                  ((786) 828-5576
                 </a>
               </div>
             </div>

@@ -940,9 +940,9 @@ export default function JoinUnityPage() {
               {language === 'en' ? 'Ready to elevate your career? Contact us today!' : '¿Listo para elevar tu carrera? ¡Contáctanos hoy!'}
             </p>
             <div className="flex flex-wrap gap-6 justify-center">
-              <a href="tel:7868285576" className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold">
+              <a href="tel:(786) 828-5576" className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold">
                 <Phone className="w-5 h-5" />
-                (7868285576
+                ((786) 828-5576
               </a>
               <a href="mailto:careers@unityfinancialnetwork.com" className="flex items-center gap-2 text-primary-600 hover:text-primary-700 font-semibold">
                 <Mail className="w-5 h-5" />
